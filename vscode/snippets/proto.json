@@ -1,0 +1,39 @@
+{
+    // Place your snippets for proto here. Each snippet is defined under a snippet name and has a prefix, body and 
+    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+    // same ids are connected.
+    // Example:
+    "create servcie": {
+        "prefix": "cs",
+        "body": [
+            "service $1 {",
+            "}"
+        ],
+        "description": "create servcie"
+    },
+    "define unary method": {
+        "prefix": "dn",
+        "body": [
+            "rpc $1($1Request) returns ($1Response) ;",
+            ""
+        ],
+        "description": "define unary method"
+    },
+    "define stream method": {
+        "prefix": "ds",
+        "body": [
+            "rpc $1($1Request) returns (stream $1Response) ;",
+            ""
+        ],
+        "description": "define stream method"
+    },
+    "define message": {
+        "prefix": "dm",
+        "body": [
+            "message $1 {",
+            "}"
+        ],
+        "description": "define message"
+    }
+}

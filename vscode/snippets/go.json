@@ -1,0 +1,18 @@
+{
+	"Print to console": {
+		"prefix": "pl",
+		"body": [
+			"fmt.Printf(\"$1 %+v\\n\", $2)",
+		],
+		"description": "Log output to console"
+	},
+	"handle err": {
+		"prefix": "he",
+		"body": [
+			"if err != nil {",
+            "   return nil,err",
+            "}"
+		],
+		"description": "Log output to console"
+	}
+}

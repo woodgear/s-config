@@ -1,0 +1,75 @@
+set nocompatible
+set nu
+filetype plugin indent on
+syntax on
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" 使用系统剪贴板
+set clipboard=unnamedplus
+
+" 向右分裂出一个新窗口 焦点仍停留在当前窗口 
+noremap ,w3 :split<CR>
+
+" 向下分裂出一个新窗口 焦点仍停留在当前窗口 
+nnoremap ,w2 :vsplit<CR>
+
+" 关闭当前窗口
+nnoremap ,w0 :close<CR>
+
+" 只保留当前窗口
+nnoremap ,w1 :only<CR>
+
+noremap ,wh <C-w>h
+noremap ,wj <C-w>j
+noremap ,wk <C-w>k
+noremap ,wl <C-w>l
+
+" 修改vimrc | 向左分裂一个新窗口 打开vimrc 焦点移动至右边
+noremap ,ec :vsplit<CR>:e $MYVIMRC<CR>
+" 重载vimrc
+nnoremap ,lc :source $MYVIMRC <CR>
+
+" 查找文件
+nnoremap ,kk :CtrlP<CR>
+
+
+" 修改之前的文件
+noremap ,ep :e#<CR>
+
+noremap ,pi :PlugInstall<CR>
+
+
+" 搜索visual mode 选中的文字
+" y 复制当前选中的文字
+" h 向左移动一下 这样在搜索的时候就能搜索到当前这个文字
+" /\V<C-R>=escape(@",'/\')<CR><CR> 奇奇怪怪的操作 达成的效果应该与输入/当前选中的文字 (搜索当前选中的文字)类似
+vnoremap // yh/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" vim-auto-save config
+" let g:auto_save = 1
+" vim-term-help use ,mm to toggle terminal
+let g:terminal_key = ',mm'
+
+autocmd FileType rust noremap ,fm :RustFmt<CR>
+
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+call plug#begin('~/.vim/plugged')
+Plug '907th/vim-auto-save' " 自动保存
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'kien/ctrlp.vim' " 查找文件 
+Plug 'skywind3000/vim-terminal-help'
+Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dracula/vim', { 'as': 'dracula' }
+call plug#end()
+
+colorscheme ron

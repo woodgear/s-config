@@ -1,0 +1,148 @@
+{
+	"println": {
+		"prefix": "pl",
+		"body": [
+			"println!(\"{:?}\",${1});",
+		],
+	},
+	"dbgpoint": {
+		"prefix": "dp",
+		"body": [
+			"println!(\"{:?}\",std::line!());",
+		],
+	},
+	"return faileue err": {
+		"prefix": "rfe",
+		"body": [
+			"return Err(failure::format_err!(\"{}\",${1}));",
+		],
+	},
+	"define serde struct": {
+		"prefix": "dss",
+		"body": [
+			"#[derive(Serialize, Deserialize,Debug)]",
+			"pub struct ${1} {",
+			"}"
+		],
+	},
+	"define result failure": {
+		"prefix": "drf",
+		"body": [
+			"Result<${1},failure::Error>",
+		],
+	},
+	"define struct_self_fn": {
+		"prefix": "dsf",
+		"body": [
+            "fn ${1}(&${2} self,${3}) -> ${4} {",
+            "   ${5}",
+            "   unimplement();",
+            "}"
+		],
+	},
+	"define anonymous nfn": {
+		"prefix": "danf",
+		"body": [
+			"let ret = || -> Result<${1},failure::Error> {",
+			"    ${2}",
+			"}();"
+		],
+	},
+	"define anonymous fn": {
+		"prefix": "darf",
+		"body": [
+			"let ret = || -> Result<${1},failure::Error> {",
+			"    ${2}",
+			"}();"
+		],
+	},
+	"define test fn": {
+		"prefix": "dtf",
+		"body": [
+			"#[test]",
+			"fn test_${1}() {",
+            "    println!(\"test_${1}\");",
+            "    assert_eq!(true,false);",
+			"}"
+		],
+	},
+	"define result fn": {
+		"prefix": "df",
+		"body": [
+			"fn ${1}(${2}) ->Result<${3},failure::Error> {",
+			"   ${4}",
+			"}"
+		],
+	},
+	"define pub_result fn": {
+		"prefix": "pdf",
+		"body": [
+			"pub fn ${1}(${2}) ->Result<${3},failure::Error> {",
+			"   ${4}",
+			"}"
+		],
+	},
+	"define struct": {
+		"prefix": "ds",
+		"body": [
+			"struct ${2} {",
+			"   ${2}",
+			"}"
+		],
+	},
+	"define enum": {
+		"prefix": "de",
+		"body": [
+			"enum ${2} {",
+			"   ${2}",
+			"}"
+		],
+	},
+	"info log": {
+		"prefix": "li",
+		"body": [
+			"info!(\"{}\",${1});",
+		],
+	},
+	"warn log": {
+		"prefix": "wi",
+		"body": [
+			"warn!(\"{}\",${1});",
+		],
+	},
+	"error log": {
+		"prefix": "ei",
+		"body": [
+			"error!(\"{}\",${1});",
+		],
+	},
+	"impl_from": {
+		"prefix": "irf",
+		"body": [
+			"impl From<${1}> for ${2} {",
+			"    fn from(origin: ${1}) -> Self {",
+			"    }",
+			"}",
+		]
+	},
+	"unimplement": {
+		"prefix": "ui",
+		"body": [
+            "unimplemented!();"
+		]
+	},
+	"tests mod": {
+		"prefix": "mt",
+		"body": [
+			"#[cfg(test)]",
+			"mod tests {",
+			"   use super::*;",
+			"   #[test]",
+			"   fn test_${1}() {",
+			"       assert_eq!(true,true);",
+			"   }",
+			"}"
+		],
+		"description": "Log output to console"
+	}
+}

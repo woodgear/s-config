@@ -1,0 +1,468 @@
+{
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "window.zoomLevel": 0,
+    "files.autoSave": "afterDelay",
+    "window.menuBarVisibility": "default",
+    "workbench.activityBar.visible": true,
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.visualstar": true,
+    "vim.ignorecase": false,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": ",",
+    // 以下为自定义的快捷方式, 在所有的编辑器和IDE中i都应该具备这种语义 此即为IDE要素
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "x",
+                "m"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        },
+        {
+            // 注释/取消注释当前代码
+            "before": [
+                "<leader>",
+                "c",
+                "i"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        },
+        {
+            // 在当前项目中查找 
+            "before": [
+                "<leader>",
+                "q",
+                "q"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ]
+        },
+        {
+            // 在当前文件中查找 
+            "before": [
+                "<leader>",
+                "s",
+                "s"
+            ],
+            "commands": [
+                "actions.find"
+            ]
+        },
+        {
+            // format当前文件
+            "before": [
+                "<leader>",
+                "f",
+                "m"
+            ],
+            "commands": [
+                "editor.action.formatDocument"
+            ]
+        },
+        {
+            //  切换到右边的tab
+            "before": [
+                "<leader>",
+                "m",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            //  切换到左边的tab
+            "before": [
+                "<leader>",
+                "m",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            // close sidebar
+            "before": [
+                "<leader>",
+                "c",
+                "s"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        {
+            // 关闭当前文档
+            "before": [
+                "<leader>",
+                "c",
+                "e"
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        {
+            // 打开当前项目中的文件
+            "before": [
+                "<leader>",
+                "k",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            // 跳转至定义
+            "before": [
+                "<leader>",
+                "j",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition",
+            ]
+        },
+        {
+            // 在右边分裂窗口
+            "before": [
+                "<leader>",
+                "x",
+                "3"
+            ],
+            "commands": [
+                "workbench.action.splitEditorRight"
+            ]
+        },
+        {
+            // focus on terminal use alt+m to focus back
+            "before": [
+                "<leader>",
+                "m",
+                "m",
+            ],
+            "commands": [
+                "workbench.action.terminal.focus"
+            ]
+        },
+        {
+            // 显示文档 效果和手动hover一致
+            "before": [
+                "<leader>",
+                "s",
+                "d"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            // jump to define 跳转到定义
+            "before": [
+                "<leader>",
+                "j",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
+        },
+        {
+            // jump to current 跳转回去 使用跳转定义跳到其他文件之后在跳回去
+            "before": [
+                "<leader>",
+                "j",
+                "b"
+            ],
+            "commands": [
+                "workbench.action.navigateBack"
+            ]
+        },
+        {
+            // jump to pre 跳转到下面使用当前符号的地方
+            "before": [
+                "<leader>",
+                "j",
+                "n"
+            ],
+            "commands": [
+                "editor.action.wordHighlight.next"
+            ]
+        },
+        {
+            // jump to next 跳转到上面使用当前符号的地方
+            "before": [
+                "<leader>",
+                "j",
+                "p"
+            ],
+            "commands": [
+                "editor.action.wordHighlight.prev"
+            ]
+        },
+        {
+            // 显示所有的符号并跳转
+            "before": [
+                "<leader>",
+                "f",
+                "s"
+            ],
+            "commands": [
+                "workbench.action.gotoSymbol"
+            ]
+        },
+        {
+            // 焦点切换到左边的窗口 ,下面一样
+            "before": [
+                "<leader>",
+                "w",
+                "h"
+            ],
+            "after": [
+                "<C-w>",
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "j"
+            ],
+            "after": [
+                "<C-w>",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "k"
+            ],
+            "after": [
+                "<C-w>",
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "l"
+            ],
+            "after": [
+                "<C-w>",
+                "l"
+            ]
+        },
+        // 切换焦点结束
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.tasks.reRunTask"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "j",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.navigateToLastEditLocation"
+            ]
+        },
+        {
+            "before": [
+                "%"
+            ],
+            "commands": [
+                "extension.matchitJumpItems"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "s",
+                "i"
+            ],
+            "commands": [
+                "extension.matchitSelectItems"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "i"
+            ],
+            "commands": [
+                "extension.matchitDeleteItems"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "x",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.files.openFile"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "r"
+            ],
+            "commands": [
+                "workbench.action.openRecent"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "x",
+                "1"
+            ],
+            "commands": [
+                "workbench.action.editorLayoutSingle"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "x",
+                "2"
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "x",
+                "4"
+            ],
+            "commands": [
+                "workbench.action.editorLayoutTwoByTwoGrid"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "x",
+                "0"
+            ],
+            "commands": [
+                "workbench.action.closeGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.toggleZenMode"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "q"
+            ],
+            "after": [
+                ":wq"
+            ],
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            // 注释/取消注释当前代码
+            "before": [
+                "<leader>",
+                "c",
+                "i"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        },
+        {
+            // 在整个项目/worksapace中查找
+            "before": [
+                "<leader>",
+                "q",
+                "q"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ]
+        },
+        {
+            // 在当前文件中查找
+            "before": [
+                "<leader>",
+                "s",
+                "s"
+            ],
+            "commands": [
+                "actions.find"
+            ]
+        }
+    ],
+    // golang config
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        // Optional: Disable snippets, as they conflict with completion ranking.
+        "editor.snippetSuggestions": "none",
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+    },
+    "gopls": {
+         // Add parameter placeholders when completing a function.
+        "usePlaceholders": true,
+    
+        // If true, enable additional analyses with staticcheck.
+        // Warning: This will significantly increase memory usage.
+        "staticcheck": false,
+    },
+    "debug.allowBreakpointsEverywhere": true,
+    "go.formatTool": "goimports",
+    "workbench.colorTheme": "Quiet Light",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "sync.autoUpload": true,
+}

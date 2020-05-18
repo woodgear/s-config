@@ -1,0 +1,78 @@
+let mapleader = ","   " leader is comma
+let localleader = "," " leader is comma
+
+set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
+set shiftwidth=4    " spaces in newline start
+set expandtab       " tabs are spaces
+set number              " show line numbers
+set showcmd             " show command in bottom bar
+set cursorline          " highlight current line
+set surround            " use surround shortcuts
+set commentary "vim-commentary
+filetype indent on      " load filetype-specific indent files
+set wildmenu            " visual autocomplete for command menu
+set showmatch           " highlight matching [{()}]
+set timeoutlen=500      " timeout for key combinations
+
+set so=5                " lines to cursor
+set backspace=2         " make backspace work like most other apps
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+set ignorecase          " do case insensitive matching
+set smartcase           " do smart case matching
+set hidden
+
+set fillchars+=stl:\ ,stlnc:\
+set laststatus=2
+set clipboard=unnamedplus  "X clipboard as unnamed
+
+"press kj to exit insert mode
+imap kj <Esc>
+vmap kj <Esc>
+
+
+" load-config
+noremap ,lc :source ~/.ideavimrc<CR>
+" edit-config
+noremap ,ec :e $HOMEPATH/.ideavimrc<CR>
+" reformat code
+noremap ,fm :action ReformatCode<CR>
+
+" 搜索visual mode 选中的文字
+" y 复制当前选中的文字
+" h 向左移动一下 这样在搜索的时候就能搜索到当前这个文字
+" /\V<C-R>=escape(@",'/\')<CR><CR> 奇奇怪怪的操作 达成的效果应该与输入/当前选中的文字 (搜索当前选中的文字)类似
+vnoremap // yh/\V<C-R>=escape(@",'/\')<CR><CR>
+
+"@see https://youtrack.jetbrains.com/issue/VIM-510 on expand selected region. Press `Ctrl-W` and `Ctrl-Shift-W` to increase and decrease selected region
+
+
+noremap ,xm :action SearchEverywhere<CR>
+noremap ,ci :action CommentByLineComment<CR>
+noremap ,xs :action SaveAll<CR>
+noremap ,aa :action $Copy<CR>
+noremap ,zz :action $Paste<CR>
+noremap ,yy :action PasteMultiple<CR>
+noremap ,qq :action FindInPath<CR>
+noremap ,ss :action Find<CR>
+noremap ,fp :action CopyPaths<CR>
+noremap ,xk :action CloseEditor<CR>
+noremap ,rr :action RecentFiles<CR>
+noremap ,kk :action GotoFile<CR>
+noremap ,ii :action GotoSymbol<CR>
+noremap <C-]> :action GotoImplementation<CR>
+noremap ,xz :action ActivateTerminalToolWindow<CR>
+
+" ideavim don't support numberic character in hotkey in 0.55
+" it's fixed in 0.55.1
+noremap ,x1 <C-W>o
+noremap ,x2 :split<CR>
+noremap ,x3 :vsplit<CR>
+noremap ,x0 :q<CR>
+" move window
+noremap ,wh <C-W>h
+noremap ,wl <C-W>l
+noremap ,wj <C-W>j
+noremap ,wk <C-W>k
+noremap ,xx :action EditorSelectWord<CR>
