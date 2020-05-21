@@ -2,13 +2,13 @@
 	"println": {
 		"prefix": "pl",
 		"body": [
-			"println!(\"{:?}\",${1});",
+			"println!(\"debug==> ${1} {:?}\",${2});",
 		],
 	},
 	"dbgpoint": {
 		"prefix": "dp",
 		"body": [
-			"println!(\"{:?}\",std::line!());",
+			"println!(\"$debug==> ${1} {:?}:{:?}\",std::file!(),std::line!());",
 		],
 	},
 	"return faileue err": {

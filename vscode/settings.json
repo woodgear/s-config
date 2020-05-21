@@ -70,6 +70,18 @@
                 "editor.action.formatDocument"
             ]
         },
+
+        {
+            // go to symbol
+            "before": [
+                "<leader>",
+                "i",
+                "i"
+            ],
+            "commands": [
+                "workbench.action.gotoSymbol"
+            ]
+        },
         {
             //  切换到右边的tab
             "before": [
@@ -465,4 +477,5 @@
     "explorer.confirmDragAndDrop": false,
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "sync.autoUpload": true,
+    "diffEditor.ignoreTrimWhitespace": false,
 }
