@@ -5,10 +5,10 @@ ln -s ~/.config/Code\ -\ OSS  ~/.config/Code
 rm -rf  ~/.config/Code/User/settings.json 
 rm -rf ~/.config/Code/User/snippets 
 rm -rf  ~/.config/Code/User/keybindings.json 
-
-ln -s ~/ns/share/init/vscode/settings.json ~/.config/Code/User/settings.json 
-ln -s ~/ns/share/init/vscode/snippets ~/.config/Code/User/snippets
-ln -s ~/ns/share/init/vscode/keybindings.json ~/.config/Code/User/keybindings.json 
+export VSCODE_CONFIG_DIR=$(pwd)/vscode
+ln -s $VSCODE_CONFIG_DIR/settings.json ~/.config/Code/User/settings.json 
+ln -s $VSCODE_CONFIG_DIR/snippets ~/.config/Code/User/snippets
+ln -s $VSCODE_CONFIG_DIR/keybindings.json ~/.config/Code/User/keybindings.json 
 ```
 # windows
 ```ps
