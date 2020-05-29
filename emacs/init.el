@@ -28,9 +28,9 @@
 (straight-use-package 'evil)
 (straight-use-package 'winum)
 (straight-use-package 'lsp-mode)
+(straight-use-package 'keyfreq)
 
 
-;; Enable Evil
 (require 'evil)
 (evil-mode 1)
 
@@ -38,6 +38,9 @@
 (winum-mode)
 
 
+(require 'keyfreq)
+(keyfreq-mode 1)
+(keyfreq-autosave-mode 1)
 
 
 ;; 其他配置
