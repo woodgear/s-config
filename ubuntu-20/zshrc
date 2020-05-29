@@ -69,3 +69,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # emacs-lab
 export PATH=/home/oaa/lab/emacs-lab/redguardtoo:$PATH
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
