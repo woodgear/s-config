@@ -94,3 +94,7 @@ tpm install  https://github.com/woodgear/t.git
 
 # yed
 sudo aura -A yed
+
+
+# link
+ln -s ~/sm/lab/s-config/emacs/init.el ~/.emacs.d/init.el 
