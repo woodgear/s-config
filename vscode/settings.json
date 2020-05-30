@@ -412,6 +412,16 @@
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
+            "before": [
+                "<leader>",
+                "x",
+                "m"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        },
+        {
             // 注释/取消注释当前代码
             "before": [
                 "<leader>",
