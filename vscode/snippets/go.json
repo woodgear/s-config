@@ -6,6 +6,14 @@
 		],
 		"description": "Log output to console"
 	},
+	"define function": {
+		"prefix": "fn",
+		"body": [
+			"fnuc $1($2) $3 {",
+            "}"
+		],
+		"description": "Log output to console"
+	}
 	"handle err": {
 		"prefix": "he",
 		"body": [

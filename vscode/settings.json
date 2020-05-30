@@ -70,7 +70,6 @@
                 "editor.action.formatDocument"
             ]
         },
-
         {
             // go to symbol
             "before": [
@@ -463,9 +462,8 @@
         },
     },
     "gopls": {
-         // Add parameter placeholders when completing a function.
+        // Add parameter placeholders when completing a function.
         "usePlaceholders": true,
-    
         // If true, enable additional analyses with staticcheck.
         // Warning: This will significantly increase memory usage.
         "staticcheck": false,
@@ -478,4 +476,6 @@
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "sync.autoUpload": true,
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.tabCompletion":"on",
+    "editor.snippetSuggestions": "top"
 }
