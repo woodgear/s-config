@@ -6,6 +6,8 @@ choco install beyondcompare -y
 choco install jq -y
 choco install wireshark -y
 choco install cygwin -y
+choco install handle -y
+choco install lockhunter -y
 ```
 
 ```bat
