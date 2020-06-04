@@ -94,3 +94,6 @@ tpm install  https://github.com/woodgear/t.git
 
 # yed
 sudo aura -A yed
+
+sudo systemctl enable lightdm
+sudo systemctl enable docker.service

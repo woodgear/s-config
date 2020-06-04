@@ -23,6 +23,9 @@ mklink "C:\Users\developer\.ideavimrc" "Z:\share\init\vim\.ideamvimrc"
 # widnows-terminal(uwp) config file
 mklink "C:\Users\developer\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" "Z:\share\init\windows\windows-terminal-uwp\settings.json"
 ```
+# 关闭防病毒
+
+# 关闭ctrl+shift+f
 
 # env path
 ```bat
