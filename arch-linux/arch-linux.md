@@ -95,6 +95,8 @@ tpm install  https://github.com/woodgear/t.git
 # yed
 sudo aura -A yed
 
+sudo systemctl enable lightdm
+sudo systemctl enable docker.service
 
 # link
 ln -s ~/sm/lab/s-config/emacs/init.el ~/.emacs.d/init.el 

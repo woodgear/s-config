@@ -6,6 +6,8 @@ choco install beyondcompare -y
 choco install jq -y
 choco install wireshark -y
 choco install cygwin -y
+choco install handle -y
+choco install lockhunter -y
 ```
 
 ```bat
@@ -25,6 +27,9 @@ mklink "C:\Users\developer\AppData\Local\Packages\Microsoft.WindowsTerminal_8wek
 
 # link vscode config according vscode.md
 ```
+# 关闭防病毒
+
+# 关闭ctrl+shift+f
 
 # env path
 ```bat
