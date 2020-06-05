@@ -1,4 +1,12 @@
+# choco
+```
+Get-ExecutionPolicy
+Set-ExecutionPolicy AllSigned
+Set-ExecutionPolicy Bypass -Scope Process
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+```
 ```bat
+
 choco install emacs -y
 choco install 7zip.install -y
 choco install manictime -y
@@ -8,6 +16,8 @@ choco install wireshark -y
 choco install cygwin -y
 choco install handle -y
 choco install lockhunter -y
+choco install listary -y
+choco install clcl.portable -y
 ```
 
 ```bat
