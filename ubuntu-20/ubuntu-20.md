@@ -16,7 +16,7 @@ sudo apt install gnome-tweak-tool -y &&
 sudo apt install openjdk-11-jdk -y  &&
 sudo apt install autojump
 sudo apt  install cmake -y
-
+sudo apt-get install graphviz -y
 
 # docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
