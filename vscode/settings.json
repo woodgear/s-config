@@ -487,5 +487,6 @@
     "sync.autoUpload": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.tabCompletion":"on",
-    "editor.snippetSuggestions": "top"
+    "editor.snippetSuggestions": "top",
+    "files.maxMemoryForLargeFilesMB": 8192
 }

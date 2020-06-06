@@ -92,9 +92,11 @@ cargo install fd-find
 cargo install --git https://github.com/woodgear/tpm.git
 tpm install  https://github.com/woodgear/t.git
 
-# yed
+```
 sudo aura -A yed
-
+pacman -S aria2
+```
 
 # link
 ln -s ~/sm/lab/s-config/emacs/init.el ~/.emacs.d/init.el 
+ln -s ~/sm/lab/s-config/arch-linux/zshrc ~/.zshrc 
