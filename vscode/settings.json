@@ -486,6 +486,7 @@
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "sync.autoUpload": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.tabCompletion":"on",
-    "editor.snippetSuggestions": "top"
+    "editor.tabCompletion": "on",
+    "editor.snippetSuggestions": "top",
+    "files.autoDetectEncoding": true
 }

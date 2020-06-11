@@ -18,6 +18,7 @@ choco install handle -y
 choco install lockhunter -y
 choco install listary -y
 choco install clcl.portable -y
+choco install wps-office-free -y
 ```
 
 ```bat
