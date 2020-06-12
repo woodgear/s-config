@@ -2,7 +2,7 @@
 	"println": {
 		"prefix": "pl",
 		"body": [
-			"println!(\"debug==> ${1} {:?}\",${2});",
+			"println!(\"debug==> ${1} {:?}\",\"${2}\");",
 		],
 	},
 	"dbgpoint": {

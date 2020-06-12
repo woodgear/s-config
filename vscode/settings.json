@@ -82,6 +82,50 @@
             ]
         },
         {
+            // editor.action.rename
+            "before": [
+                "<leader>",
+                "r",
+                "n"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        },
+        {
+            // find all reference
+            "before": [
+                "<leader>",
+                "f",
+                "r"
+            ],
+            "commands": [
+                "references-view.find"
+            ]
+        },
+        {
+            // 打开当前项目中的文件
+            "before": [
+                "<leader>",
+                "k",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            // 跳转至定义
+            "before": [
+                "<leader>",
+                "j",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition",
+            ]
+        },
+        {
             //  切换到右边的tab
             "before": [
                 "<leader>",
@@ -123,28 +167,6 @@
             ],
             "commands": [
                 "workbench.action.closeActiveEditor"
-            ]
-        },
-        {
-            // 打开当前项目中的文件
-            "before": [
-                "<leader>",
-                "k",
-                "k"
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
-        },
-        {
-            // 跳转至定义
-            "before": [
-                "<leader>",
-                "j",
-                "d"
-            ],
-            "commands": [
-                "editor.action.revealDefinition",
             ]
         },
         {
@@ -486,6 +508,7 @@
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "sync.autoUpload": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.tabCompletion":"on",
-    "editor.snippetSuggestions": "top"
+    "editor.tabCompletion": "on",
+    "editor.snippetSuggestions": "top",
+    "files.autoGuessEncoding": true
 }
