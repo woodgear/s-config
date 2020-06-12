@@ -11,6 +11,9 @@ sudo  pacman -S git zsh wget emacs docker
 sudo aura -A yed
 sudo pacman -S aria2
 sudo pacman -S pip3
+sudo pacman -S time
+sudo pacman -S graphviz
+
 ```
 # docker
 sudo pacman -S docker
@@ -100,5 +103,8 @@ sudo systemctl enable docker.service
 ```
 
 # link
+```
 ln -s ~/sm/lab/s-config/emacs/init.el ~/.emacs.d/init.el 
 ln -s ~/sm/lab/s-config/arch-linux/zshrc ~/.zshrc 
+ln -s ~/sm/lab/s-config/vim/vimrc ~/.vimrc 
+```
