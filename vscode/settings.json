@@ -510,5 +510,7 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.tabCompletion": "on",
     "editor.snippetSuggestions": "top",
-    "files.autoGuessEncoding": true
+    "files.autoGuessEncoding": true,
+    "extensions.ignoreRecommendations": false,
+    "go.autocompleteUnimportedPackages": true
 }

@@ -6,14 +6,22 @@
 		],
 		"description": "Log output to console"
 	},
-	"define function": {
-		"prefix": "fn",
+	"define interface": {
+		"prefix": "di",
 		"body": [
-			"fnuc $1($2) $3 {",
+            "type $1 interface{",
             "}"
 		],
-		"description": "Log output to console"
-	}
+		"description": "define interface"
+	},
+	"define function": {
+		"prefix": "ds",
+		"body": [
+            "type $1 struct {",
+            "}"
+		],
+		"description": "define struct "
+	},
 	"handle err": {
 		"prefix": "he",
 		"body": [
@@ -21,6 +29,6 @@
             "   return nil,err",
             "}"
 		],
-		"description": "Log output to console"
+		"description": "handle error"
 	}
 }
