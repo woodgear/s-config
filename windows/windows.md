@@ -9,7 +9,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 choco install emacs -y
 choco install 7zip.install -y
-choco install manictime -y
+rem choco install manictime -y
 choco install beyondcompare -y
 choco install jq -y
 choco install wireshark -y
@@ -19,6 +19,17 @@ choco install lockhunter -y
 choco install listary -y
 choco install clcl.portable -y
 choco install wps-office-free -y
+choco install vscode -y
+choco install sublimetext3.powershellalias -y
+choco install baretail -y
+choco install microsoft-windows-terminal -y
+choco install git -y
+choco install everything -y
+choco install googlechrome -y
+choco install autohotkey.portable -y
+choco install cmdermini -y
+choco install cmake -y
+choco install python3 -y
 ```
 
 ```bat

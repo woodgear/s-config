@@ -1,5 +1,19 @@
+# install aura
+```sh
+git clone https://aur.archlinux.org/aura-bin.git
+cd aura-bin
+makepkg
+sudo pacman -U aura-bin-2.3.0-1-x86_64.pkg.tar.xz
+```
+# install 
 ```sh
 sudo  pacman -S git zsh wget emacs docker
+sudo aura -A yed
+sudo pacman -S aria2
+sudo pacman -S pip3
+sudo pacman -S time
+sudo pacman -S graphviz
+
 ```
 # docker
 sudo pacman -S docker
@@ -17,16 +31,6 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 cat /etc/docker/daemon.json
 docker run hello-world
-
-# install aura
-```sh
-git clone https://aur.archlinux.org/aura-bin.git
-cd aura-bin
-makepkg
-sudo pacman -U aura-bin-2.3.0-1-x86_64.pkg.tar.xz
-```
-
-# git
 
 # golang
 ```
@@ -69,8 +73,6 @@ curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/bin/antigen.z
 source ~/.zshrc
 ```
 
-# python
-sudo pacman -S pip3
 # node
 ```
 # nvm 
@@ -87,16 +89,22 @@ source $HOME/.cargo/env
 sudo apt install libssl-dev
 cargo install ripgrep
 cargo install fd-find
+cargo install cargo-edit
 
 # tpm
+```
 cargo install --git https://github.com/woodgear/tpm.git
 tpm install  https://github.com/woodgear/t.git
-
-# yed
-sudo aura -A yed
-
+```
+# init config
+```
 sudo systemctl enable lightdm
 sudo systemctl enable docker.service
+```
 
 # link
+```
 ln -s ~/sm/lab/s-config/emacs/init.el ~/.emacs.d/init.el 
+ln -s ~/sm/lab/s-config/arch-linux/zshrc ~/.zshrc 
+ln -s ~/sm/lab/s-config/vim/vimrc ~/.vimrc 
+```
