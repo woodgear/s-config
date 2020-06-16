@@ -30,6 +30,7 @@ choco install autohotkey.portable -y
 choco install cmdermini -y
 choco install cmake -y
 choco install python3 -y
+choco install microsoft-windows-terminal -y
 ```
 
 ```bat

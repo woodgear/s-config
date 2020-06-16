@@ -149,13 +149,12 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.
 
 # init 
 ```bash
-ln -s ~/data/Nutstore\ Files/ ~/ns
-ln -s ~/ns/share/init/ubuntu-20/xmodmap.sh ~/xmodmap.sh
-ln -s ~/ns/share/init/ubuntu-20/zshrc ~/.zshrc
-ln -s ~/ns/share/init/vim/vimrc ~/.vimrc
+# S_CONFIG_DIR
+ln -s $S_CONFIG_DIR/ubuntu-20/zshrc ~/.zshrc
+ln -s $S_CONFIG_DIR/vim/vimrc ~/.vimrc
 mkdir ~/.config/nvim
-ln -s ~/ns/share/init/vim/vimrc ~/.config/nvim/init.vim
-ln -s ~/ns/share/init/vim/.ideavimrc ~/.ideavimrc
-ln -s ~/ns/share/init/emacs/init.el ~/.emacs.d/init.el
-ln -s ~/ns/share/init/emacs/.doom.d ~/.doom.d
+ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
+ln -s $S_CONFIG_DIR/vim/.ideavimrc ~/.ideavimrc
+ln -s $S_CONFIG_DIR/emacs/init.el ~/.emacs.d/init.el
+ln -s $S_CONFIG_DIR/emacs/.doom.d ~/.doom.d
 ```
