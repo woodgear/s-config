@@ -147,14 +147,20 @@ sudo systemctl enable ssh
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
-# init 
+# link
 ```bash
-# S_CONFIG_DIR
+# S_CONFIG_DIR=/home/oaa/lab/s-config
+rm  ~/.zshrc
+rm  ~/.vimrc
+rm -rf ~/.config/nvim
+rm  ~/.ideavimrc
+rm  ~/.emacs.d/init.el
+
 ln -s $S_CONFIG_DIR/ubuntu-20/zshrc ~/.zshrc
 ln -s $S_CONFIG_DIR/vim/vimrc ~/.vimrc
-mkdir ~/.config/nvim
+mkdir -p ~/.config/nvim
 ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
 ln -s $S_CONFIG_DIR/vim/.ideavimrc ~/.ideavimrc
+mkdir -p ~/.emacs.d
 ln -s $S_CONFIG_DIR/emacs/init.el ~/.emacs.d/init.el
-ln -s $S_CONFIG_DIR/emacs/.doom.d ~/.doom.d
 ```
