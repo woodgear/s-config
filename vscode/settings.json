@@ -512,5 +512,7 @@
     "editor.snippetSuggestions": "top",
     "files.maxMemoryForLargeFilesMB": 8192,
     "editor.snippetSuggestions": "top",
-    "files.autoGuessEncoding": true
+    "files.autoGuessEncoding": true,
+    "terminal.integrated.fontFamily": "monospace",
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', 'Droid Sans Fallback'"
 }

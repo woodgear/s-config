@@ -80,3 +80,8 @@ go env -w  GOPROXY=https://goproxy.cn
 
 
 source ~/.cargo/env 
+
+alias dl="aria2c -c -s16 -x16 -k1M"
+
+alias ud="sudo pacman -Syu"
+
