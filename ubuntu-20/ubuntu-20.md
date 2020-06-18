@@ -7,7 +7,7 @@ sudo apt update
 sudo apt install curl -y &&
 sudo apt install gcc  g++ make perl -y &&
 sudo apt install git -y &&
-sudo apt install hashalot -y &&
+sudo apt install hashalot -y &&  # for sha256 etc
 # sudo apt install vim -y default is vim8 now
 sudo apt install neovim -y
 snap install emacs --classic

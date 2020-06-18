@@ -513,7 +513,9 @@
     "files.maxMemoryForLargeFilesMB": 8192,
     "editor.snippetSuggestions": "top",
     "files.autoGuessEncoding": true,
-    "terminal.integrated.fontFamily": "monospace",
-    "editor.fontFamily": "'Droid Sans Mono', 'monospace', 'Droid Sans Fallback'",
-    "go.autocompleteUnimportedPackages": true
+    "terminal.integrated.fontFamily": "Iosevka",
+    "editor.fontFamily": "Iosevka",
+    "go.autocompleteUnimportedPackages": true,
+    "debug.console.fontFamily": "Iosevka",
+    "editor.fontSize": 16,
 }
