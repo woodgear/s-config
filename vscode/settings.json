@@ -514,5 +514,6 @@
     "editor.snippetSuggestions": "top",
     "files.autoGuessEncoding": true,
     "terminal.integrated.fontFamily": "monospace",
-    "editor.fontFamily": "'Droid Sans Mono', 'monospace', 'Droid Sans Fallback'"
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', 'Droid Sans Fallback'",
+    "go.autocompleteUnimportedPackages": true
 }

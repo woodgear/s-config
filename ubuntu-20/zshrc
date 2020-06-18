@@ -27,10 +27,7 @@ antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 antigen apply
 
 export PATH=~/bin:$PATH
-export PATH=/home/oaa/work/trantect/saas/tx-startup/tx/scripts:$PATH
 
-export LOCAL_IP="192.168.2.218"
-export PATH=$PATH:/home/oaa/work/trantect/saas/tx-startup/dev-script
 export PATH=$PATH:/usr/local/go/bin
 
 export NVM_DIR="$HOME/.nvm"
@@ -71,3 +68,9 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=/home/oaa/lab/emacs-lab/redguardtoo:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 alias dl="aria2c -s16 -x16 -k1M"
+
+# rust
+source $HOME/.cargo/env
+
+
+export DISPLAY=":0"
