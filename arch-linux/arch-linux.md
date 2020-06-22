@@ -15,6 +15,8 @@ sudo pacman -S emacs  --noconfirm
 sudo pacman -S  cmake  --noconfirm
 sudo pacman -S graphviz  --noconfirm 
 sudo pacman -S aria2  --noconfirm
+sudo pacman -S tmux --noconfirm
+sudo aura -A indicator-stickynotes
 sudo aura  -A bcompare
 sudo pacman -S  zsh wget docker
 sudo aura -A yed
@@ -107,6 +109,14 @@ tpm install  https://github.com/woodgear/t.git
 ```
 sudo systemctl enable lightdm
 sudo systemctl enable docker.service
+```
+# kvm qemu
+```sh
+sudo systemctl enable libvirtd.service
+sudo systemctl start libvirtd.service
+sudo pacman -S qemu libvirt virt-manager
+sudo pacman -Syu ebtables dnsmasq
+
 ```
 
 # link
