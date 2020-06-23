@@ -73,4 +73,5 @@ vim ~/.ssh/id_rsa.pub
 vim ~/.ssh/id_rsa.pub
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_rsa
+git config --global core.editor "vim" 
 ```
