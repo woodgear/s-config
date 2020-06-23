@@ -7,12 +7,21 @@ sudo pacman -U aura-bin-2.3.0-1-x86_64.pkg.tar.xz
 ```
 # install 
 ```sh
-sudo  pacman -S git zsh wget emacs docker
+sudo  pacman -S curl gcc  g++ make perl  --noconfirm 
+sudo pacman -S git --noconfirm
+# arch linux has sha256 as default
+sudo pacman -S   neovim  --noconfirm
+sudo pacman -S emacs  --noconfirm
+sudo pacman -S  cmake  --noconfirm
+sudo pacman -S graphviz  --noconfirm 
+sudo pacman -S aria2  --noconfirm
+sudo pacman -S tmux --noconfirm
+sudo aura -A indicator-stickynotes
+sudo aura  -A bcompare
+sudo pacman -S  zsh wget docker
 sudo aura -A yed
-sudo pacman -S aria2
 sudo pacman -S pip3
 sudo pacman -S time
-sudo pacman -S graphviz
 
 ```
 # docker
@@ -100,6 +109,14 @@ tpm install  https://github.com/woodgear/t.git
 ```
 sudo systemctl enable lightdm
 sudo systemctl enable docker.service
+```
+# kvm qemu
+```sh
+sudo systemctl enable libvirtd.service
+sudo systemctl start libvirtd.service
+sudo pacman -S qemu libvirt virt-manager
+sudo pacman -Syu ebtables dnsmasq
+
 ```
 
 # link

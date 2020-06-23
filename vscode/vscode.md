@@ -8,8 +8,6 @@ code --install-extension matklad.rust-analyzer
 code --install-extension ms-python.python
 code --install-extension golang.go
 code --install-extension redguardtoo.matchit
-code --install-extension rlivings39.fzf-quick-open
-code --install-extension tatosjb.fuzzy-search
 code --install-extension vscodevim.vim
 ```
 
