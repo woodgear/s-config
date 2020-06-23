@@ -6,12 +6,11 @@ code --install-extension Cameron.rerun-last-command
 code --install-extension in4margaret.compareit
 code --install-extension matklad.rust-analyzer
 code --install-extension ms-python.python
-code --install-extension ms-vscode.Go
+code --install-extension golang.go
 code --install-extension redguardtoo.matchit
 code --install-extension rlivings39.fzf-quick-open
 code --install-extension tatosjb.fuzzy-search
 code --install-extension vscodevim.vim
-
 ```
 
 
