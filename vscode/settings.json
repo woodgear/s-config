@@ -513,9 +513,9 @@
     "files.maxMemoryForLargeFilesMB": 8192,
     "editor.snippetSuggestions": "top",
     "files.autoGuessEncoding": true,
-    "terminal.integrated.fontFamily": "Iosevka",
-    "editor.fontFamily": "Iosevka",
+    "editor.fontFamily": "Iosevka,monospace",
     "go.autocompleteUnimportedPackages": true,
     "debug.console.fontFamily": "Iosevka",
     "editor.fontSize": 16,
+    "terminal.integrated.fontFamily": "Iosevka,monospace",
 }
