@@ -22,7 +22,8 @@ sudo pacman -S  zsh wget docker
 sudo aura -A yed
 sudo pacman -S pip3
 sudo pacman -S time
-
+sudo pacman -S parole 	gst-libav
+sudo pacman -S discord --noconfirm
 ```
 # docker
 sudo pacman -S docker
@@ -85,7 +86,7 @@ source ~/.zshrc
 # node
 ```
 # nvm 
-mkdir ～/.nvm
+mkdir ~/.nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 source ~/.zshrc
 nvm install --lts
@@ -99,6 +100,7 @@ sudo apt install libssl-dev
 cargo install ripgrep
 cargo install fd-find
 cargo install cargo-edit
+cargo install starship
 
 # tpm
 ```
@@ -116,7 +118,6 @@ sudo systemctl enable libvirtd.service
 sudo systemctl start libvirtd.service
 sudo pacman -S qemu libvirt virt-manager
 sudo pacman -Syu ebtables dnsmasq
-
 ```
 
 # link

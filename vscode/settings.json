@@ -518,4 +518,6 @@
     "go.autocompleteUnimportedPackages": true,
     "debug.console.fontFamily": "Iosevka",
     "editor.fontSize": 16,
+    "rust-analyzer.updates.askBeforeDownload": false ,
+    "rust-analyzer.updates.channel": "nightly"
 }
