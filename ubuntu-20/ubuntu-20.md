@@ -26,6 +26,11 @@ sudo snap install code
 sudo apt install openssh-server -y
 sudo systemctl enable ssh
 sudo apt-get install chromium-browser -y
+sudo snap install discord --classic
+
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
+sudo apt update
+sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret -y
 ```
 #  docker
 ```bash

@@ -31,6 +31,8 @@ choco install cmdermini -y
 choco install cmake -y
 choco install python3 -y
 choco install microsoft-windows-terminal -y
+choco install sublimetext3.app -y
+choco install discord -y
 ```
 
 ```bat
@@ -62,3 +64,14 @@ HOMEPATH=C:\Users\developer
 - everything 搜索
 - faststone capture 截图
 - vim 映射 autohotkey
+
+
+# ssh
+```
+mkdir ~/.ssh
+vim ~/.ssh/id_rsa.pub
+vim ~/.ssh/id_rsa.pub
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
+git config --global core.editor "vim" 
+```
