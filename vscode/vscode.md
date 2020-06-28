@@ -1,3 +1,18 @@
+# install
+## linux
+### ubuntu
+```bash
+# snap 版本code 有时输入法无法切换 遂弃
+wget -O code.deb https://az764295.vo.msecnd.net/stable/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/code_1.46.1-1592428892_amd64.deb
+sudo apt install ./code.deb
+```
+
+### arch
+
+## windows
+```ps1
+choco install vscode -y
+```
 # install plugin 
 ```sh
 # code --list-extensions |xargs -I '{}' echo 'code --install-extension {}'
@@ -34,5 +49,3 @@ mklink "C:\Users\developer\AppData\Roaming\Code\User\settings.json" "%config_dir
 mklink "C:\Users\developer\AppData\Roaming\Code\User\keybindings.json" "%config_dir%\keybindings.json"
 mklink /D  "C:\Users\developer\AppData\Roaming\Code\User\snippets" "%config_dir%\snippets"
 ```
-# sync gist id
-6f3b19d8ff668e6198cf5fa206fef71b

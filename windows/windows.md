@@ -1,5 +1,5 @@
 # choco
-```
+```bat
 Get-ExecutionPolicy
 Set-ExecutionPolicy AllSigned
 Set-ExecutionPolicy Bypass -Scope Process
@@ -42,16 +42,33 @@ Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.
 ``` manually
 npcap
 ```
+# vscode
+参照vscode/vscode.md
 
-
+# link
 ```bat
 
 mklink "C:\Users\developer\.ideavimrc" "Z:\share\init\vim\.ideamvimrc"
 # widnows-terminal(uwp) config file
-mklink "C:\Users\developer\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" "Z:\share\init\windows\windows-terminal-uwp\settings.json"
-
-# link vscode config according vscode.md
 ```
+# auto-logon
+```ps
+$RegPath = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"
+$DefaultUsername = "your username"
+$DefaultPassword = "your password"
+Set-ItemProperty $RegPath "AutoAdminLogon" -Value "1" -type String 
+Set-ItemProperty $RegPath "DefaultUsername" -Value "$DefaultUsername" -type String 
+Set-ItemProperty $RegPath "DefaultPassword" -Value "$DefaultPassword" -type String
+```
+# rust
+```
+rustup-init.exe --default-host i686-pc-windows-msvc --default-toolchain stable --profile default -v -y
+rustup update
+```
+# set-global-env
+```bat
+wmic ENVIRONMENT create name="test-env",username="<system>",VariableValue="xxxxx"
+``` 
 # 关闭防病毒
 
 # 关闭ctrl+shift+f
