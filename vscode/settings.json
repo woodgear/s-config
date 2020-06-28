@@ -519,5 +519,6 @@
     "editor.fontSize": 16,
     "rust-analyzer.updates.askBeforeDownload": false ,
     "rust-analyzer.updates.channel": "nightly",
-    "terminal.integrated.fontFamily": "Iosevka,monospace"
+    "terminal.integrated.fontFamily": "Iosevka,monospace",
+    "editor.formatOnSave": true
 }
