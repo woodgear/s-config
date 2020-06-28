@@ -22,7 +22,6 @@ sudo apt install aria2 -y
 sudo apt install net-tools
 
 sudo apt install cmake -y
-sudo snap install code
 sudo apt install openssh-server -y
 sudo systemctl enable ssh
 sudo apt-get install chromium-browser -y
@@ -119,7 +118,8 @@ wget https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.14.4.linux-amd64.tar.gz
 rm go1.14.4.linux-amd64.tar.gz
 ```
-
+# vscode
+参照vscode/vscode.md
 # link
 ```bash
 # S_CONFIG_DIR=/home/oaa/sm/pv/s-config
