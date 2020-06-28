@@ -61,8 +61,17 @@ Set-ItemProperty $RegPath "AutoAdminLogon" -Value "1" -type String
 Set-ItemProperty $RegPath "DefaultUsername" -Value "$DefaultUsername" -type String 
 Set-ItemProperty $RegPath "DefaultPassword" -Value "$DefaultPassword" -type String
 ```
-
+# rust
+```
+rustup-init.exe --default-host i686-pc-windows-msvc --default-toolchain stable --profile default -v -y
+rustup update
+```
+# set-global-env
+```bat
+wmic ENVIRONMENT create name="test-env",username="<system>",VariableValue="xxxxx"
+``` 
 # 关闭防病毒
+
 
 # 关闭ctrl+shift+f
 
