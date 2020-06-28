@@ -1,5 +1,5 @@
 # choco
-```
+```bat
 Get-ExecutionPolicy
 Set-ExecutionPolicy AllSigned
 Set-ExecutionPolicy Bypass -Scope Process
@@ -43,7 +43,7 @@ Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.
 npcap
 ```
 
-
+# link
 ```bat
 
 mklink "C:\Users\developer\.ideavimrc" "Z:\share\init\vim\.ideamvimrc"
@@ -52,6 +52,16 @@ mklink "C:\Users\developer\AppData\Local\Packages\Microsoft.WindowsTerminal_8wek
 
 # link vscode config according vscode.md
 ```
+# auto-logon
+```ps
+$RegPath = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"
+$DefaultUsername = "your username"
+$DefaultPassword = "your password"
+Set-ItemProperty $RegPath "AutoAdminLogon" -Value "1" -type String 
+Set-ItemProperty $RegPath "DefaultUsername" -Value "$DefaultUsername" -type String 
+Set-ItemProperty $RegPath "DefaultPassword" -Value "$DefaultPassword" -type String
+```
+
 # 关闭防病毒
 
 # 关闭ctrl+shift+f
