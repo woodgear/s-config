@@ -33,6 +33,7 @@ choco install python3 -y
 choco install microsoft-windows-terminal -y
 choco install sublimetext3.app -y
 choco install discord -y
+choco install yq -y
 ```
 
 ```bat

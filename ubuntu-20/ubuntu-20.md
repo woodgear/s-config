@@ -49,7 +49,7 @@ docker run hello-world
 # docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-# nutstore
+# nutstore 坚果云
 ```bash
 wget https://www.jianguoyun.com/static/exe/installer/ubuntu/nautilus_nutstore_amd64.deb
 
@@ -61,6 +61,8 @@ nautilus -q
 sudo make install
 ./runtime_bootstrap
 rm -rf nutstore_linux_src_installer nutstore_linux_src_installer.tar.gz
+rm -r 'Nutstore Files'
+rm nautilus_nutstore_amd64.deb
 ```
 
 # caps2esc
@@ -134,8 +136,6 @@ ln -s $S_CONFIG_DIR/vim/vimrc ~/.vimrc
 mkdir -p ~/.config/nvim
 ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
 ln -s $S_CONFIG_DIR/vim/.ideavimrc ~/.ideavimrc
-mkdir -p ~/.emacs.d
-ln -s $S_CONFIG_DIR/emacs/init.el ~/.emacs.d/init.el
 ```
 
 # zsh
@@ -211,8 +211,10 @@ https://github.com/greymd/tmux-xpanes
 sudo apt-get install fcitx fcitx-googlepinyin im-config -y
 # 假设常用英文输入法 那么应该将英文输入法放到第一个
 # 安装完成后要重启下fcitx
-
 fcitx
+# 执行im-config 设置为fcitx
+im-config
+# 取消ctrl+shift+f 中文简繁转换
 ```
 
 # copyq
