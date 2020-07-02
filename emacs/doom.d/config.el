@@ -35,3 +35,7 @@
 ;; 绑定显示所有命令到 ',,'
 (with-eval-after-load 'evil
   (define-key evil-normal-state-map (kbd ", ,") 'execute-extended-command))
+
+;; 使用更强力一点的fuzzy search  使得 kems 能够匹配到kill-emacs
+(setq ivy-re-builders-alist
+      '((t . ivy--regex-fuzzy)))
