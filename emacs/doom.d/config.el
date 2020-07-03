@@ -1,6 +1,7 @@
 (setq user-full-name "wucong"
       user-mail-address "1875486458@qq.com")
-(setq doom-theme 'doom-one)
+
+(setq doom-theme 'doom-acario-light)
 
 ;; 显示行号
 (setq display-line-numbers-type t)
