@@ -192,6 +192,17 @@
             ]
         },
         {
+            // show quick fix
+            "before": [
+                "<leader>",
+                "s",
+                "f"
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ]
+        },
+        {
             // 显示文档 效果和手动hover一致
             "before": [
                 "<leader>",
@@ -518,4 +529,6 @@
     "go.autocompleteUnimportedPackages": true,
     "debug.console.fontFamily": "Iosevka",
     "editor.fontSize": 16,
+    "cmake.configureOnOpen": false,
+    "C_Cpp.updateChannel": "Insiders",
 }

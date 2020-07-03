@@ -27,13 +27,14 @@ ln -s $VSCODE_CONFIG_DIR/keybindings.json ~/.config/Code/User/keybindings.json
 ```
 # windows
 ```ps
-set config_dir=D:\self\s-config\vscode
-rm C:\Users\developer\AppData\Roaming\Code\User\settings.json
-rm C:\Users\developer\AppData\Roaming\Code\User\keybindings.json
-rm -rf C:\Users\developer\AppData\Roaming\Code\User\snippets
-mklink "C:\Users\developer\AppData\Roaming\Code\User\settings.json" "%config_dir%\settings.json"
-mklink "C:\Users\developer\AppData\Roaming\Code\User\keybindings.json" "%config_dir%\keybindings.json"
-mklink /D  "C:\Users\developer\AppData\Roaming\Code\User\snippets" "%config_dir%\snippets"
+set config_dir=E:\sm\pv\s-config\vscode
+set user_name=oaa
+rm C:\Users\%user_name%\AppData\Roaming\Code\User\settings.json
+rm C:\Users\%user_name%\AppData\Roaming\Code\User\keybindings.json
+rm -rf C:\Users\%user_name%\AppData\Roaming\Code\User\snippets
+mklink "C:\Users\%user_name%\AppData\Roaming\Code\User\settings.json" "%config_dir%\settings.json"
+mklink "C:\Users\%user_name%\AppData\Roaming\Code\User\keybindings.json" "%config_dir%\keybindings.json"
+mklink /D  "C:\Users\%user_name%\AppData\Roaming\Code\User\snippets" "%config_dir%\snippets"
 ```
 # sync gist id
 6f3b19d8ff668e6198cf5fa206fef71b
