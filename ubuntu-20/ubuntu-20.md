@@ -17,7 +17,8 @@ sudo apt install openjdk-11-jdk -y  &&
 sudo apt install autojump
 sudo apt  install cmake -y
 sudo apt-get install graphviz -y
-
+sudp apt install xclip -y
+sudp apt install xsel -y
 sudo apt install aria2 -y
 sudo apt install net-tools
 
@@ -239,3 +240,13 @@ sudo apt-get install indicator-sysmonitor
 cpu: {cpu} mem: {mem} temp: {cputemp}
 ```
 
+# git
+```
+xclip -o >~/.ssh/id_rsa
+xclip -o >~/.ssh/id_rsa.pub
+sudo chmod 600 ~/.ssh/id_rsa
+sudo chmod 600 ~/.ssh/id_rsa.pub
+git config --global core.editor "vim" 
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rs
+```

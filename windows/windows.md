@@ -34,6 +34,7 @@ choco install microsoft-windows-terminal -y
 choco install sublimetext3.app -y
 choco install discord -y
 choco install yq -y
+choco install winpcap -y
 ```
 
 ```bat

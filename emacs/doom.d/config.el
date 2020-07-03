@@ -1,14 +1,11 @@
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
-
+(setq user-full-name "wucong"
+      user-mail-address "1875486458@qq.com")
 (setq doom-theme 'doom-one)
-
-(setq org-directory "~/org/")
 
 ;; 显示行号
 (setq display-line-numbers-type t)
 
-;;
+;; 配置winnum l-panel-focus-jump
 (use-package! winum
   :init
   ;; 使用Alt+0-9 直接切换window
@@ -28,3 +25,17 @@
   :config
   (winum-mode)
 )
+
+;; 使用xsel 提供如下三条命令
+;; paste-from-xclipboard
+;; cut-from-xclipboard
+;; copy-to-xclipboard
+(load "~/.doom.d/xclipboard.el")
+
+;; 绑定显示所有命令到 ',,'
+(with-eval-after-load 'evil
+  (define-key evil-normal-state-map (kbd ", ,") 'execute-extended-command))
+
+;; 使用更强力一点的fuzzy search  使得 kems 能够匹配到kill-emacs
+(setq ivy-re-builders-alist
+      '((t . ivy--regex-fuzzy)))
