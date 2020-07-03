@@ -22,7 +22,7 @@ sudo pacman -S  zsh wget docker
 sudo aura -A yed
 sudo pacman -S pip3
 sudo pacman -S time
-sudo pacman -S parole 	gst-libav
+sudo pacman -S parole gst-libav
 sudo pacman -S discord --noconfirm
 sudo pacman -S xclip --noconfirm
 sudo pacman -S copyq --noconfirm

@@ -40,3 +40,5 @@
 ;; 使用更强力一点的fuzzy search  使得 kems 能够匹配到kill-emacs
 (setq ivy-re-builders-alist
       '((t . ivy--regex-fuzzy)))
+;; 提供zoom-window-zoom 命令 向tmux一样zoom
+(use-package! zoom-window)
