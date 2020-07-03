@@ -17,15 +17,20 @@ sudo apt install openjdk-11-jdk -y  &&
 sudo apt install autojump
 sudo apt  install cmake -y
 sudo apt-get install graphviz -y
-
+sudp apt install xclip -y
+sudp apt install xsel -y
 sudo apt install aria2 -y
 sudo apt install net-tools
 
 sudo apt install cmake -y
-sudo snap install code
 sudo apt install openssh-server -y
 sudo systemctl enable ssh
 sudo apt-get install chromium-browser -y
+sudo snap install discord --classic
+
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
+sudo apt update
+sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret -y
 ```
 #  docker
 ```bash
@@ -45,7 +50,7 @@ docker run hello-world
 # docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-# nutstore
+# nutstore 坚果云
 ```bash
 wget https://www.jianguoyun.com/static/exe/installer/ubuntu/nautilus_nutstore_amd64.deb
 
@@ -57,6 +62,8 @@ nautilus -q
 sudo make install
 ./runtime_bootstrap
 rm -rf nutstore_linux_src_installer nutstore_linux_src_installer.tar.gz
+rm -r 'Nutstore Files'
+rm nautilus_nutstore_amd64.deb
 ```
 
 # caps2esc
@@ -114,7 +121,8 @@ wget https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.14.4.linux-amd64.tar.gz
 rm go1.14.4.linux-amd64.tar.gz
 ```
-
+# vscode
+参照vscode/vscode.md
 # link
 ```bash
 # S_CONFIG_DIR=/home/oaa/sm/pv/s-config
@@ -129,8 +137,6 @@ ln -s $S_CONFIG_DIR/vim/vimrc ~/.vimrc
 mkdir -p ~/.config/nvim
 ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
 ln -s $S_CONFIG_DIR/vim/.ideavimrc ~/.ideavimrc
-mkdir -p ~/.emacs.d
-ln -s $S_CONFIG_DIR/emacs/init.el ~/.emacs.d/init.el
 ```
 
 # zsh
@@ -206,8 +212,10 @@ https://github.com/greymd/tmux-xpanes
 sudo apt-get install fcitx fcitx-googlepinyin im-config -y
 # 假设常用英文输入法 那么应该将英文输入法放到第一个
 # 安装完成后要重启下fcitx
-
 fcitx
+# 执行im-config 设置为fcitx
+im-config
+# 取消ctrl+shift+f 中文简繁转换
 ```
 
 # copyq
@@ -232,3 +240,13 @@ sudo apt-get install indicator-sysmonitor
 cpu: {cpu} mem: {mem} temp: {cputemp}
 ```
 
+# git
+```
+xclip -o >~/.ssh/id_rsa
+xclip -o >~/.ssh/id_rsa.pub
+sudo chmod 600 ~/.ssh/id_rsa
+sudo chmod 600 ~/.ssh/id_rsa.pub
+git config --global core.editor "vim" 
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rs
+```

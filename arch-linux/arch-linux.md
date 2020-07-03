@@ -15,12 +15,17 @@ sudo pacman -S emacs  --noconfirm
 sudo pacman -S  cmake  --noconfirm
 sudo pacman -S graphviz  --noconfirm 
 sudo pacman -S aria2  --noconfirm
+sudo pacman -S tmux --noconfirm
+sudo aura -A indicator-stickynotes
 sudo aura  -A bcompare
 sudo pacman -S  zsh wget docker
 sudo aura -A yed
 sudo pacman -S pip3
 sudo pacman -S time
-
+sudo pacman -S parole 	gst-libav
+sudo pacman -S discord --noconfirm
+sudo pacman -S xclip --noconfirm
+sudo pacman -S copyq --noconfirm
 ```
 # docker
 sudo pacman -S docker
@@ -83,7 +88,7 @@ source ~/.zshrc
 # node
 ```
 # nvm 
-mkdir ～/.nvm
+mkdir ~/.nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 source ~/.zshrc
 nvm install --lts
@@ -91,12 +96,20 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 
 # rust
-curl https://sh.rustup.rs -sSf | sh
+```bash
+ curl https://sh.rustup.rs -sSf | sh -s --   --default-host x86_64-unknown-linux-gnu  --default-toolchain stable --profile default -v -y
+
 source $HOME/.cargo/env
 sudo apt install libssl-dev
 cargo install ripgrep
 cargo install fd-find
 cargo install cargo-edit
+cargo install starship
+# rust-analyzer
+rustup component add rust-src
+sudo curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux -o /usr/local/bin/rust-analyzer
+sudo chmod a+x  /usr/local/bin/rust-analyzer
+```
 
 # tpm
 ```
@@ -107,6 +120,13 @@ tpm install  https://github.com/woodgear/t.git
 ```
 sudo systemctl enable lightdm
 sudo systemctl enable docker.service
+```
+# kvm qemu
+```sh
+sudo systemctl enable libvirtd.service
+sudo systemctl start libvirtd.service
+sudo pacman -S qemu libvirt virt-manager
+sudo pacman -Syu ebtables dnsmasq
 ```
 
 # link
