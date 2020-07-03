@@ -6,3 +6,4 @@ mkdir ~/sm/project
 mkdir ~/sm/lab
 mkdir ~/sm/work
 mkdir ~/sm/collection
+git remote set-url origin git@github.com:woodgear/s-config.git
