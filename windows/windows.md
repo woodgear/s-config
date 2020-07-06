@@ -39,7 +39,9 @@ choco install winpcap -y
 
 ```bat
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+scoop install nim
 ```
+
 
 ``` manually
 npcap
@@ -92,5 +94,9 @@ vim ~/.ssh/id_rsa.pub
 vim ~/.ssh/id_rsa.pub
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_rsa
-git config --global core.editor "vim" 
+git config --global core.editor "vim"
+
+git config --global diff.tool bc4
+git config --global difftool.bc4.cmd "\"C:\Program Files\Beyond Compare 4\BCompare.exe\" \"$LOCAL\" \"$REMOTE\""
+git config --global difftool.prompt false
 ```
