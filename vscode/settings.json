@@ -247,6 +247,22 @@
             ]
         },
         {
+            // easy motion
+            "before": [
+                "<leader>",
+                "l",
+            ],
+            // TODO it should use commands
+            "after": [
+                "leader",
+                "leader",
+                "leader",
+                "b",
+                "d",
+                "w"
+            ]
+        },
+        {
             // jump to next 跳转到上面使用当前符号的地方
             "before": [
                 "<leader>",
@@ -255,17 +271,6 @@
             ],
             "commands": [
                 "editor.action.wordHighlight.prev"
-            ]
-        },
-        {
-            // 显示所有的符号并跳转
-            "before": [
-                "<leader>",
-                "f",
-                "s"
-            ],
-            "commands": [
-                "workbench.action.gotoSymbol"
             ]
         },
         {
@@ -496,7 +501,7 @@
             "source.organizeImports": true,
         },
         // Optional: Disable snippets, as they conflict with completion ranking.
-        "editor.snippetSuggestions": "none",
+        // "editor.snippetSuggestions": "none",
     },
     "[go.mod]": {
         "editor.formatOnSave": true,
@@ -519,7 +524,7 @@
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "sync.autoUpload": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.tabCompletion":"on",
+    "editor.tabCompletion": "on",
     "editor.snippetSuggestions": "top",
     "files.maxMemoryForLargeFilesMB": 8192,
     "editor.snippetSuggestions": "top",
@@ -528,8 +533,37 @@
     "go.autocompleteUnimportedPackages": true,
     "debug.console.fontFamily": "Iosevka",
     "editor.fontSize": 16,
-    "rust-analyzer.updates.askBeforeDownload": false ,
+    "rust-analyzer.updates.askBeforeDownload": false,
     "rust-analyzer.updates.channel": "nightly",
     "terminal.integrated.fontFamily": "Iosevka,monospace",
-    "editor.formatOnSave": true
+    "C_Cpp.updateChannel": "Insiders",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "surround.custom": {
+        "brackce": {
+            "label": "brackce",
+            "description": "{}",
+            "snippet": "{$TM_SELECTED_TEXT}"
+        },
+        "rust-rawstring": {
+            "label": "rawstring",
+            "description": "rawstring",
+            "snippet": "r#$TM_SELECTED_TEXT#"
+        },
+        "rust-format": {
+            "label": "rust-format-string",
+            "description": "add format! macro",
+            "snippet": "format!($TM_SELECTED_TEXT,$0)"
+        },
+        "golang-pl": {
+            "label": "golang-log",
+            "description": "",
+            "snippet": "Log().Infof(\"%v\",$TM_SELECTED_TEXT)"
+        },
+        "golang-format": {
+            "label": "golang-format-string",
+            "description": "golang-format-string",
+            "snippet": "fmt.Sprintf($TM_SELECTED_TEXT,\"$0\")"
+        },
+    },
+    "editor.formatOnSave": true,
 }

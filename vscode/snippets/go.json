@@ -1,34 +1,44 @@
 {
-	"Print to console": {
-		"prefix": "pl",
-		"body": [
-			"fmt.Printf(\"$1 %+v\\n\", $2)",
-		],
-		"description": "Log output to console"
-	},
-	"define interface": {
-		"prefix": "di",
-		"body": [
+    "Print to console": {
+        "prefix": "pl",
+        "body": [
+            "fmt.Printf(\"$1 %+v\\n\", $2)",
+        ],
+        "description": "Log output to console"
+    },
+    "define interface": {
+        "prefix": "di",
+        "body": [
             "type $1 interface{",
             "}"
-		],
-		"description": "define interface"
-	},
-	"define function": {
-		"prefix": "ds",
-		"body": [
+        ],
+        "description": "define interface"
+    },
+    "define-receiver-function": {
+        "prefix": "drf",
+        "body": [
+            "func ($1) $2($3) $4",
+            "{",
+            "$5",
+            "}"
+        ],
+        "description": "define struct "
+    },
+    "define struct": {
+        "prefix": "ds",
+        "body": [
             "type $1 struct {",
             "}"
-		],
-		"description": "define struct "
-	},
-	"handle err": {
-		"prefix": "he",
-		"body": [
-			"if err != nil {",
+        ],
+        "description": "define struct "
+    },
+    "handle err": {
+        "prefix": "he",
+        "body": [
+            "if err != nil {",
             "   return nil,err",
             "}"
-		],
-		"description": "handle error"
-	}
+        ],
+        "description": "handle error"
+    }
 }

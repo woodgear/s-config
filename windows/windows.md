@@ -35,6 +35,8 @@ choco install sublimetext3.app -y
 choco install discord -y
 choco install yq -y
 choco install winpcap -y
+choco install nvm -y
+choco install free-hex-editor-neo -y
 ```
 
 ```bat
@@ -85,7 +87,10 @@ HOMEPATH=C:\Users\developer
 - vim 映射 autohotkey
 
 
-# ssh
+# git
+## git for windows sdk (pacman)
+https://github.com/git-for-windows/build-extra/releases
+
 ```
 mkdir ~/.ssh
 vim ~/.ssh/id_rsa.pub
