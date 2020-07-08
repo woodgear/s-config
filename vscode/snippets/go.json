@@ -6,6 +6,13 @@
         ],
         "description": "Log output to console"
     },
+    "print to console use in test function": {
+        "prefix": "tpl",
+        "body": [
+            "t.Logf(\"$1 %+v\\n\", $2)",
+        ],
+        "description": "print to console use in test function"
+    },
     "define interface": {
         "prefix": "di",
         "body": [

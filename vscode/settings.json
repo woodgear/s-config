@@ -274,6 +274,17 @@
             ]
         },
         {
+            // editor.action.addSelectionToNextFindMatch
+            "before": [
+                "<leader>",
+                "s",
+                "d"
+            ],
+            "commands": [
+                "editor.action.addSelectionToNextFindMatch"
+            ]
+        },
+        {
             // 焦点切换到左边的窗口 ,下面一样
             "before": [
                 "<leader>",
@@ -491,7 +502,18 @@
             "commands": [
                 "actions.find"
             ]
-        }
+        },
+        {
+            // editor.action.addSelectionToNextFindMatch
+            "before": [
+                "<leader>",
+                "s",
+                "d"
+            ],
+            "commands": [
+                "editor.action.addSelectionToNextFindMatch"
+            ]
+        },
     ],
     // golang config
     "go.useLanguageServer": true,
@@ -523,9 +545,7 @@
     "explorer.confirmDragAndDrop": false,
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "sync.autoUpload": true,
-    "diffEditor.ignoreTrimWhitespace": false,
     "editor.tabCompletion": "on",
-    "editor.snippetSuggestions": "top",
     "files.maxMemoryForLargeFilesMB": 8192,
     "editor.snippetSuggestions": "top",
     "files.autoGuessEncoding": true,
