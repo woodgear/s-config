@@ -2,7 +2,7 @@
     "Print to console": {
         "prefix": "pl",
         "body": [
-            "fmt.Printf(\"$1 %+v\\n\", $2)",
+            "Log().Infof(\"$1 %+v\\n\", $2)",
         ],
         "description": "Log output to console"
     },

@@ -554,6 +554,11 @@
             "description": "add format! macro",
             "snippet": "format!($TM_SELECTED_TEXT,$0)"
         },
+        "golang-unsafe-pointer": {
+            "label": "golang-unsafe-pointer",
+            "description": "",
+            "snippet": "unsafe.Pointer($TM_SELECTED_TEXT)"
+        },
         "golang-pl": {
             "label": "golang-log",
             "description": "",
