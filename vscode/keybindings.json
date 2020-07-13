@@ -95,4 +95,31 @@
         "key": "ctrl+n",
         "command": "-workbench.action.files.newUntitledFile"
     },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "-workbench.action.openSettings"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "workbench.action.terminal.focus",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "workbench.action.terminal.focus",
+        "when": "!terminalFocus && !editorTextFocus"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "terminalFocus"
+    },
 ]
