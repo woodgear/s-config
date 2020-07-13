@@ -250,3 +250,6 @@ git config --global core.editor "vim"
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_rs
 ```
+
+# increase max_map_count
+sudo echo 'vm.max_map_count=262144' >>/etc/sysctl.conf
