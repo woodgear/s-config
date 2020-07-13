@@ -591,6 +591,11 @@
             "description": "golang-warpper-error",
             "snippet": "($TM_SELECTED_TEXT,error)"
         },
+        "golang-unsafe-pointer": {
+            "label": "golang-unsafe-pointer",
+            "description": "",
+            "snippet": "unsafe.Pointer($TM_SELECTED_TEXT)"
+        },
         "golang-pl": {
             "label": "golang-log",
             "description": "",
