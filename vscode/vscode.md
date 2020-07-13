@@ -24,8 +24,8 @@ code --install-extension ms-python.python
 code --install-extension golang.go
 code --install-extension redguardtoo.matchit
 code --install-extension vscodevim.vim
+code --install--extession yatki.vscode-surround 
 ```
-
 
 # init
 ## linux
