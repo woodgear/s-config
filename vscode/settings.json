@@ -17,6 +17,16 @@
     // 以下为自定义的快捷方式, 在所有的编辑器和IDE中i都应该具备这种语义 此即为IDE要素
     "vim.normalModeKeyBindingsNonRecursive": [
         {
+            // 当使用matchit时 vim 的y无法使用 只能自己在定义一个?
+            "before": [
+                "<leader>",
+                "y",
+            ],
+            "commands": [
+                "editor.action.clipboardCopyAction"
+            ]
+        },
+        {
             "before": [
                 "<leader>",
                 "x",
@@ -71,7 +81,7 @@
             ]
         },
         {
-            // go to symbol
+            // go to symbol in editor
             "before": [
                 "<leader>",
                 "i",
@@ -79,6 +89,17 @@
             ],
             "commands": [
                 "workbench.action.gotoSymbol"
+            ]
+        },
+        {
+            // go to symbol in worksapce
+            "before": [
+                "<leader>",
+                "a",
+                "i"
+            ],
+            "commands": [
+                "workbench.action.showAllSymbols"
             ]
         },
         {
@@ -522,21 +543,12 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": true,
         },
-        // Optional: Disable snippets, as they conflict with completion ranking.
-        // "editor.snippetSuggestions": "none",
     },
     "[go.mod]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true,
         },
-    },
-    "gopls": {
-        // Add parameter placeholders when completing a function.
-        "usePlaceholders": true,
-        // If true, enable additional analyses with staticcheck.
-        // Warning: This will significantly increase memory usage.
-        "staticcheck": false,
     },
     "debug.allowBreakpointsEverywhere": true,
     "go.formatTool": "goimports",
@@ -574,6 +586,11 @@
             "description": "add format! macro",
             "snippet": "format!($TM_SELECTED_TEXT,$0)"
         },
+        "golang-warpper-error": {
+            "label": "golang-warpper-error",
+            "description": "golang-warpper-error",
+            "snippet": "($TM_SELECTED_TEXT,error)"
+        },
         "golang-pl": {
             "label": "golang-log",
             "description": "",
@@ -586,4 +603,7 @@
         },
     },
     "editor.formatOnSave": true,
+    "files.associations": {
+        "*.json": "jsonc"
+    },
 }
