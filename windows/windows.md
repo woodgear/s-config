@@ -105,3 +105,9 @@ git config --global diff.tool bc4
 git config --global difftool.bc4.cmd "\"C:\Program Files\Beyond Compare 4\BCompare.exe\" \"$LOCAL\" \"$REMOTE\""
 git config --global difftool.prompt false
 ```
+
+# python
+```
+pip install -U autopep8 --user
+pip install -U pylint --user
+```
