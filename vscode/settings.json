@@ -518,7 +518,7 @@
     // golang config
     "go.useLanguageServer": true,
     "[go]": {
-        "editor.formatOnSave": true,
+        "editor.formatOnSave": false,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true,
         },
@@ -558,11 +558,43 @@
     "terminal.integrated.fontFamily": "Iosevka,monospace",
     "C_Cpp.updateChannel": "Insiders",
     "diffEditor.ignoreTrimWhitespace": true,
+    "replacerules.rules": {
+        "convert-slash": {
+            "literal": true,
+            "find": "\\",
+            "replace": "\\\\"
+        },
+        "revert-slash-left-to-right": {
+            "literal": true,
+            "find": "\\",
+            "replace": "/"
+        },
+        "convert-quote": {
+            "literal": true,
+            "find": "\"",
+            "replace": "\\\""
+        },
+        "remove-quote": {
+            "literal": true,
+            "find": "\"",
+            "replace": ""
+        }
+    },
     "surround.custom": {
+        "quote": {
+            "label": "quote",
+            "description": "\"\"",
+            "snippet": "\"$TM_SELECTED_TEXT\""
+        },
         "brackce": {
             "label": "brackce",
             "description": "{}",
             "snippet": "{$TM_SELECTED_TEXT}"
+        },
+        "node-forof": {
+            "label": "node-for-of",
+            "description": "node-for-or",
+            "snippet": "for (const item of $TM_SELECTED_TEXT){\n$0}"
         },
         "rust-rawstring": {
             "label": "rawstring",
@@ -590,5 +622,4 @@
             "snippet": "fmt.Sprintf($TM_SELECTED_TEXT,\"$0\")"
         },
     },
-    "editor.formatOnSave": true,
 }
