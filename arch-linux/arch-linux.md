@@ -26,6 +26,7 @@ sudo pacman -S parole gst-libav
 sudo pacman -S discord --noconfirm
 sudo pacman -S xclip --noconfirm
 sudo pacman -S copyq --noconfirm
+sudo pacman -S peek --noconfirm # record gif
 ```
 # docker
 sudo pacman -S docker
