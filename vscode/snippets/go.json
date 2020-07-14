@@ -13,7 +13,7 @@
         ],
         "description": "print to console use in test function"
     },
-    "define interface": {
+    "define-interface": {
         "prefix": "di",
         "body": [
             "type $1 interface{",
@@ -24,14 +24,13 @@
     "define-receiver-function": {
         "prefix": "drf",
         "body": [
-            "func ($1) $2($3) $4",
-            "{",
-            "$5",
+            "func ($1 *$2) $3($4) ($5) {",
+            "   $6",
             "}"
         ],
         "description": "define struct "
     },
-    "define struct": {
+    "define-struct": {
         "prefix": "ds",
         "body": [
             "type $1 struct {",
@@ -47,5 +46,21 @@
             "}"
         ],
         "description": "handle error"
+    },
+    "panic-on-error": {
+        "prefix": "pe",
+        "body": [
+            "if err != nil {",
+            "   panic(err)",
+            "}"
+        ],
+        "description": "panic-on-error"
+    },
+    "define-variable": {
+        "prefix": "dv",
+        "body": [
+            "$1 := $2"
+        ],
+        "description": "define-variable"
     }
 }
