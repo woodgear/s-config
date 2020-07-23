@@ -81,17 +81,6 @@
             ]
         },
         {
-            // go to symbol in editor
-            "before": [
-                "<leader>",
-                "i",
-                "i"
-            ],
-            "commands": [
-                "workbench.action.gotoSymbol"
-            ]
-        },
-        {
             // go to symbol in worksapce
             "before": [
                 "<leader>",
@@ -100,6 +89,17 @@
             ],
             "commands": [
                 "workbench.action.showAllSymbols"
+            ]
+        },
+        {
+            // go to symbol
+            "before": [
+                "<leader>",
+                "i",
+                "i"
+            ],
+            "commands": [
+                "workbench.action.gotoSymbol"
             ]
         },
         {
@@ -299,7 +299,7 @@
             "before": [
                 "<leader>",
                 "s",
-                "d"
+                "n"
             ],
             "commands": [
                 "editor.action.addSelectionToNextFindMatch"
@@ -529,7 +529,7 @@
             "before": [
                 "<leader>",
                 "s",
-                "d"
+                "n"
             ],
             "commands": [
                 "editor.action.addSelectionToNextFindMatch"
@@ -550,13 +550,23 @@
             "source.organizeImports": true,
         },
     },
+    "gopls": {
+        // Add parameter placeholders when completing a function.
+        "usePlaceholders": true,
+        // If true, enable additional analyses with staticcheck.
+        // Warning: This will significantly increase memory usage.
+        "staticcheck": false,
+    },
     "debug.allowBreakpointsEverywhere": true,
     "go.formatTool": "goimports",
     "workbench.colorTheme": "Quiet Light",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-    "sync.autoUpload": true,
+    "terminal.integrated.shell.windows": "C:\\Users\\oaa\\.babun\\cygwin\\bin\\bash.exe",
+    "terminal.integrated.shellArgs.windows": [
+        "/bin/xhere", "/bin/zsh"
+     ],
+    "terminal.integrated.cwd": "${fileDirname}",
     "editor.tabCompletion": "on",
     "files.maxMemoryForLargeFilesMB": 8192,
     "editor.snippetSuggestions": "top",
@@ -570,11 +580,48 @@
     "terminal.integrated.fontFamily": "Iosevka,monospace",
     "C_Cpp.updateChannel": "Insiders",
     "diffEditor.ignoreTrimWhitespace": true,
+    "replacerules.rules": {
+        "convert-slash": {
+            "literal": true,
+            "find": "\\",
+            "replace": "\\\\"
+        },
+        "revert-slash-left-to-right": {
+            "literal": true,
+            "find": "\\",
+            "replace": "/"
+        },
+        "revert-convert-quote": {
+            "literal": true,
+            "find": "\\\"",
+            "replace": "\""
+        },
+        "convert-quote": {
+            "literal": true,
+            "find": "\"",
+            "replace": "\\\""
+        },
+        "remove-quote": {
+            "literal": true,
+            "find": "\"",
+            "replace": ""
+        }
+    },
     "surround.custom": {
+        "quote": {
+            "label": "quote",
+            "description": "\"\"",
+            "snippet": "\"$TM_SELECTED_TEXT\""
+        },
         "brackce": {
             "label": "brackce",
             "description": "{}",
             "snippet": "{$TM_SELECTED_TEXT}"
+        },
+        "node-forof": {
+            "label": "node-for-of",
+            "description": "node-for-or",
+            "snippet": "for (const item of $TM_SELECTED_TEXT){\n$0}"
         },
         "rust-rawstring": {
             "label": "rawstring",
@@ -606,9 +653,14 @@
             "description": "golang-format-string",
             "snippet": "fmt.Sprintf($TM_SELECTED_TEXT,\"$0\")"
         },
+        "cpp-if": {
+            "label": "cpp-if",
+            "description": "cpp-if",
+            "snippet": "if ($TM_SELECTED_TEXT) \n{\n$1\n}"
+        },
     },
-    "editor.formatOnSave": true,
     "files.associations": {
         "*.json": "jsonc"
     },
+    "vim.easymotionMarkerBackgroundColor": "green"
 }
