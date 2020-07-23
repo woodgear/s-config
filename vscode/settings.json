@@ -80,7 +80,7 @@
                 "editor.action.formatDocument"
             ]
         },
-	{
+        {
             // go to symbol in worksapce
             "before": [
                 "<leader>",
@@ -299,7 +299,7 @@
             "before": [
                 "<leader>",
                 "s",
-                "d"
+                "n"
             ],
             "commands": [
                 "editor.action.addSelectionToNextFindMatch"
@@ -529,7 +529,7 @@
             "before": [
                 "<leader>",
                 "s",
-                "d"
+                "n"
             ],
             "commands": [
                 "editor.action.addSelectionToNextFindMatch"
@@ -562,8 +562,11 @@
     "workbench.colorTheme": "Quiet Light",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-    "sync.autoUpload": true,
+    "terminal.integrated.shell.windows": "C:\\Users\\oaa\\.babun\\cygwin\\bin\\bash.exe",
+    "terminal.integrated.shellArgs.windows": [
+        "/bin/xhere", "/bin/zsh"
+     ],
+    "terminal.integrated.cwd": "${fileDirname}",
     "editor.tabCompletion": "on",
     "files.maxMemoryForLargeFilesMB": 8192,
     "editor.snippetSuggestions": "top",
@@ -587,6 +590,11 @@
             "literal": true,
             "find": "\\",
             "replace": "/"
+        },
+        "revert-convert-quote": {
+            "literal": true,
+            "find": "\\\"",
+            "replace": "\""
         },
         "convert-quote": {
             "literal": true,
@@ -625,7 +633,7 @@
             "description": "add format! macro",
             "snippet": "format!($TM_SELECTED_TEXT,$0)"
         },
-	"golang-warpper-error": {
+        "golang-warpper-error": {
             "label": "golang-warpper-error",
             "description": "golang-warpper-error",
             "snippet": "($TM_SELECTED_TEXT,error)"
@@ -645,9 +653,14 @@
             "description": "golang-format-string",
             "snippet": "fmt.Sprintf($TM_SELECTED_TEXT,\"$0\")"
         },
+        "cpp-if": {
+            "label": "cpp-if",
+            "description": "cpp-if",
+            "snippet": "if ($TM_SELECTED_TEXT) \n{\n$1\n}"
+        },
     },
-    "editor.formatOnSave": true,
     "files.associations": {
         "*.json": "jsonc"
-    }
+    },
+    "vim.easymotionMarkerBackgroundColor": "green"
 }
