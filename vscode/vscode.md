@@ -25,6 +25,11 @@ code --install-extension golang.go
 code --install-extension redguardtoo.matchit
 code --install-extension vscodevim.vim
 code --install--extession yatki.vscode-surround 
+code --install-extension bhughes339.replacerules
+code --install-extension michelemelluso.gitignore
+code --install-extension ms-vscode.cpptools
+code --install-extension richie5um2.vscode-statusbar-json-path
+
 ```
 
 # init
