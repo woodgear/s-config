@@ -26,7 +26,9 @@ sudo pacman -S parole gst-libav
 sudo pacman -S discord --noconfirm
 sudo pacman -S xclip --noconfirm
 sudo pacman -S copyq --noconfirm
-sudo pacman -S peek --noconfirm # record gif
+sudo pacman -S peek --noconfirm # screen record as gif
+sudo aura -A dgsh-git # could not work
+sudo pacman -S net-tools
 ```
 # docker
 sudo pacman -S docker
@@ -146,4 +148,5 @@ ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
 ln -s $S_CONFIG_DIR/vim/.ideavimrc ~/.ideavimrc
 mkdir -p ~/.emacs.d
 ln -s $S_CONFIG_DIR/emacs/init.el ~/.emacs.d/init.el
+ln -s $S_CONFIG_DIR/arch-linux/tmux.conf ~/.tmux.conf
 ```
