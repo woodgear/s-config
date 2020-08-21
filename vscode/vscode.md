@@ -45,9 +45,9 @@ ln -s $VSCODE_CONFIG_DIR/snippets ~/.config/Code/User/snippets
 ln -s $VSCODE_CONFIG_DIR/keybindings.json ~/.config/Code/User/keybindings.json 
 ```
 # windows
-```ps
-set config_dir=E:\sm\pv\s-config\vscode
-set user_name=oaa
+```bat
+set config_dir=%cd%\vscode
+set user_name=%USERNAME%
 rm C:\Users\%user_name%\AppData\Roaming\Code\User\settings.json
 rm C:\Users\%user_name%\AppData\Roaming\Code\User\keybindings.json
 rm -rf C:\Users\%user_name%\AppData\Roaming\Code\User\snippets
