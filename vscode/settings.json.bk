@@ -586,10 +586,10 @@
     "workbench.colorTheme": "Quiet Light",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "terminal.integrated.shell.windows": "C:\\Users\\oaa\\.babun\\cygwin\\bin\\bash.exe",
-    "terminal.integrated.shellArgs.windows": [
-        "/bin/xhere", "/bin/zsh"
-     ],
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    // "terminal.integrated.shellArgs.windows": [
+    //     "/bin/xhere", "/bin/zsh"
+    //  ],
     "terminal.integrated.cwd": "${fileDirname}",
     "editor.tabCompletion": "on",
     "files.maxMemoryForLargeFilesMB": 8192,
@@ -603,7 +603,7 @@
     "rust-analyzer.updates.channel": "nightly",
     "terminal.integrated.fontFamily": "Iosevka,monospace",
     "C_Cpp.updateChannel": "Insiders",
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "replacerules.rules": {
         "convert-slash": {
             "literal": true,
@@ -687,9 +687,14 @@
         "*.json": "jsonc"
     },
     "vim.easymotionMarkerBackgroundColor": "green",
- 
-    "editor.quickSuggestions": true,
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.quickSuggestions": true
 }
