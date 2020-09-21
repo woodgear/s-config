@@ -228,7 +228,7 @@
             "before": [
                 "<leader>",
                 "s",
-                "d"
+                "h"
             ],
             "commands": [
                 "editor.action.showHover"
@@ -269,9 +269,10 @@
         },
         {
             // easy motion
+            // jump to motion
             "before": [
                 "<leader>",
-                "l",
+                "j",
             ],
             // TODO it should use commands
             "after": [
@@ -535,6 +536,29 @@
                 "editor.action.addSelectionToNextFindMatch"
             ]
         },
+        {
+            // jump to pre 搜索并替换当前选择的字符串
+            "before": [
+                "<leader>",
+                "r",
+                "r"
+            ],
+            "commands": [
+                "editor.action.startFindReplaceAction",
+                "toggleFindInSelection",
+            ]
+        },
+        {
+            // jump to pre 搜索并替换当前选择的字符串
+            "before": [
+                "<leader>",
+                "r",
+                "s"
+            ],
+            "commands": [
+                "editor.action.startFindReplaceAction",
+            ]
+        },
     ],
     // golang config
     "go.useLanguageServer": true,
@@ -662,5 +686,7 @@
     "files.associations": {
         "*.json": "jsonc"
     },
-    "vim.easymotionMarkerBackgroundColor": "green"
+    "vim.easymotionMarkerBackgroundColor": "green",
+ 
+    "editor.quickSuggestions": true
 }
