@@ -9,61 +9,56 @@ sudo apt install gcc  g++ make perl -y &&
 sudo apt install git -y &&
 sudo apt install hashalot -y &&  # for sha256 etc
 # sudo apt install vim -y default is vim8 now
-sudo apt install neovim -y
-snap install emacs --classic
+sudo apt install neovim -y &&
+sudo install emacs --classic
 sudo apt install gdebi-core -y  && # install deb
 sudo apt install gnome-tweak-tool -y &&
 sudo apt install openjdk-11-jdk -y  &&
-sudo apt install autojump
-sudo apt  install cmake -y
-sudo apt-get install graphviz -y
-sudp apt install xclip -y
-sudp apt install xsel -y
-sudo apt install aria2 -y
-sudo apt install net-tools
+sudo apt install autojump &&
+sudo apt  install cmake -y &&
+sudo apt-get install graphviz -y &&
+sudo apt install xclip -y &&
+sudo apt install xsel -y &&
+sudo apt install aria2 -y &&
+sudo apt install net-tools -y &&
 
-sudo apt install cmake -y
-sudo apt install openssh-server -y
-sudo systemctl enable ssh
-sudo apt-get install chromium-browser -y
-sudo snap install discord --classic
+sudo apt install cmake -y &&
+sudo apt install openssh-server -y &&
+sudo systemctl enable ssh &&
+sudo apt-get install chromium-browser -y &&
+sudo snap install discord --classic &&
 
-sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
-sudo apt update
-sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret -y
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next &&
+sudo apt update &&
+sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret -y 
 ```
-#  docker
+# 输入法
 ```bash
-sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-apt-cache policy docker-ce
-sudo apt install docker-ce -y
-sudo systemctl status docker
-
-sudo usermod -aG docker ${USER}
-su - ${USER}
-id -nG
-sudo usermod -aG docker ${USER}
-docker run hello-world
+sudo apt-get install fcitx fcitx-googlepinyin im-config -y
+# 手动搜索 lauange support 应该会提示下载语言,下载完成后,将keyboard method system 设成 fcitx
+# logout 一下
+fcitx-config-gtk3
+# 假设常用英文输入法 那么应该将英文输入法放到第一个
+# 取消ctrl+shift+f 中文简繁转换
 ```
-# docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-# nutstore 坚果云
+# git
+# s-config
+# vscode
+参照vscode/vscode.md
+# link
 ```bash
-wget https://www.jianguoyun.com/static/exe/installer/ubuntu/nautilus_nutstore_amd64.deb
+# S_CONFIG_DIR=/home/oaa/sm/pv/s-config
+rm  ~/.zshrc
+rm  ~/.vimrc
+rm -rf ~/.config/nvim
+rm  ~/.ideavimrc
+rm  ~/.emacs.d/init.el
 
-sudo apt-get install libglib2.0-dev libgtk2.0-dev libnautilus-extension-dev gvfs-bin python-gi gir1.2-appindicator3-0.1 -y
-wget https://www.jianguoyun.com/static/exe/installer/nutstore_linux_src_installer.tar.gz
-tar zxf nutstore_linux_src_installer.tar.gz
-cd nutstore_linux_src_installer && ./configure && make
-nautilus -q
-sudo make install
-./runtime_bootstrap
-rm -rf nutstore_linux_src_installer nutstore_linux_src_installer.tar.gz
-rm -r 'Nutstore Files'
-rm nautilus_nutstore_amd64.deb
+ln -s $S_CONFIG_DIR/ubuntu-20/zshrc ~/.zshrc
+ln -s $S_CONFIG_DIR/vim/vimrc ~/.vimrc
+mkdir -p ~/.config/nvim
+ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
+ln -s $S_CONFIG_DIR/vim/.ideavimrc ~/.ideavimrc
 ```
 
 # caps2esc
@@ -115,28 +110,47 @@ sudo systemctl status  udevmon
 cd ../../../
 rm -rf caps2esc/
 ```
+
+# nutstore 坚果云
+```bash
+wget https://www.jianguoyun.com/static/exe/installer/ubuntu/nautilus_nutstore_amd64.deb
+
+sudo apt-get install libglib2.0-dev libgtk2.0-dev libnautilus-extension-dev gvfs-bin python-gi gir1.2-appindicator3-0.1 -y
+wget https://www.jianguoyun.com/static/exe/installer/nutstore_linux_src_installer.tar.gz
+tar zxf nutstore_linux_src_installer.tar.gz
+cd nutstore_linux_src_installer && ./configure && make
+nautilus -q
+sudo make install
+./runtime_bootstrap
+cd ../
+rm -rf ./nutstore_linux_src_installer nutstore_linux_src_installer.tar.gz
+rm -r 'Nutstore Files'
+rm nautilus_nutstore_amd64.deb
+```
+
+#  docker
+```bash
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+apt-cache policy docker-ce
+sudo apt install docker-ce -y
+sudo systemctl status docker
+
+sudo usermod -aG docker ${USER}
+su - ${USER}
+id -nG
+sudo usermod -aG docker ${USER}
+docker run hello-world
+```
+# docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
 # go
 ```
 wget https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.14.4.linux-amd64.tar.gz
 rm go1.14.4.linux-amd64.tar.gz
-```
-# vscode
-参照vscode/vscode.md
-# link
-```bash
-# S_CONFIG_DIR=/home/oaa/sm/pv/s-config
-rm  ~/.zshrc
-rm  ~/.vimrc
-rm -rf ~/.config/nvim
-rm  ~/.ideavimrc
-rm  ~/.emacs.d/init.el
-
-ln -s $S_CONFIG_DIR/ubuntu-20/zshrc ~/.zshrc
-ln -s $S_CONFIG_DIR/vim/vimrc ~/.vimrc
-mkdir -p ~/.config/nvim
-ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
-ln -s $S_CONFIG_DIR/vim/.ideavimrc ~/.ideavimrc
 ```
 
 # zsh
@@ -173,27 +187,21 @@ sudo install  gnome-tweak-tool -y
 sudo apt-get install flat-remix -y
 
 # rust 
-sudo apt install libssl-dev
-curl https://sh.rustup.rs -sSf | sh
+```bash
+curl https://sh.rustup.rs >./rust-installer.sh
+chmod a+x ./rust-installer.sh
+./rust-installer.sh --default-host x86_64-unknown-linux-gnu  --default-toolchain nightly --profile default -v -y
+
 source $HOME/.cargo/env
-
-
-# some rust util
+sudo apt install libssl-dev
 cargo install ripgrep
 cargo install fd-find
-
-
-# opvpn
-sudo apt install  network-manager-openvpn-gnome
-setting->network->vpn click add  import from file filling user name and passwd  click add
-# node
-```
-# nvm 
-mkdir ~/.nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-source ~/.zshrc
-nvm install --lts
-npm install -g cnpm --registry=https://registry.npm.taobao.org
+cargo install cargo-edit
+cargo install starship
+# rust-analyzer
+rustup component add rust-src
+sudo curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux -o /usr/local/bin/rust-analyzer
+sudo chmod a+x  /usr/local/bin/rust-analyzer
 ```
 
 # deepin-termial
@@ -205,18 +213,6 @@ sudo update-alternatives --config x-terminal-emulator
 ```
 # tmux
 https://github.com/greymd/tmux-xpanes
-
-# 输入法
-
-```bash
-sudo apt-get install fcitx fcitx-googlepinyin im-config -y
-# 假设常用英文输入法 那么应该将英文输入法放到第一个
-# 安装完成后要重启下fcitx
-fcitx
-# 执行im-config 设置为fcitx
-im-config
-# 取消ctrl+shift+f 中文简繁转换
-```
 
 # copyq
 sudo add-apt-repository ppa:hluk/copyq
