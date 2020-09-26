@@ -38,14 +38,14 @@ code --install-extension richie5um2.vscode-statusbar-json-path
 # init
 ## linux
 ```bash
-ln -s ~/.config/Code\ -\ OSS  ~/.config/Code
-rm -rf  ~/.config/Code/User/settings.json 
-rm -rf ~/.config/Code/User/snippets 
-rm -rf  ~/.config/Code/User/keybindings.json 
-export VSCODE_CONFIG_DIR=/home/oaa/sm/pv/s-config/vscode
+ln -s ~/.config/Code\ -\ OSS  ~/.config/Code # 保证oss版本和mircosoft版本配置文件位置兼容
+rm -rf  ~/.config/Code/User/*   # 删除旧有全部数据
+
+export VSCODE_CONFIG_DIR=$(pwd)/vscode # 默认当前路径是s-config
 ln -s $VSCODE_CONFIG_DIR/settings.json ~/.config/Code/User/settings.json 
 ln -s $VSCODE_CONFIG_DIR/snippets ~/.config/Code/User/snippets
 ln -s $VSCODE_CONFIG_DIR/keybindings.json ~/.config/Code/User/keybindings.json 
+# View -> Command Palette -> reload window
 ```
 # windows
 ```bat

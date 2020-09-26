@@ -42,24 +42,29 @@ fcitx-config-gtk3
 # 取消ctrl+shift+f 中文简繁转换
 ```
 # git
+```
+git config --global core.editor "vim" 
+git clone https://github.com/woodgear/s-config
+git config --global user.email "q1875486458@gmail.com"
+git config --global user.name "wucong"
+git remote set-url origin git@github.com:woodgear/s-config.git
+
+ssh-keygen -t rsa -b 4096 -C "q1875486458@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa
+# copy to github/settings/sshkey
+```
+
 # s-config
+git remote set-url origin git@github.com:woodgear/s-config.git
 # vscode
 参照vscode/vscode.md
-# link
-```bash
-# S_CONFIG_DIR=/home/oaa/sm/pv/s-config
-rm  ~/.zshrc
-rm  ~/.vimrc
-rm -rf ~/.config/nvim
-rm  ~/.ideavimrc
-rm  ~/.emacs.d/init.el
 
-ln -s $S_CONFIG_DIR/ubuntu-20/zshrc ~/.zshrc
-ln -s $S_CONFIG_DIR/vim/vimrc ~/.vimrc
-mkdir -p ~/.config/nvim
-ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
-ln -s $S_CONFIG_DIR/vim/.ideavimrc ~/.ideavimrc
-```
+
+
+
+
 
 # caps2esc
 ```bash
@@ -153,20 +158,7 @@ sudo tar -C /usr/local -xzf go1.14.4.linux-amd64.tar.gz
 rm go1.14.4.linux-amd64.tar.gz
 ```
 
-# zsh
-```bash
-mkdir ~/.zsh
-sudo apt install zsh -y
-sudo apt install autojump -y
-curl -L git.io/antigen > ~/.zsh/antigen.zsh
 
-zsh
-
-## autojump 
-
-chsh -s $(which zsh) # make it as default shell need to relogin to take effect
-
-```
 # qemu kvm 
 ```bash
 sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager -y
@@ -204,13 +196,6 @@ sudo curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/down
 sudo chmod a+x  /usr/local/bin/rust-analyzer
 ```
 
-# deepin-termial
-```
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/deepin-terminal 50
-
-# Select your terminal
-sudo update-alternatives --config x-terminal-emulator
-```
 # tmux
 https://github.com/greymd/tmux-xpanes
 
@@ -232,19 +217,37 @@ sudo apt-get install indicator-stickynotes
 ```bash
 sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
 sudo apt-get update
-sudo apt-get install indicator-sysmonitor
+sudo apt-get install indicator-sysmonitor -y
 cpu: {cpu} mem: {mem} temp: {cputemp}
 ```
 
-# git
+# link
+```bash
+export S_CONFIG_DIR=$(pwd)
+rm  ~/.zshrc
+rm  ~/.vimrc
+rm -rf ~/.config/nvim
+rm  ~/.ideavimrc
+rm  ~/.emacs.d/init.el
+
+ln -s $S_CONFIG_DIR/ubuntu-20/zshrc ~/.zshrc
+ln -s $S_CONFIG_DIR/vim/vimrc ~/.vimrc
+mkdir -p ~/.config/nvim
+ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
+ln -s $S_CONFIG_DIR/vim/.ideavimrc ~/.ideavimrc
 ```
-xclip -o >~/.ssh/id_rsa
-xclip -o >~/.ssh/id_rsa.pub
-sudo chmod 600 ~/.ssh/id_rsa
-sudo chmod 600 ~/.ssh/id_rsa.pub
-git config --global core.editor "vim" 
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_rs
+# zsh
+```bash
+mkdir -p ~/.zsh &&
+sudo apt install zsh -y &&
+sudo apt install autojump -y &&
+
+git clone https://gitclone.com/github.com/zsh-users/antigen ~/antigen
+zsh
+
+## autojump 
+
+chsh -s $(which zsh) # make it as default shell need to relogin to take effect
 ```
 
 # increase max_map_count

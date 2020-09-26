@@ -1,4 +1,4 @@
-source ~/.zsh/antigen.zsh
+source ~/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -13,7 +13,7 @@ antigen bundle autojump
 antigen bundle z
 antigen bundle d
 antigen bundle cargo
-#antigen bundle kubectl
+antigen bundle kubectl
 antigen bundle zsh-users/zsh-autosuggestions
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
