@@ -61,11 +61,6 @@ git remote set-url origin git@github.com:woodgear/s-config.git
 # vscode
 参照vscode/vscode.md
 
-
-
-
-
-
 # caps2esc
 ```bash
 sudo apt install libyaml-cpp-dev  -y
@@ -81,8 +76,6 @@ cd build
 cmake ..
 make
 sudo make install
-
-
 
 echo '- JOB: "intercept -g $DEVNODE | caps2esc | uinput -d $DEVNODE"
   DEVICE:
@@ -153,11 +146,32 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-
 
 # go
 ```
-wget https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.14.4.linux-amd64.tar.gz
-rm go1.14.4.linux-amd64.tar.gz
+sudo apt install golang-go -v
 ```
+# rust 
+```bash
+curl https://sh.rustup.rs >./rust-installer.sh
+chmod a+x ./rust-installer.sh
+./rust-installer.sh --default-host x86_64-unknown-linux-gnu  --default-toolchain nightly --profile default -v -y
 
+source $HOME/.cargo/env
+sudo apt install libssl-dev
+cargo install ripgrep
+cargo install fd-find
+cargo install cargo-edit
+cargo install starship
+# rust-analyzer
+rustup component add rust-src
+sudo curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux -o /usr/local/bin/rust-analyzer
+sudo chmod a+x  /usr/local/bin/rust-analyzer
+```
+# node
+```
+sudo apt install npm
+npm install -g n
+n latest
+npm install -g typescript
+```
 
 # qemu kvm 
 ```bash
@@ -178,23 +192,7 @@ rm bcompare-4.3.3.24545_amd64.deb
 sudo install  gnome-tweak-tool -y
 sudo apt-get install flat-remix -y
 
-# rust 
-```bash
-curl https://sh.rustup.rs >./rust-installer.sh
-chmod a+x ./rust-installer.sh
-./rust-installer.sh --default-host x86_64-unknown-linux-gnu  --default-toolchain nightly --profile default -v -y
 
-source $HOME/.cargo/env
-sudo apt install libssl-dev
-cargo install ripgrep
-cargo install fd-find
-cargo install cargo-edit
-cargo install starship
-# rust-analyzer
-rustup component add rust-src
-sudo curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux -o /usr/local/bin/rust-analyzer
-sudo chmod a+x  /usr/local/bin/rust-analyzer
-```
 
 # tmux
 https://github.com/greymd/tmux-xpanes
