@@ -272,6 +272,7 @@
             // jump to motion
             "before": [
                 "<leader>",
+                "<leader>",
                 "j",
             ],
             // TODO it should use commands
@@ -586,7 +587,7 @@
     "workbench.colorTheme": "Quiet Light",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "terminal.integrated.shell.windows": "C:\\Users\\oaa\\.babun\\cygwin\\bin\\bash.exe",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
     "terminal.integrated.shellArgs.windows": [
         "/bin/xhere", "/bin/zsh"
      ],
@@ -691,5 +692,9 @@
     "editor.quickSuggestions": true,
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "tabnine.experimentalAutoImports": true,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
 }

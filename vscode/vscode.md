@@ -16,6 +16,8 @@ choco install vscode -y
 # install plugin 
 ```sh
 # code --list-extensions |xargs -I '{}' echo 'code --install-extension {}'
+
+code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension aaron-bond.better-comments
 code --install-extension Cameron.rerun-last-command
 code --install-extension in4margaret.compareit

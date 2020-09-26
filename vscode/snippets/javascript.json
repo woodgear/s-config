@@ -10,5 +10,12 @@
 			"console.log('$1');",
 		],
 		"description": "Log output to console"
-	}
+    },
+    "json-string-format-string": {
+        "prefix": "jsf",
+        "body": [
+            "JSON.stringify($1,null,4)"
+        ],
+        "description": "json-string-format-string"
+    },
 }
