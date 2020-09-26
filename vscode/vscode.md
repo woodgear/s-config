@@ -3,8 +3,12 @@
 ### ubuntu
 ```bash
 # snap 版本code 有时输入法无法切换 遂弃
-wget -O code.deb https://az764295.vo.msecnd.net/stable/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/code_1.46.1-1592428892_amd64.deb
-sudo apt install ./code.deb
+sudo apt update
+sudo apt install software-properties-common apt-transport-https wget
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt install code
+
 ```
 ## windows
 ```ps1
