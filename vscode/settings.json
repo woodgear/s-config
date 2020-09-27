@@ -697,4 +697,5 @@
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
 }
