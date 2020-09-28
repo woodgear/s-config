@@ -487,6 +487,17 @@
             "before": [
                 "<leader>",
                 "x",
+                "x"
+            ],
+            
+            "commands": [
+                "replacerules.runRule",
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "x",
                 "m"
             ],
             "commands": [
@@ -589,8 +600,9 @@
     "explorer.confirmDragAndDrop": false,
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
     "terminal.integrated.shellArgs.windows": [
-        "/bin/xhere", "/bin/zsh"
-     ],
+        "/bin/xhere",
+        "/bin/zsh"
+    ],
     "terminal.integrated.cwd": "${fileDirname}",
     "editor.tabCompletion": "on",
     "files.maxMemoryForLargeFilesMB": 8192,
@@ -688,7 +700,7 @@
         "*.json": "jsonc"
     },
     "vim.easymotionMarkerBackgroundColor": "green",
- 
+    
     "editor.quickSuggestions": true,
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
