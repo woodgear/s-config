@@ -170,7 +170,9 @@ sudo chmod a+x  /usr/local/bin/rust-analyzer
 sudo apt install npm
 npm install -g n
 n latest
-npm install -g typescript
+sudo npm install -g typescript
+sudo npm install cnpm -g --registry=https://r.npm.taobao.org
+
 ```
 
 # qemu kvm 

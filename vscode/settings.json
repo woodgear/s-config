@@ -691,10 +691,11 @@
  
     "editor.quickSuggestions": true,
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "tabnine.experimentalAutoImports": true,
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
 }
