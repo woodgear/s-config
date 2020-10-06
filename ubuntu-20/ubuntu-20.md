@@ -171,6 +171,7 @@ sudo apt install npm
 npm install -g n
 n latest
 npm install -g typescript
+npm install -g npm-check-updates
 ```
 
 # qemu kvm 
