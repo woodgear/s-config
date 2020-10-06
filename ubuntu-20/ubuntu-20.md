@@ -172,6 +172,7 @@ npm install -g n
 n latest
 npm install -g typescript
 npm install -g npm-check-updates
+sudo npm install cnpm -g --registry=https://r.npm.taobao.org
 ```
 
 # qemu kvm 

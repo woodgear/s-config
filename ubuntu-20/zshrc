@@ -66,5 +66,3 @@ alias dl="aria2c -s16 -x16 -k1M"
 # rust
 source $HOME/.cargo/env
 
-
-export DISPLAY=":0"

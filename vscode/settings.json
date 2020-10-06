@@ -700,11 +700,14 @@
         "*.json": "jsonc"
     },
     "vim.easymotionMarkerBackgroundColor": "green",
+    
     "editor.quickSuggestions": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
     "tabnine.experimentalAutoImports": true,
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "git.autofetch": true,
 }
