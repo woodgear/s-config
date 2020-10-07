@@ -197,8 +197,11 @@ sudo apt-get install flat-remix -y
 
 
 # tmux
+```bash
+sudo apt  install tmux 
 https://github.com/greymd/tmux-xpanes
-
+ln -s $(pwd)/tmux.conf ~/.tmux.conf 
+```
 # copyq
 sudo add-apt-repository ppa:hluk/copyq
 sudo apt update
