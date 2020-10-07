@@ -252,3 +252,13 @@ chsh -s $(which zsh) # make it as default shell need to relogin to take effect
 
 # increase max_map_count
 sudo echo 'vm.max_map_count=262144' >>/etc/sysctl.conf
+
+
+# espanso
+```bash
+sudo snap install espanso --classic
+espanso start
+
+export VSCODE_CONFIG_DIR=$(pwd) # 默认当前路径是s-config
+ln -s $VSCODE_CONFIG_DIR/espanso ~/.config 
+```
