@@ -623,6 +623,11 @@
             "find": "\\",
             "replace": "\\\\"
         },
+        "slash-windows-to-unix": {
+            "literal": true,
+            "find": "//",
+            "replace": "/"
+        },
         "revert-slash-left-to-right": {
             "literal": true,
             "find": "\\",
@@ -710,4 +715,5 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "todo-tree.tree.showScanModeButton": false,
 }
