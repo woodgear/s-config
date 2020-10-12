@@ -37,6 +37,7 @@ choco install yq -y
 choco install winpcap -y
 choco install nvm -y
 choco install free-hex-editor-neo -y
+choco install copyq -y
 ```
 
 ```bat

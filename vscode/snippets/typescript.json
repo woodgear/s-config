@@ -20,5 +20,15 @@
             "}"
         ],
         "description": "define a async function"
-    }
+    },
+       "test-it": {
+            "prefix": "tit",
+            "body": [
+                "it(\"$1\", async () => {",
+                "$2",
+                "});"
+
+            ],
+            "description": "test-it"
+        },
 }
