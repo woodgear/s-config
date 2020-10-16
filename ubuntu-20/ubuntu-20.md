@@ -20,6 +20,7 @@ sudo apt-get install graphviz -y &&
 sudo apt install xclip -y &&
 sudo apt install xsel -y &&
 sudo apt install aria2 -y &&
+sudo apt install nfs-common -y &&
 sudo apt install net-tools -y &&
 
 sudo apt install cmake -y &&
@@ -31,6 +32,10 @@ sudo snap install discord --classic &&
 sudo apt-add-repository ppa:remmina-ppa-team/remmina-next &&
 sudo apt update &&
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret -y 
+
+sudo add-apt-repository ppa:mc3man/mpv-tests
+sudo apt-get update
+sudo apt install mpv
 ```
 # 输入法
 ```bash
