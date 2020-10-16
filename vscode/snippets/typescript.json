@@ -21,14 +21,22 @@
         ],
         "description": "define a async function"
     },
-       "test-it": {
-            "prefix": "tit",
-            "body": [
-                "it(\"$1\", async () => {",
-                "$2",
-                "});"
-
-            ],
-            "description": "test-it"
-        },
+    "test-it": {
+        "prefix": "tit",
+        "body": [
+            "it(\"$1\", async () => {",
+            "$2",
+            "});"
+        ],
+        "description": "test-it"
+    },
+    "test-it-only": {
+        "prefix": "tito",
+        "body": [
+            "it.only(\"$1\", async () => {",
+            "$2",
+            "});"
+        ],
+        "description": "test-it"
+    },
 }

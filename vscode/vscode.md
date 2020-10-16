@@ -34,6 +34,7 @@ code --install-extension ms-vscode.cpptools
 code --install-extension richie5um2.vscode-statusbar-json-path
 code --install-extension bhughes339.replacerules
 code --install-extension TabNine.tabnine-vscode
+code --install-extension albymor.increment-selection
 ```
 
 # init

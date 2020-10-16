@@ -486,8 +486,8 @@
         {
             "before": [
                 "<leader>",
-                "x",
-                "x"
+                "c",
+                "f"
             ],
             
             "commands": [
@@ -716,4 +716,5 @@
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "todo-tree.tree.showScanModeButton": false,
+    "typescript.preferences.includePackageJsonAutoImports": "on",
 }
