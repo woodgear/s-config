@@ -489,7 +489,7 @@
                 "c",
                 "f"
             ],
-            
+
             "commands": [
                 "replacerules.runRule",
             ],
@@ -716,5 +716,11 @@
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "todo-tree.tree.showScanModeButton": false,
+    "dateTime.showDayOfMonth": true,
+    "dateTime.showMonth": true,
+    "dateTime.use24HourClock": true,
+    "dateTime.customFormat": "YYYY-MM-DD ddd HH:mm",
+    "dateTime.showAMPM": true,
+    "dateTime.locale": "zh-cn",
     "typescript.preferences.includePackageJsonAutoImports": "on",
 }

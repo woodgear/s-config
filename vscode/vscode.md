@@ -36,6 +36,7 @@ code --install-extension bhughes339.replacerules
 code --install-extension TabNine.tabnine-vscode
 code --install-extension albymor.increment-selection
 code --install-extension Gruntfuggly.todo-tree
+code --install-extension rid9.datetime
 ```
 
 # init
