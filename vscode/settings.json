@@ -706,7 +706,7 @@
     "vim.easymotionMarkerBackgroundColor": "green",
     "editor.quickSuggestions": true,
     "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "tabnine.experimentalAutoImports": true,
     "[jsonc]": {
@@ -721,4 +721,5 @@
     "dateTime.showAMPM": true,
     "dateTime.locale": "zh-cn",
     "typescript.preferences.includePackageJsonAutoImports": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
 }
