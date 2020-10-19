@@ -36,6 +36,11 @@ sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret -y
 sudo add-apt-repository ppa:mc3man/mpv-tests
 sudo apt-get update
 sudo apt install mpv
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install gh
 ```
 # 输入法
 ```bash
@@ -270,3 +275,4 @@ espanso start
 export VSCODE_CONFIG_DIR=$(pwd) # 默认当前路径是s-config
 ln -s $VSCODE_CONFIG_DIR/espanso ~/.config 
 ```
+# activitywatch

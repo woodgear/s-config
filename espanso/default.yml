@@ -12,6 +12,14 @@ matches:
     replace: "Hi there!"
 
   # Dates
+  - trigger: ":now"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+            format: "%Y-%m-%d %H:%M:%S"
+  # Dates
   - trigger: ":nd"
     replace: "{{mydate}}"
     vars:

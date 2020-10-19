@@ -35,6 +35,7 @@ code --install-extension richie5um2.vscode-statusbar-json-path
 code --install-extension bhughes339.replacerules
 code --install-extension TabNine.tabnine-vscode
 code --install-extension Gruntfuggly.todo-tree
+code --install-extension lindraupe.aw-watcher-vscode
 ```
 
 # init

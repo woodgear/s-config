@@ -360,7 +360,7 @@
                 "l"
             ],
             "commands": [
-                "workbench.action.tasks.reRunTask"
+                "extension.rerunLastCommand"
             ]
         },
         {
@@ -489,7 +489,6 @@
                 "x",
                 "x"
             ],
-            
             "commands": [
                 "replacerules.runRule",
             ],
@@ -705,7 +704,6 @@
         "*.json": "jsonc"
     },
     "vim.easymotionMarkerBackgroundColor": "green",
-    
     "editor.quickSuggestions": true,
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
