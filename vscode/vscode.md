@@ -34,8 +34,10 @@ code --install-extension ms-vscode.cpptools
 code --install-extension richie5um2.vscode-statusbar-json-path
 code --install-extension bhughes339.replacerules
 code --install-extension TabNine.tabnine-vscode
+code --install-extension albymor.increment-selection
 code --install-extension Gruntfuggly.todo-tree
 code --install-extension lindraupe.aw-watcher-vscode
+code --install-extension rid9.datetime
 ```
 
 # init
