@@ -489,7 +489,6 @@
                 "c",
                 "f"
             ],
-
             "commands": [
                 "replacerules.runRule",
             ],
@@ -705,7 +704,6 @@
         "*.json": "jsonc"
     },
     "vim.easymotionMarkerBackgroundColor": "green",
-    
     "editor.quickSuggestions": true,
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -723,4 +721,6 @@
     "dateTime.showAMPM": true,
     "dateTime.locale": "zh-cn",
     "typescript.preferences.includePackageJsonAutoImports": "on",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false
 }
