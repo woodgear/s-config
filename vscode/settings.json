@@ -360,7 +360,7 @@
                 "l"
             ],
             "commands": [
-                "workbench.action.tasks.reRunTask"
+                "extension.rerunLastCommand"
             ]
         },
         {
@@ -706,7 +706,7 @@
     "vim.easymotionMarkerBackgroundColor": "green",
     "editor.quickSuggestions": true,
     "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "tabnine.experimentalAutoImports": true,
     "[jsonc]": {
@@ -722,5 +722,6 @@
     "dateTime.locale": "zh-cn",
     "typescript.preferences.includePackageJsonAutoImports": "on",
     "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
