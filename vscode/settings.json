@@ -721,5 +721,7 @@
     "dateTime.showAMPM": true,
     "dateTime.locale": "zh-cn",
     "typescript.preferences.includePackageJsonAutoImports": "on",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
