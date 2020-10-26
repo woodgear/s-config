@@ -73,17 +73,8 @@
         "command": "-extension.vim_cmd+d",
         "when": "editorTextFocus && vim.active && vim.use<D-d> && !inDebugRepl"
     },
-    { // Unbind unconditional default
-        "key": "ctrl+0",
-        "command": "-workbench.action.focusSideBar"
-    },
-    { // |←
-        "key": "ctrl+0",
-        "when": "!sideBarFocus",
-        "command": "workbench.action.focusSideBar"
-    },
     { // |→
-        "key": "ctrl+0",
+        "key": "ctrl+1",
         "when": "sideBarFocus",
         "command": "workbench.action.focusActiveEditorGroup"
     },
@@ -100,26 +91,17 @@
         "command": "-workbench.action.quickOpen"
     },
     {
-        "key": "ctrl+e",
-        "command": "-workbench.action.quickOpen"
+        "key": "alt+k",
+        "command": "workbench.action.terminal.scrollUpPage",
+        "when": "terminalFocus && terminalProcessSupported"
     },
     {
-        "key": "ctrl+,",
-        "command": "-workbench.action.openSettings"
+        "key": "alt+j",
+        "command": "workbench.action.terminal.scrollDownPage",
+        "when": "terminalFocus && terminalProcessSupported"
     },
     {
-        "key": "ctrl+,",
-        "command": "workbench.action.terminal.focus",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+,",
-        "command": "workbench.action.terminal.focus",
-        "when": "!terminalFocus && !editorTextFocus"
-    },
-    {
-        "key": "ctrl+,",
+        "key": "ctrl+1",
         "command": "workbench.action.focusFirstEditorGroup",
-        "when": "terminalFocus"
     },
 ]

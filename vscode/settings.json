@@ -14,8 +14,70 @@
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
     "vim.leader": ",",
-    // 以下为自定义的快捷方式, 在所有的编辑器和IDE中i都应该具备这种语义 此即为IDE要素
+    // 以下为自定义的快捷方式, 在所有的编辑器和IDE中都应该具备这种语义 此即为IDE要素
+    // 动作族 j:jump n:next o:open c: close  f: focus
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "f",
+                "f",
+            ],
+            "commands": [
+                "workbench.files.action.focusFilesExplorer"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "m",
+                "m",
+            ],
+            "commands": [
+                "workbench.action.toggleEditorWidths",
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f",
+                "f",
+            ],
+            "commands": [
+                "workbench.files.action.focusFilesExplorer"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "o",
+                "e",
+            ],
+            "commands": [
+                "workbench.action.closeOtherEditors"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "o",
+                "s",
+            ],
+            "commands": [
+                "workbench.action.openSettingsJson"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "o",
+                "k",
+            ],
+            "commands": [
+                "workbench.action.openGlobalKeybindings"
+            ]
+        },
         {
             // 当使用matchit时 vim 的y无法使用 只能自己在定义一个?
             "before": [
@@ -199,17 +261,6 @@
             ],
             "commands": [
                 "workbench.action.splitEditorRight"
-            ]
-        },
-        {
-            // focus on terminal use alt+m to focus back
-            "before": [
-                "<leader>",
-                "m",
-                "m",
-            ],
-            "commands": [
-                "workbench.action.terminal.focus"
             ]
         },
         {
@@ -464,8 +515,8 @@
         {
             "before": [
                 "<leader>",
-                "f",
-                "f"
+                "z",
+                "m"
             ],
             "commands": [
                 "workbench.action.toggleZenMode"
@@ -617,6 +668,11 @@
     "C_Cpp.updateChannel": "Insiders",
     "diffEditor.ignoreTrimWhitespace": true,
     "replacerules.rules": {
+        "split-line-with-comma": {
+            "literal": true,
+            "find": ",",
+            "replace": ",\n"
+        },
         "convert-slash": {
             "literal": true,
             "find": "\\",
@@ -649,6 +705,16 @@
         }
     },
     "surround.custom": {
+        "try": {
+            "label": "try",
+            "description": "",
+            "snippet": "Promise<$TM_SELECTED_TEXT>"
+        },
+        "promise": {
+            "label": "type-promise",
+            "description": "",
+            "snippet": "Promise<$TM_SELECTED_TEXT>"
+        },
         "quote": {
             "label": "quote",
             "description": "\"\"",
@@ -706,7 +772,7 @@
     "vim.easymotionMarkerBackgroundColor": "green",
     "editor.quickSuggestions": true,
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "tabnine.experimentalAutoImports": true,
     "[jsonc]": {
@@ -723,5 +789,8 @@
     "typescript.preferences.includePackageJsonAutoImports": "on",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "zenMode.hideTabs": false,
 }
