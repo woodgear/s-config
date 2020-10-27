@@ -21,6 +21,13 @@
         ],
         "description": "define a async function"
     },
+    "mocha describe": {
+        "prefix": "desc",
+        "body": [
+            ""
+        ],
+        "description": "mocha describe"
+    },
     "test-it": {
         "prefix": "tit",
         "body": [
