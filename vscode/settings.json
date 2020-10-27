@@ -20,6 +20,14 @@
         {
             "before": [
                 "<leader>",
+                "t",
+                "r"
+            ],
+            "commands":["replacerules.runRule"],
+        },
+        {
+            "before": [
+                "<leader>",
                 "f",
                 "f",
             ],
@@ -537,12 +545,12 @@
         {
             "before": [
                 "<leader>",
+                "s",
                 "c",
-                "f"
             ],
             "commands": [
-                "replacerules.runRule",
-            ],
+                "surround.with"
+            ]
         },
         {
             "before": [
@@ -705,6 +713,12 @@
         }
     },
     "surround.custom": {
+
+        "jsonstringify": {
+            "label": "jsf",
+            "description": "",
+            "snippet": "JSON.stringify($TM_SELECTED_TEXT,null,4)"
+        },
         "try": {
             "label": "try",
             "description": "",
