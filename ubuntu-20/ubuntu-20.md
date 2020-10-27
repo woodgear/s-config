@@ -186,6 +186,10 @@ npm install -g npm-check-updates
 sudo npm install cnpm -g --registry=https://r.npm.taobao.org
 ```
 
+# python
+```
+sudo apt install python3-pip
+```
 # qemu kvm 
 ```bash
 sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager -y

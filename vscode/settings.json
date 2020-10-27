@@ -723,5 +723,8 @@
     "typescript.preferences.includePackageJsonAutoImports": "on",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "cSpell.userWords": [
+        "eval"
+    ]
 }
