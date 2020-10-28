@@ -43,6 +43,10 @@ sudo apt update
 sudo apt install gh
 sudo apt install okular
 ```
+# gh
+`gh alias set cpr 'pr create -f`  
+`gh alias set --shell see "gh pr list |cat|tail |awk '{print \$1}' | xargs -I {} sh -c 'echo {} &&gh pr diff {}'"`  
+`gh alias set --shell  mg 'gh pr review $1 -a && gh pr merge $1 -d -r' `
 # 输入法
 ```bash
 sudo apt-get install fcitx fcitx-googlepinyin im-config -y
@@ -281,3 +285,9 @@ export VSCODE_CONFIG_DIR=$(pwd) # 默认当前路径是s-config
 ln -s $VSCODE_CONFIG_DIR/espanso ~/.config 
 ```
 # activitywatch
+
+# mongo
+```bash
+docker pull mongno
+sudo snap install robo3t-snap
+```
