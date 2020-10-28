@@ -714,6 +714,11 @@
     },
     "surround.custom": {
 
+        "jslog": {
+            "label": "jslg",
+            "description": "",
+            "snippet": "console.log(\"$TM_SELECTED_TEXT\",JSON.stringify($TM_SELECTED_TEXT,null,4))"
+        },
         "jsonstringify": {
             "label": "jsf",
             "description": "",
@@ -805,9 +810,11 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "cSpell.userWords": [
-        "eval"
+        "eval",
+        "worktile"
     ],
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "zenMode.hideTabs": false,
+    "extensions.ignoreRecommendations": false,
 }
