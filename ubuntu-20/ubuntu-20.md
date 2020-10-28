@@ -10,7 +10,7 @@ sudo apt install git -y &&
 sudo apt install hashalot -y &&  # for sha256 etc
 # sudo apt install vim -y default is vim8 now
 sudo apt install neovim -y &&
-sudo install emacs --classic
+sudo snap install emacs --classic &&
 sudo apt install gdebi-core -y  && # install deb
 sudo apt install gnome-tweak-tool -y &&
 sudo apt install openjdk-11-jdk -y  &&
@@ -44,6 +44,7 @@ sudo apt install gh
 sudo apt install okular
 ```
 # 输入法
+## fictx
 ```bash
 sudo apt-get install fcitx fcitx-googlepinyin im-config -y
 # 手动搜索 lauange support 应该会提示下载语言,下载完成后,将keyboard method system 设成 fcitx
@@ -52,6 +53,8 @@ fcitx-config-gtk3
 # 假设常用英文输入法 那么应该将英文输入法放到第一个
 # 取消ctrl+shift+f 中文简繁转换
 ```
+## ubuntu 输入法
+settings->region & language-> input sources clich "+" and add chinese
 # git
 ```
 git config --global core.editor "vim" 
@@ -77,6 +80,7 @@ git remote set-url origin git@github.com:woodgear/s-config.git
 sudo apt install libyaml-cpp-dev  -y
 sudo apt install libevdev-dev  -y
 sudo apt install libudev-dev  -y
+
 rm -rf caps2esc
 mkdir caps2esc
 cd caps2esc
@@ -157,7 +161,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-
 
 # go
 ```
-sudo apt install golang-go -v
+sudo apt install golang-go -y
 ```
 # rust 
 ```bash
@@ -215,7 +219,7 @@ sudo apt-get install flat-remix -y
 ```bash
 sudo apt  install tmux 
 https://github.com/greymd/tmux-xpanes
-ln -s $(pwd)/tmux.conf ~/.tmux.conf 
+ln -s $(pwd)/ubuntu-20/tmux.conf ~/.tmux.conf 
 ```
 # copyq
 sudo add-apt-repository ppa:hluk/copyq
@@ -281,3 +285,7 @@ export VSCODE_CONFIG_DIR=$(pwd) # 默认当前路径是s-config
 ln -s $VSCODE_CONFIG_DIR/espanso ~/.config 
 ```
 # activitywatch
+
+```
+wget https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
+```

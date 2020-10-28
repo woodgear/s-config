@@ -4,6 +4,7 @@
 ```
 apt update
 apt install git -y
+mkdir ~/app
 mkdir ~/sm
 mkdir ~/sm/lab
 mkdir ~/sm/pv
@@ -14,6 +15,5 @@ mkdir ~/sm/temp
 cd ~/sm/pv 
 git clone https://github.com/woodgear/s-config.git
 cd s-config
-cat 
 less ubuntu-20/ubuntu-20.md
 ```
