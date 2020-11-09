@@ -4,6 +4,7 @@
 ```
 apt update
 apt install git -y
+mkdir ~/app
 mkdir ~/sm
 mkdir ~/sm/lab
 mkdir ~/sm/pv
