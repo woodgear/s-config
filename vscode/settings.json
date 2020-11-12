@@ -814,10 +814,13 @@
         "codegen",
         "eval",
         "testhub",
+        "mongodump",
         "worktile"
     ],
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "zenMode.hideTabs": false,
     "extensions.ignoreRecommendations": false,
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "typescript.preferences.importModuleSpecifierEnding": "minimal",
 }
