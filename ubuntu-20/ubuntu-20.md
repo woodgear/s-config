@@ -42,9 +42,18 @@ sudo apt-add-repository https://cli.github.com/packages
 sudo apt update
 sudo apt install gh
 sudo apt install okular
+
+
+
+```
+# AppImageLauncher
+```bash
+sudo add-apt-repository ppa:appimagelauncher-team/stable
+sudo apt update
+sudo apt install appimagelauncher
 ```
 # gh
-`gh alias set cpr 'pr create -f`  
+`gh alias set cpr 'pr create -f'`  
 `gh alias set --shell see "gh pr list |cat|tail |awk '{print \$1}' | xargs -I {} sh -c 'echo {} &&gh pr diff {}'"`  
 `gh alias set --shell  mg 'gh pr review $1 -a && gh pr merge $1 -d -r' `
 # 输入法
@@ -261,6 +270,7 @@ ln -s $S_CONFIG_DIR/vim/vimrc ~/.vimrc
 mkdir -p ~/.config/nvim
 ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
 ln -s $S_CONFIG_DIR/vim/.ideavimrc ~/.ideavimrc
+ln -s $S_CONFIG_DIR/emacs/init.el ~/.emacs.d/init.el
 ```
 # zsh
 ```bash

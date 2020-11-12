@@ -1,14 +1,13 @@
 (defun hello ()
-  "display hello world in echo area to indicate tjat you are load the init.el"
+  "display hello world in echo area to indicate that you are load the init.el"
   (interactive)
-  (message "hello world")
+  (message "hello emacs prepare ok now.")
   )
 
 (defun open-config-file ()
 (interactive)
   (find-file "~/.emacs.d/init.el")
   )
-(hello)
 
 ;; init straight
 (defvar bootstrap-version)
@@ -46,3 +45,6 @@
 ;; 其他配置
 ;; 允许emacs follow symlinks
 (setq vc-follow-symlinks nil)
+
+
+(hello)
