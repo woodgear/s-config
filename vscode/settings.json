@@ -791,7 +791,7 @@
     "vim.easymotionMarkerBackgroundColor": "green",
     "editor.quickSuggestions": true,
     "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "tabnine.experimentalAutoImports": true,
     "[jsonc]": {
@@ -810,7 +810,10 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "cSpell.userWords": [
+        "auxre",
+        "codegen",
         "eval",
+        "testhub",
         "mongodump",
         "worktile"
     ],
