@@ -228,7 +228,10 @@ rm bcompare-4.3.3.24545_amd64.deb
 sudo install  gnome-tweak-tool -y
 sudo apt-get install flat-remix -y
 
-
+# increase file watch limit
+```bash
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
 
 # tmux
 ```bash

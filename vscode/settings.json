@@ -674,7 +674,7 @@
     "rust-analyzer.updates.channel": "nightly",
     "terminal.integrated.fontFamily": "Iosevka,monospace",
     "C_Cpp.updateChannel": "Insiders",
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "replacerules.rules": {
         "split-line-with-comma": {
             "literal": true,
