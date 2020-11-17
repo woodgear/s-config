@@ -22,13 +22,13 @@ sudo apt install xsel -y &&
 sudo apt install aria2 -y &&
 sudo apt install nfs-common -y &&
 sudo apt install net-tools -y &&
-
+sudo apt install baobab -y && 
 sudo apt install cmake -y &&
 sudo apt install openssh-server -y &&
 sudo systemctl enable ssh &&
 sudo apt-get install chromium-browser -y &&
 sudo snap install discord --classic &&
-
+sudo snap install slack --classic &&
 sudo apt-add-repository ppa:remmina-ppa-team/remmina-next &&
 sudo apt update &&
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret -y 
@@ -43,7 +43,9 @@ sudo apt update
 sudo apt install gh
 sudo apt install okular
 
-
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt update
+sudo apt install peek # gif recorder
 
 ```
 # AppImageLauncher
@@ -226,7 +228,10 @@ rm bcompare-4.3.3.24545_amd64.deb
 sudo install  gnome-tweak-tool -y
 sudo apt-get install flat-remix -y
 
-
+# increase file watch limit
+```bash
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
 
 # tmux
 ```bash

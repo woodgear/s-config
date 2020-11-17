@@ -38,6 +38,7 @@ code --install-extension albymor.increment-selection
 code --install-extension Gruntfuggly.todo-tree
 code --install-extension lindraupe.aw-watcher-vscode
 code --install-extension rid9.datetime
+code --install-extension christian-kohler.path-intellisense
 ```
 
 # init

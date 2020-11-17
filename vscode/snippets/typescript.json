@@ -24,7 +24,11 @@
     "mocha describe": {
         "prefix": "desc",
         "body": [
-            ""
+            "describe(\"test\", () => {",
+            "    it(\"should ok\", async () => {",
+            "        ",
+            "    })",
+            "})",
         ],
         "description": "mocha describe"
     },
@@ -45,5 +49,12 @@
             "});"
         ],
         "description": "test-it"
+    },
+    "describe": {
+        "prefix": "desc",
+        "body": [
+            ""
+        ],
+        "description": "describe"
     },
 }
