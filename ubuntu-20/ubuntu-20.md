@@ -312,3 +312,9 @@ wget https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/act
 docker pull mongno
 sudo snap install robo3t-snap
 ```
+# thefuck
+```bash
+sudo apt update
+sudo apt install python3-dev python3-pip python3-setuptools
+sudo pip3 install thefuck
+```
