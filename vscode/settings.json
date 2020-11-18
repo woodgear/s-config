@@ -823,4 +823,5 @@
     "extensions.ignoreRecommendations": false,
     "typescript.preferences.importModuleSpecifier": "relative",
     "typescript.preferences.importModuleSpecifierEnding": "minimal",
+    "gohome.minute": 30,
 }
