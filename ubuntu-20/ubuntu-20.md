@@ -48,6 +48,12 @@ sudo apt update
 sudo apt install peek # gif recorder
 
 ```
+# bpftool
+```
+sudo apt install linux-tools-common # bpftool
+sudo apt-get install bpfcc-tools linux-headers-$(uname -r)
+```
+
 # AppImageLauncher
 ```bash
 sudo add-apt-repository ppa:appimagelauncher-team/stable
