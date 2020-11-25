@@ -46,12 +46,14 @@ sudo apt install okular
 sudo add-apt-repository ppa:peek-developers/stable
 sudo apt update
 sudo apt install peek # gif recorder
+sudo apt install sysstat
 
 ```
 # bpftool
 ```
 sudo apt install linux-tools-common # bpftool
 sudo apt-get install bpfcc-tools linux-headers-$(uname -r)
+sudo apt-get install bpftrace
 ```
 
 # AppImageLauncher
@@ -323,4 +325,9 @@ sudo snap install robo3t-snap
 sudo apt update
 sudo apt install python3-dev python3-pip python3-setuptools
 sudo pip3 install thefuck
+```
+# docker-images
+## baiduyun
+```bash
+docker run -d --name baidupcs -p 5299:5299 -v /home/oaa/Downloads/bd:/downloads  oldiy/baidupcs:latest
 ```
