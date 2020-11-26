@@ -11,6 +11,13 @@
 		],
 		"description": "Log output to console"
     },
+    "json-log": {
+        "prefix": "jslg",
+        "body": [
+            "console.log(\"$1\",JSON.stringify($1,null,4))"
+        ],
+        "description": "json-string-format-string"
+    },
     "json-string-format-string": {
         "prefix": "jsf",
         "body": [

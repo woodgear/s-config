@@ -57,6 +57,7 @@ alias lock="gnome-screensaver-command -l"
 
 export FZF_DEFAULT_COMMAND='fd'
 alias gpm="git pull origin master"
+alias gpd="git pull origin develop"
 
 # emacs-lab
 export PATH=/home/oaa/lab/emacs-lab/redguardtoo:$PATH
@@ -66,5 +67,13 @@ alias dl="aria2c -s16 -x16 -k1M"
 # rust
 source $HOME/.cargo/env
 
-
 eval $(thefuck --alias)
+
+gitclone () {
+    echo "git clone by https://gitclone.com/"
+    url=$1
+    proxyed_url=$(sed 's/https:\/\//https:\/\/gitclone.com\//g'<<< $url)
+    echo "origin url $url"
+    echo "proxyed url $proxyed_url"
+    git clone $proxyed_url
+}

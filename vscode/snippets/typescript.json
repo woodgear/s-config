@@ -1,4 +1,13 @@
 {
+    "forofobject": {
+        "prefix": "forofobject",
+        "body": [
+            "for (const [key,val] of Object.entries($1)) {",
+            "    $2",
+            "}",
+        ],
+        "description": "forofobject"
+    },
     "Print to console": {
         "prefix": "pl",
         "body": [
@@ -50,11 +59,11 @@
         ],
         "description": "test-it"
     },
-    "describe": {
-        "prefix": "desc",
+    "json-log": {
+        "prefix": "jslg",
         "body": [
-            ""
+            "console.log(\"$1\",JSON.stringify($1,null,4))"
         ],
-        "description": "describe"
+        "description": "json-string-format-string"
     },
 }

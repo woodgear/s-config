@@ -4,6 +4,7 @@ sudo cp ./tuna.ubuntu-20.source.list /etc/apt/sources.list
 ```bash
 sudo apt update
 # sudo apt upgrade
+sudo apt install snapd
 sudo apt install curl -y &&
 sudo apt install gcc  g++ make perl -y &&
 sudo apt install git -y &&
@@ -46,8 +47,10 @@ sudo apt install okular
 sudo add-apt-repository ppa:peek-developers/stable
 sudo apt update
 sudo apt install peek # gif recorder
-
+sudo apt install jq
 ```
+# bpf
+
 # AppImageLauncher
 ```bash
 sudo add-apt-repository ppa:appimagelauncher-team/stable
@@ -214,7 +217,9 @@ sudo apt install python3-pip
 sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager -y
 ```
 # wireshark
-
+```
+sudo apt install wireshark
+```
 # bycompare Beyond Compare 4
 wget https://www.scootersoftware.com/bcompare-4.3.3.24545_amd64.deb
 sudo apt-get update
@@ -317,4 +322,9 @@ sudo snap install robo3t-snap
 sudo apt update
 sudo apt install python3-dev python3-pip python3-setuptools
 sudo pip3 install thefuck
+```
+# docker-images
+## swagger
+```bash
+docker run --name swagger-editor -d --restart=always -p 10000:8080 swaggerapi/swagger-editor:latest
 ```

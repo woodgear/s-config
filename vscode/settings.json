@@ -713,7 +713,11 @@
         }
     },
     "surround.custom": {
-
+        "call":{
+            "label":"call",
+            "description":"",
+            "snippet":"$1($TM_SELECTED_TEXT)",
+        },
         "jslog": {
             "label": "jslg",
             "description": "",
