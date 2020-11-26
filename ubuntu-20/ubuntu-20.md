@@ -50,6 +50,15 @@ sudo apt install peek # gif recorder
 sudo apt install jq
 ```
 # bpf
+sudo apt install sysstat
+
+```
+# bpftool
+```
+sudo apt install linux-tools-common # bpftool
+sudo apt-get install bpfcc-tools linux-headers-$(uname -r)
+sudo apt-get install bpftrace
+```
 
 # AppImageLauncher
 ```bash
@@ -327,4 +336,12 @@ sudo pip3 install thefuck
 ## swagger
 ```bash
 docker run --name swagger-editor -d --restart=always -p 10000:8080 swaggerapi/swagger-editor:latest
+```
+## baiduyun
+```bash
+docker run -d --name baidupcs -p 5299:5299 -v /home/oaa/Downloads/bd:/downloads  oldiy/baidupcs:latest
+```
+## wechat
+```bash
+curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh | bash
 ```
