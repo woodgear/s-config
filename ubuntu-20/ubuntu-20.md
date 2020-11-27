@@ -344,4 +344,25 @@ docker run -d --name baidupcs -p 5299:5299 -v /home/oaa/Downloads/bd:/downloads 
 ## wechat
 ```bash
 curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh | bash
+docker run \
+  --name DoChat \
+  --rm \
+  -i \
+  \
+  -v "$HOME/DoChat/WeChat Files/":'/home/user/WeChat Files/' \
+  -v "$HOME/DoChat/Applcation Data":'/home/user/.wine/drive_c/users/user/Application Data/' \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  \
+  -e DISPLAY \
+  \
+  -e XMODIFIERS=@im=fcitx \
+  -e GTK_IM_MODULE=fcitx \
+  -e QT_IM_MODULE=fcitx \
+  -e GID="$(id -g)" \
+  -e UID="$(id -u)" \
+  \
+  --ipc=host \
+  --privileged \
+  \
+  zixia/wechat
 ```
