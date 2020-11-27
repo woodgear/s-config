@@ -366,3 +366,5 @@ docker run \
   \
   zixia/wechat
 ```
+## init ssh
+ssh-copy-id root@45.32.114.140 
