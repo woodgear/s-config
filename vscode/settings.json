@@ -828,4 +828,7 @@
     "typescript.preferences.importModuleSpecifier": "relative",
     "typescript.preferences.importModuleSpecifierEnding": "minimal",
     "gohome.minute": 30,
+    "git.ignoredRepositories": [
+        "/home/oaa/sm/ns/share/blog"
+    ],
 }
