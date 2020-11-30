@@ -14,4 +14,5 @@ cd ~/sm/lab
 git clone git@github.com:woodgear/t.git
 git clone git@github.com:woodgear/tpm.git
 git clone git@github.com:woodgear/Note.git
+git clone git@github.com:awesome-code-actions/awesome-shell-actions.git
 ```
