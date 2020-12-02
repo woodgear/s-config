@@ -48,6 +48,7 @@ go env -w GO111MODULE=on
 go env -w  GOPROXY=https://goproxy.cn
 
 export PATH=/home/oaa/.tiup/bin:$PATH
+export PATH=/home/oaa/go/bin:$PATH
 
 alias vim="nvim"
 

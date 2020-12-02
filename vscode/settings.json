@@ -817,8 +817,9 @@
         "auxre",
         "codegen",
         "eval",
-        "testhub",
+        "inmemory",
         "mongodump",
+        "testhub",
         "worktile"
     ],
     "editor.suggestSelection": "first",
