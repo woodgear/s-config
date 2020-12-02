@@ -372,3 +372,13 @@ ssh-copy-id root@45.32.114.140
 ```bash
 GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
 ```
+
+## kubectl
+```bash
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+kubectl version --client
+
+```
