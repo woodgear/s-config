@@ -817,8 +817,9 @@
         "auxre",
         "codegen",
         "eval",
-        "testhub",
+        "inmemory",
         "mongodump",
+        "testhub",
         "worktile"
     ],
     "editor.suggestSelection": "first",
@@ -829,6 +830,7 @@
     "typescript.preferences.importModuleSpecifierEnding": "minimal",
     "gohome.minute": 30,
     "git.ignoredRepositories": [
+        "/home/oaa/ns/share/blog",
         "/home/oaa/sm/ns/share/blog"
     ],
 }

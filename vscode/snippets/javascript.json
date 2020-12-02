@@ -7,14 +7,14 @@
 	"Print to console": {
 		"prefix": "pl",
 		"body": [
-			"console.log('$1',$2);",
+			"console.log('debug: $1',$2);",
 		],
 		"description": "Log output to console"
     },
     "json-log": {
         "prefix": "jslg",
         "body": [
-            "console.log(\"$1\",JSON.stringify($1,null,4))"
+            "console.log(\"debug: $1\",JSON.stringify($1,null,4))"
         ],
         "description": "json-string-format-string"
     },
