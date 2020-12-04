@@ -23,7 +23,9 @@
                 "t",
                 "r"
             ],
-            "commands":["replacerules.runRule"],
+            "commands": [
+                "replacerules.runRule"
+            ],
         },
         {
             "before": [
@@ -713,10 +715,10 @@
         }
     },
     "surround.custom": {
-        "call":{
-            "label":"call",
-            "description":"",
-            "snippet":"$1($TM_SELECTED_TEXT)",
+        "call": {
+            "label": "call",
+            "description": "",
+            "snippet": "$1($TM_SELECTED_TEXT)",
         },
         "jslog": {
             "label": "jslg",
@@ -833,4 +835,5 @@
         "/home/oaa/ns/share/blog",
         "/home/oaa/sm/ns/share/blog"
     ],
+    "markdown-preview-enhanced.liveUpdate": true,
 }
