@@ -5,6 +5,10 @@ sudo cp ./tuna.ubuntu-20.source.list /etc/apt/sources.list
 sudo apt update
 # sudo apt upgrade
 sudo apt install snapd
+sudo apt install flatpak -y &&
+sudo apt install gnome-software-plugin-flatpak -y && 
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
+
 sudo apt install curl -y &&
 sudo apt install gcc  g++ make perl -y &&
 sudo apt install git -y &&
