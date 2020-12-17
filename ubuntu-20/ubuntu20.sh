@@ -206,7 +206,9 @@ sudo apt-get update
 sudo apt-get install indicator-sysmonitor -y
 
 # zsh
+
 mkdir -p ~/.zsh &&
+
 sudo apt install zsh -y &&
 sudo apt install autojump -y &&
 
@@ -284,3 +286,9 @@ kubectl version --client
 git config --global core.editor "vim" 
 git config --global user.email "q1875486458@gmail.com"
 git config --global user.name "wucong"
+
+
+## XMind
+wget https://apprepo.de/appimage/download/xmind -o ~/app/Xmind.AppImage
+chmod +x ~/app/Xmind.Appimage
+ail-cli integrate  ~/app/Xmind.AppImage
