@@ -1,154 +1,22 @@
-# update source list
-sudo cp ./tuna.ubuntu-20.source.list /etc/apt/sources.list
-# apt install sth
-```bash
-sudo apt update
-# sudo apt upgrade
-sudo apt install snapd
-sudo apt install curl -y &&
-sudo apt install gcc  g++ make perl -y &&
-sudo apt install git -y &&
-sudo apt install hashalot -y &&  # for sha256 etc
-# sudo apt install vim -y default is vim8 now
-sudo apt install neovim -y &&
-sudo snap install emacs --classic &&
-sudo apt install gdebi-core -y  && # install deb
-sudo apt install gnome-tweak-tool -y &&
-sudo apt install openjdk-11-jdk -y  &&
-sudo apt install autojump &&
-sudo apt  install cmake -y &&
-sudo apt-get install graphviz -y &&
-sudo apt install xclip -y &&
-sudo apt install xsel -y &&
-sudo apt install aria2 -y &&
-sudo apt install nfs-common -y &&
-sudo apt install net-tools -y &&
-sudo apt install baobab -y && 
-sudo apt install cmake -y &&
-sudo apt install openssh-server -y &&
-sudo systemctl enable ssh &&
-sudo apt-get install chromium-browser -y &&
-sudo snap install discord --classic &&
-sudo snap install slack --classic &&
-sudo apt-add-repository ppa:remmina-ppa-team/remmina-next &&
-sudo apt update &&
-sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret -y 
-
-sudo add-apt-repository ppa:mc3man/mpv-tests
-sudo apt-get update
-sudo apt install mpv
-
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-sudo apt-add-repository https://cli.github.com/packages
-sudo apt update
-sudo apt install gh
-sudo apt install okular
-
-sudo add-apt-repository ppa:peek-developers/stable
-sudo apt update
-sudo apt install peek # gif recorder
-sudo apt install jq
-```
-# bpf
-sudo apt install sysstat
-
-```
-# bpftool
-```
-sudo apt install linux-tools-common # bpftool
-sudo apt-get install bpfcc-tools linux-headers-$(uname -r)
-sudo apt-get install bpftrace
-```
-
-# AppImageLauncher
-```bash
-sudo add-apt-repository ppa:appimagelauncher-team/stable
-sudo apt update
-sudo apt install appimagelauncher
-```
-# gh
-`gh alias set cpr 'pr create -f'`  
-`gh alias set --shell see "gh pr list |cat|tail |awk '{print \$1}' | xargs -I {} sh -c 'echo {} &&gh pr diff {}'"`  
-`gh alias set --shell  mg 'gh pr review $1 -a && gh pr merge $1 -d -r' `
 # 输入法
 ## fictx
 ```bash
-sudo apt-get install fcitx fcitx-googlepinyin im-config -y
+sudo apt-get install fcitx fcitx-googlepinyin fcitx-config-gtk im-config -y
 # 手动搜索 lauange support 应该会提示下载语言,下载完成后,将keyboard method system 设成 fcitx
-# logout 一下
+# 重启一下
 fcitx-config-gtk3
 # 假设常用英文输入法 那么应该将英文输入法放到第一个
 # 取消ctrl+shift+f 中文简繁转换
 ```
-## ubuntu 输入法
-settings->region & language-> input sources clich "+" and add chinese
 # git
 ```
-git config --global core.editor "vim" 
-git clone https://github.com/woodgear/s-config
-git config --global user.email "q1875486458@gmail.com"
-git config --global user.name "wucong"
 git remote set-url origin git@github.com:woodgear/s-config.git
 
 ssh-keygen -t rsa -b 4096 -C "q1875486458@gmail.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
-cat ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub
 # copy to github/settings/sshkey
-```
-
-# s-config
-git remote set-url origin git@github.com:woodgear/s-config.git
-# vscode
-参照vscode/vscode.md
-
-# caps2esc
-```bash
-sudo apt install libyaml-cpp-dev  -y
-sudo apt install libevdev-dev  -y
-sudo apt install libudev-dev  -y
-
-rm -rf caps2esc
-mkdir caps2esc
-cd caps2esc
-git clone https://gitlab.com/interception/linux/plugins/caps2esc.git
-cd caps2esc 
-mkdir build
-cd build
-cmake ..
-make
-sudo make install
-
-echo '- JOB: "intercept -g $DEVNODE | caps2esc | uinput -d $DEVNODE"
-  DEVICE:
-    EVENTS:
-      EV_KEY: [KEY_CAPSLOCK, KEY_ESC]'| sudo tee /etc/udevmon.yaml
-
-echo '[Unit]
-Description=udevmon
-Wants=systemd-udev-settle.service
-After=systemd-udev-settle.service
-
-[Service]
-ExecStart=/usr/bin/nice -n -20 /usr/local/bin/udevmon -c /etc/udevmon.yaml
-
-[Install]
-WantedBy=multi-user.target' | sudo tee /etc/systemd/system/udevmon.service
-
-cd ../../
-
-git clone https://gitlab.com/interception/linux/tools.git
-cd tools
-mkdir build
-cd build
-cmake ..
-make
-sudo make install
-
-sudo systemctl enable --now udevmon
-sudo systemctl status  udevmon
-cd ../../../
-rm -rf caps2esc/
 ```
 
 # nutstore 坚果云
@@ -168,111 +36,30 @@ rm -r 'Nutstore Files'
 rm nautilus_nutstore_amd64.deb
 ```
 
-#  docker
-```bash
-sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-apt-cache policy docker-ce
-sudo apt install docker-ce -y
-sudo systemctl status docker
-
-sudo usermod -aG docker ${USER}
-su - ${USER}
-id -nG
-sudo usermod -aG docker ${USER}
-docker run hello-world
-```
-# docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-# go
-```
-sudo apt install golang-go -y
-```
-# rust 
-```bash
-curl https://sh.rustup.rs >./rust-installer.sh
-chmod a+x ./rust-installer.sh
-./rust-installer.sh --default-host x86_64-unknown-linux-gnu  --default-toolchain nightly --profile default -v -y
-
-source $HOME/.cargo/env
-sudo apt install libssl-dev
-cargo install ripgrep
-cargo install fd-find
-cargo install cargo-edit
-cargo install starship
-# rust-analyzer
-rustup component add rust-src
-sudo curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux -o /usr/local/bin/rust-analyzer
-sudo chmod a+x  /usr/local/bin/rust-analyzer
-```
-# node
-```
-sudo apt install npm
-npm install -g n
-n latest
-npm install -g typescript
-npm install -g npm-check-updates
-sudo npm install cnpm -g --registry=https://r.npm.taobao.org
-```
-
-# python
-```
-sudo apt install python3-pip
-```
-# qemu kvm 
-```bash
-sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager -y
-```
-# wireshark
-```
-sudo apt install wireshark
-```
 # bycompare Beyond Compare 4
+rm bcompare-4.3.7.25118_amd64.deb
 wget https://www.scootersoftware.com/bcompare-4.3.7.25118_amd64.deb
-sudo apt-get update
-sudo apt-get install gdebi-core
-sudo gdebi bcompare-4.3.7.25118_amd64.deb
+sudo apt update
+sudo apt install gdebi-core -y 
+sudo gdebi bcompare-4.3.7.25118_amd64.deb 
 rm bcompare-4.3.7.25118_amd64.deb
 
-# zeal
- sudo apt-get install zeal -y
-# 美化
-sudo install  gnome-tweak-tool -y
-sudo apt-get install flat-remix -y
 
 # increase file watch limit
 ```bash
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 ```
 
-# tmux
-```bash
-sudo apt  install tmux 
-https://github.com/greymd/tmux-xpanes
-ln -s $(pwd)/ubuntu-20/tmux.conf ~/.tmux.conf 
-```
-# copyq
-sudo add-apt-repository ppa:hluk/copyq
-sudo apt update
-sudo apt install copyq
-# xmid-zen
-wget https://www.xmind.cn/xmind/downloads/XMind-ZEN-for-Linux-64bit.deb
-sudo dpkg -i ./XMind-ZEN-for-Linux-64bit.deb
-sudo gdebi ./XMind-ZEN-for-Linux-64bit.deb
-rm ./XMind-ZEN-for-Linux-64bit.deb
-
 # Indicator Stickynotes 便签
-sudo add-apt-repository ppa:umang/indicator-stickynotes
-sudo apt-get update 
-sudo apt-get install indicator-stickynotes
+sudo add-apt-repository ppa:umang/indicator-stickynotes -y &&
+sudo apt-get update &&
+sudo apt-get install indicator-stickynotes -y
 # indicator-sysmonitor
 ```bash
 sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
 sudo apt-get update
 sudo apt-get install indicator-sysmonitor -y
-cpu: {cpu} mem: {mem} temp: {cputemp}
+cpu: {cpu} mem: {mem} net: {net} temp: {cputemp}
 ```
 
 # link
@@ -291,29 +78,11 @@ ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
 ln -s $S_CONFIG_DIR/vim/.ideavimrc ~/.ideavimrc
 ln -s $S_CONFIG_DIR/emacs/init.el ~/.emacs.d/init.el
 ```
-# zsh
-```bash
-mkdir -p ~/.zsh &&
-sudo apt install zsh -y &&
-sudo apt install autojump -y &&
-
-git clone https://gitclone.com/github.com/zsh-users/antigen ~/antigen
-zsh
-
-## autojump 
-
-chsh -s $(which zsh) # make it as default shell need to relogin to take effect
-```
-
 # increase max_map_count
 sudo echo 'vm.max_map_count=262144' >>/etc/sysctl.conf
 
-
 # espanso
 ```bash
-sudo snap install espanso --classic
-espanso start
-
 export VSCODE_CONFIG_DIR=$(pwd) # 默认当前路径是s-config
 ln -s $VSCODE_CONFIG_DIR/espanso ~/.config 
 ```
@@ -321,64 +90,5 @@ ln -s $VSCODE_CONFIG_DIR/espanso ~/.config
 ```
 wget https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
 ```
-# mongo
-```bash
-docker pull mongno
-sudo snap install robo3t-snap
-```
-# thefuck
-```bash
-sudo apt update
-sudo apt install python3-dev python3-pip python3-setuptools
-sudo pip3 install thefuck
-```
-# docker-images
-## swagger
-```bash
-docker run --name swagger-editor -d --restart=always -p 10000:8080 swaggerapi/swagger-editor:latest
-```
-## baiduyun
-```bash
-docker run -d --name baidupcs -p 5299:5299 -v /home/oaa/Downloads/bd:/downloads  oldiy/baidupcs:latest
-```
-## wechat
-```bash
-curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh | bash
-docker run \
-  --name DoChat \
-  --rm \
-  -i \
-  \
-  -v "$HOME/DoChat/WeChat Files/":'/home/user/WeChat Files/' \
-  -v "$HOME/DoChat/Applcation Data":'/home/user/.wine/drive_c/users/user/Application Data/' \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  \
-  -e DISPLAY \
-  \
-  -e XMODIFIERS=@im=fcitx \
-  -e GTK_IM_MODULE=fcitx \
-  -e QT_IM_MODULE=fcitx \
-  -e GID="$(id -g)" \
-  -e UID="$(id -u)" \
-  \
-  --ipc=host \
-  --privileged \
-  \
-  zixia/wechat
-```
 ## init ssh
 ssh-copy-id root@45.32.114.140 
-## kind
-```bash
-GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
-```
-
-## kubectl
-```bash
-curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
-
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
-kubectl version --client
-
-```
