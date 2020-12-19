@@ -249,28 +249,32 @@ docker run --name swagger-editor -d --restart=always -p 10000:8080 swaggerapi/sw
 docker run -d --name baidupcs -p 5299:5299 -v /home/oaa/Downloads/bd:/downloads  oldiy/baidupcs:latest
 ## wechat
 curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh | bash
-# docker run \
-#   --name DoChat \
-#   --rm \
-#   -i \
-#   \
-#   -v "$HOME/DoChat/WeChat Files/":'/home/user/WeChat Files/' \
-#   -v "$HOME/DoChat/Applcation Data":'/home/user/.wine/drive_c/users/user/Application Data/' \
-#   -v /tmp/.X11-unix:/tmp/.X11-unix \
-#   \
-#   -e DISPLAY \
-#   \
-#   -e XMODIFIERS=@im=fcitx \
-#   -e GTK_IM_MODULE=fcitx \
-#   -e QT_IM_MODULE=fcitx \
-#   -e GID="$(id -g)" \
-#   -e UID="$(id -u)" \
-#   \
-#   --ipc=host \
-#   --privileged \
-#   \
-#   zixia/wechat
+function runDoChat() {
 
+docker run \
+  --name DoChat \
+  --rm \
+  -i \
+  \
+  -v "$HOME/DoChat/WeChat Files/":'/home/user/WeChat Files/' \
+  -v "$HOME/DoChat/Applcation Data":'/home/user/.wine/drive_c/users/user/Application Data/' \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  \
+  -e DISPLAY \
+  \
+  -e XMODIFIERS=@im=fcitx \
+  -e GTK_IM_MODULE=fcitx \
+  -e QT_IM_MODULE=fcitx \
+  -e GID="$(id -g)" \
+  -e UID="$(id -u)" \
+  \
+  --ipc=host \
+  --privileged \
+  \
+  zixia/wechat
+
+
+}
 # k8s kind
 GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
 
@@ -292,3 +296,7 @@ git config --global user.name "wucong"
 wget https://apprepo.de/appimage/download/xmind -o ~/app/Xmind.AppImage
 chmod +x ~/app/Xmind.Appimage
 ail-cli integrate  ~/app/Xmind.AppImage
+## telagram
+wget  https://apprepo.de/appimage/download/telegram -o ~/app/Telegram.AppImage
+chmod +x ~/app/Telegram.AppImage
+ail-cli integrate  ~/app/Telegram.AppImage

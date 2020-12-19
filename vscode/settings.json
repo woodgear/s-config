@@ -820,6 +820,7 @@
         "codegen",
         "eval",
         "inmemory",
+        "keyof",
         "mongodump",
         "testhub",
         "worktile"
