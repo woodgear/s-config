@@ -50,7 +50,8 @@ sudo apt install okular -y &&
 sudo add-apt-repository ppa:peek-developers/stable -y &&
 sudo apt update &&
 sudo apt install jq -y &&
-
+# conky
+sudo apt install conky -y &&
 # flatapk
 flatpak install flathub com.uploadedlobster.peek -y
 # bpf
@@ -190,11 +191,6 @@ sudo apt  install tmux -y
 sudo add-apt-repository ppa:hluk/copyq -y
 sudo apt update
 sudo apt install copyq -y
-# xmid-zen
-wget https://www.xmind.cn/xmind/downloads/XMind-ZEN-for-Linux-64bit.deb
-sudo dpkg -i ./XMind-ZEN-for-Linux-64bit.deb
-sudo gdebi ./XMind-ZEN-for-Linux-64bit.deb
-rm ./XMind-ZEN-for-Linux-64bit.deb
 
 # Indicator Stickynotes 便签
 sudo add-apt-repository ppa:umang/indicator-stickynotes
@@ -286,11 +282,6 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 kubectl version --client
 
 
-## git
-git config --global core.editor "vim" 
-git config --global user.email "q1875486458@gmail.com"
-git config --global user.name "wucong"
-
 
 ## XMind
 wget https://apprepo.de/appimage/download/xmind -o ~/app/Xmind.AppImage
@@ -300,3 +291,12 @@ ail-cli integrate  ~/app/Xmind.AppImage
 wget  https://apprepo.de/appimage/download/telegram -o ~/app/Telegram.AppImage
 chmod +x ~/app/Telegram.AppImage
 ail-cli integrate  ~/app/Telegram.AppImage
+
+## config
+export S_CONFIG_DIR=$(pwd)
+### conky
+ln -s $S_CONFIG_DIR/conky/conky.conf /etc/conky/conky.conf
+### git
+git config --global core.editor "vim" 
+git config --global user.email "q1875486458@gmail.com"
+git config --global user.name "wucong"
