@@ -247,7 +247,7 @@ docker run -d --name baidupcs -p 5299:5299 -v /home/oaa/Downloads/bd:/downloads 
 curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh | bash
 function runDoChat() {
 
-docker run \
+docker run -d \
   --name DoChat \
   --rm \
   -i \
@@ -300,3 +300,14 @@ ln -s $S_CONFIG_DIR/conky/conky.conf /etc/conky/conky.conf
 git config --global core.editor "vim" 
 git config --global user.email "q1875486458@gmail.com"
 git config --global user.name "wucong"
+
+
+### init config
+cargo install --git https://github.com/woodgear/tpm.git
+tpm add  https://github.com/woodgear/t.git
+
+cd ~/sm/lab
+gitclone git@github.com:woodgear/t.git
+gitclone git@github.com:woodgear/tpm.git
+gitclone git@github.com:woodgear/Note.git
+gitclone https://github.com/kubernetes/kubernetes.git

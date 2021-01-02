@@ -821,6 +821,7 @@
         "eval",
         "inmemory",
         "keyof",
+        "kubectl",
         "mongodump",
         "testhub",
         "worktile"
@@ -837,4 +838,12 @@
         "/home/oaa/sm/ns/share/blog"
     ],
     "markdown-preview-enhanced.liveUpdate": true,
+    "go.languageServerExperimentalFeatures": {
+        "diagnostics": true,
+        "documentLink": true
+    },
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "cSpell.enabled": false,
+    "gitlens.views.repositories.enabled": true,
+    "gitlens.views.repositories.files.layout": "list",
 }
