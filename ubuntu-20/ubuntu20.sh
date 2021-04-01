@@ -1,41 +1,31 @@
-# update source list
+# make sure you are cross the wall
+
+# install retry
 if [ ! -f "/usr/local/bin/retry" ]; then
-    sudo sh -c "curl https://raw.githubusercontent.com/kadwanev/retry/master/retry -o /usr/local/bin/retry && chmod +x /usr/local/bin/retry"
-fi
+    sudo sh -c "curl https://raw.githubusercontent.com/kadwanev/retry/master/retry -o /usr/local/bin/retry && chmod +x /u
 
 
 sudo apt update
-sudo apt install flatpak -y
-sudo apt install gnome-software-plugin-flatpak -y
-sudo apt install snapd
 sudo apt install curl -y &&
 sudo apt install gcc  g++ make perl -y &&
 sudo apt install git -y &&
 sudo apt install hashalot -y &&  # for sha256 etc
-sudo apt install neovim -y &&
-sudo snap install emacs --classic &&
 sudo apt install gdebi-core -y  && # install deb
-sudo apt install gnome-tweak-tool -y &&
 sudo apt install openjdk-11-jdk -y  &&
-sudo apt install autojump &&
-sudo apt  install cmake -y &&
-sudo apt-get install graphviz -y &&
+sudo apt install autojump -y&&
+sudo apt install cmake -y &&
+sudo apt install graphviz -y &&
 sudo apt install xclip -y &&
 sudo apt install xsel -y &&
 sudo apt install aria2 -y &&
 sudo apt install nfs-common -y &&
 sudo apt install net-tools -y &&
 sudo apt install baobab -y && 
-sudo apt install cmake -y &&
 sudo apt install openssh-server -y &&
 sudo systemctl enable ssh &&
-sudo apt-get install chromium-browser -y &&
-sudo snap install discord --classic &&
-sudo snap install slack --classic &&
 sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y &&
 sudo apt update &&
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret -y 
-
 sudo add-apt-repository ppa:mc3man/mpv-tests -y &&
 sudo apt-get update &&
 sudo apt install mpv -y &&
@@ -44,16 +34,14 @@ sudo apt install thefuck -y &&
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 &&
 sudo apt-add-repository https://cli.github.com/packages -y &&
 sudo apt update &&
-sudo apt install gh -y &&
-sudo apt install okular -y &&
 
 sudo add-apt-repository ppa:peek-developers/stable -y &&
 sudo apt update &&
 sudo apt install jq -y &&
+
 # conky
 sudo apt install conky -y &&
-# flatapk
-flatpak install flathub com.uploadedlobster.peek -y
+
 # bpf
 sudo apt install sysstat -y && 
 
@@ -62,11 +50,8 @@ sudo apt install linux-tools-common -y &&
 sudo apt-get install bpfcc-tools linux-headers-$(uname -r) -y &&
 sudo apt-get install bpftrace -y &&
 
-# AppImageLauncher
-sudo add-apt-repository ppa:appimagelauncher-team/stable -y &&
-sudo apt update &&
-sudo apt install appimagelauncher -y &&
 # gh
+sudo apt install gh -y &&
 gh alias set cpr 'pr create -f'
 gh alias set --shell see "gh pr list |cat|tail |awk '{print \$1}' | xargs -I {} sh -c 'echo {} &&gh pr diff {}'"
 gh alias set --shell  mg 'gh pr review $1 -a && gh pr merge $1 -d -r'
