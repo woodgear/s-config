@@ -104,4 +104,8 @@
         "key": "ctrl+1",
         "command": "workbench.action.focusFirstEditorGroup",
     },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
 ]

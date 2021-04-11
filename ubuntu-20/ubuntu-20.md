@@ -19,23 +19,6 @@ cat ~/.ssh/id_rsa.pub
 # copy to github/settings/sshkey
 ```
 
-# nutstore 坚果云
-```bash
-wget https://www.jianguoyun.com/static/exe/installer/ubuntu/nautilus_nutstore_amd64.deb
-
-sudo apt-get install libglib2.0-dev libgtk2.0-dev libnautilus-extension-dev gvfs-bin python-gi gir1.2-appindicator3-0.1 -y
-wget https://www.jianguoyun.com/static/exe/installer/nutstore_linux_src_installer.tar.gz
-tar zxf nutstore_linux_src_installer.tar.gz
-cd nutstore_linux_src_installer && ./configure && make
-nautilus -q
-sudo make install
-./runtime_bootstrap
-cd ../
-rm -rf ./nutstore_linux_src_installer nutstore_linux_src_installer.tar.gz
-rm -r 'Nutstore Files'
-rm nautilus_nutstore_amd64.deb
-```
-
 # bycompare Beyond Compare 4
 rm bcompare-4.3.7.25118_amd64.deb
 wget https://www.scootersoftware.com/bcompare-4.3.7.25118_amd64.deb
@@ -43,43 +26,6 @@ sudo apt update
 sudo apt install gdebi-core -y 
 sudo gdebi bcompare-4.3.7.25118_amd64.deb 
 rm bcompare-4.3.7.25118_amd64.deb
-
-
-# increase file watch limit
-```bash
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-```
-
-# Indicator Stickynotes 便签
-sudo add-apt-repository ppa:umang/indicator-stickynotes -y &&
-sudo apt-get update &&
-sudo apt-get install indicator-stickynotes -y
-# indicator-sysmonitor
-```bash
-sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
-sudo apt-get update
-sudo apt-get install indicator-sysmonitor -y
-cpu: {cpu} mem: {mem} net: {net} temp: {cputemp}
-```
-
-# link
-```bash
-export S_CONFIG_DIR=$(pwd)
-rm  ~/.zshrc
-rm  ~/.vimrc
-rm -rf ~/.config/nvim
-rm  ~/.ideavimrc
-rm  ~/.emacs.d/init.el
-
-ln -s $S_CONFIG_DIR/ubuntu-20/zshrc ~/.zshrc
-ln -s $S_CONFIG_DIR/vim/vimrc ~/.vimrc
-mkdir -p ~/.config/nvim
-ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
-ln -s $S_CONFIG_DIR/vim/.ideavimrc ~/.ideavimrc
-ln -s $S_CONFIG_DIR/emacs/init.el ~/.emacs.d/init.el
-```
-# increase max_map_count
-sudo echo 'vm.max_map_count=262144' >>/etc/sysctl.conf
 
 # espanso
 ```bash

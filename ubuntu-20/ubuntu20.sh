@@ -1,10 +1,13 @@
+# fq
+# docker run -d \
+# 	--restart=always \
+# 	--privileged \
+# 	--network=host \
+# 	--name v2raya \
+# 	-v /etc/resolv.conf:/etc/resolv.conf \
+# 	-v /etc/v2raya:/etc/v2raya \
+# 	mzz2017/v2raya
 # make sure you are cross the wall
-
-# install retry
-if [ ! -f "/usr/local/bin/retry" ]; then
-    sudo sh -c "curl https://raw.githubusercontent.com/kadwanev/retry/master/retry -o /usr/local/bin/retry && chmod +x /u
-
-
 sudo apt update
 sudo apt install curl -y &&
 sudo apt install gcc  g++ make perl -y &&
@@ -61,7 +64,7 @@ gh alias set --shell  mg 'gh pr review $1 -a && gh pr merge $1 -d -r'
 sudo apt install libyaml-cpp-dev  -y &&
 sudo apt install libevdev-dev  -y && 
 sudo apt install libudev-dev  -y && 
-
+sudo apt install build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev &&
 rm -rf caps2esc
 mkdir caps2esc
 cd caps2esc
@@ -123,6 +126,9 @@ rm nautilus_nutstore_amd64.deb
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 # go
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+[[ -s "/home/wucong/.gvm/scripts/gvm" ]] && source "/home/wucong/.gvm/scripts/gvm"
+sudo apt get install bison -y
 gvm install go1.4 -B
 gvm use go1.4
 export GOROOT_BOOTSTRAP=$GOROOT
@@ -163,9 +169,6 @@ sudo apt install wireshark -y
 
 # zeal
  sudo apt-get install zeal -y
-# 美化
-sudo install  gnome-tweak-tool -y
-sudo apt-get install flat-remix -y
 
 # increase file watch limit
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
@@ -198,12 +201,6 @@ zsh
 
 # increase max_map_count
 sudo echo 'vm.max_map_count=262144' >>/etc/sysctl.conf
-# docker
-sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-apt-cache policy docker-ce
-sudo apt install docker-ce -y
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod a+x /usr/local/bin/docker-compose
 
@@ -215,21 +212,20 @@ espanso start
 wget https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
 # mongo
 docker pull mongno
-sudo snap install robo3t-snap
 # thefuck
 sudo apt update
 sudo apt install python3-dev python3-pip python3-setuptools
 sudo pip3 install thefuck
 # docker-images
 ## mongo
-docker pull mongno
-sudo snap install robo3t-sna
-## swagger
-docker run --name swagger-editor -d --restart=always -p 10000:8080 swaggerapi/swagger-editor:latest
+```
+# docker run --name swagger-editor -d --restart=always -p 10000:8080 swaggerapi/swagger-editor:latest 
+docker pull swaggerapi/swagger-editor:latest
+```
 ## baiduyun
-docker run -d --name baidupcs -p 5299:5299 -v /home/oaa/Downloads/bd:/downloads  oldiy/baidupcs:latest
+#docker run -d --name baidupcs -p 5299:5299 -v /home/oaa/Downloads/bd:/downloads  oldiy/baidupcs:latest
 ## wechat
-curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh | bash
+#curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh | bash
 function runDoChat() {
 
 docker run -d \
@@ -257,42 +253,51 @@ docker run -d \
 
 }
 # k8s kind
-GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
+# GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
 
-## kubectl
-curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
-
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
-kubectl version --client
-
+## kubectl todo
 
 
 ## XMind
-wget https://apprepo.de/appimage/download/xmind -o ~/app/Xmind.AppImage
-chmod +x ~/app/Xmind.Appimage
+#wget https://apprepo.de/appimage/download/xmind -o ~/app/Xmind.AppImage
+#chmod +x ~/app/Xmind.Appimage
 ail-cli integrate  ~/app/Xmind.AppImage
 ## telagram
-wget  https://apprepo.de/appimage/download/telegram -o ~/app/Telegram.AppImage
-chmod +x ~/app/Telegram.AppImage
-ail-cli integrate  ~/app/Telegram.AppImage
-
+#wget  https://apprepo.de/appimage/download/telegram -o ~/app/Telegram.AppImage
+#chmod +x ~/app/Telegram.AppImage
+#ail-cli integrate  ~/app/Telegram.AppImage
 ## config
+git clone https://github.com/woodgear/s-config.git
+cd s-config
 export S_CONFIG_DIR=$(pwd)
+
+### vscode 
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+
+bash -c ./vscode/vscode.sh
+### vim
+
+### emacs
+sudo add-apt-repository ppa:kelleyk/emacs
+sudo apt-get update
+sudo apt install emacs27
+ln -s ./emacs/init.el ~/.emacs.d/init.el
+
+
 ### conky
 ln -s $S_CONFIG_DIR/conky/conky.conf /etc/conky/conky.conf
-### git
-git config --global core.editor "vim" 
-git config --global user.email "q1875486458@gmail.com"
-git config --global user.name "wucong"
-
-
-### init config
-cargo install --git https://github.com/woodgear/tpm.git
-tpm add  https://github.com/woodgear/t.git
 
 cd ~/sm/lab
 gitclone git@github.com:woodgear/t.git
 gitclone git@github.com:woodgear/tpm.git
 gitclone git@github.com:woodgear/Note.git
-gitclone https://github.com/kubernetes/kubernetes.git
+
+
+
+## config fcitx
+rm ~/.config/fcitx/config 
+ln -s ~/sm/lab/s-config/fcitx/config ~/.config/fcitx/config 
+
+## polar

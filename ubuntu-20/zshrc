@@ -42,33 +42,16 @@ if [ -f '/home/oaa/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/oaa/bin/g
 if [ -f '/home/oaa/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/oaa/bin/google-cloud-sdk/completion.zsh.inc'; fi
 
 
-# go config
-
-go env -w GO111MODULE=on
-go env -w  GOPROXY=https://goproxy.cn
-
-export PATH=/home/oaa/.tiup/bin:$PATH
-export PATH=/home/oaa/go/bin:$PATH
-
-alias vim="nvim"
-
-alias lock="gnome-screensaver-command -l"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export FZF_DEFAULT_COMMAND='fd'
 alias gpm="git pull origin master"
 alias gpd="git pull origin develop"
 
-# emacs-lab
-export PATH=/home/oaa/lab/emacs-lab/redguardtoo:$PATH
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 alias dl="aria2c -s16 -x16 -k1M"
 
 # rust
 source $HOME/.cargo/env
 
-eval $(thefuck --alias)
+# TODO fix me 
+# eval $(thefuck --alias)
 
 gitclone () {
     echo "git clone by https://gitclone.com/"
@@ -99,4 +82,8 @@ load_awesome_shell_actions() {
 load_awesome_shell_actions ~/.zsh/awesome-shell-actions/
 
 
-export MONGOMS_SYSTEM_BINARY="/usr/local/lib/node_modules/mongodb-memory-server-global/node_modules/.cache/mongodb-memory-server/mongodb-binaries/4.0.14/mongod"
+## set proxy
+export HTTPS_PROXY=http://127.0.0.1:20172/
+export ALL_PROXY=socks://127.0.0.1:20170/
+export HTTP_PROXY=http://127.0.0.1:20172/
+export NO_PROXY=localhost,127.0.0.0/8,::1

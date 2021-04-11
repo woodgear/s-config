@@ -20,6 +20,16 @@
         {
             "before": [
                 "<leader>",
+                "f",
+                "n"
+            ],
+            "commands": [
+                "extension.advancedNewFile"
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
                 "t",
                 "r"
             ],
@@ -102,7 +112,7 @@
             "before": [
                 "<leader>",
                 "x",
-                "m"
+                "m",
             ],
             "commands": [
                 "workbench.action.showCommands"
@@ -639,6 +649,7 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": true,
         },
+        "editor.defaultFormatter": "golang.go",
     },
     "[go.mod]": {
         "editor.formatOnSave": true,
@@ -837,6 +848,8 @@
         "/home/oaa/ns/share/blog",
         "/home/oaa/sm/ns/share/blog"
     ],
+    "go.gopath": "/home/wucong/.gvm/pkgsets/go1.16.3/global",
+    "go.goroot": "/home/wucong/.gvm/gos/go1.16.3",
     "markdown-preview-enhanced.liveUpdate": true,
     "go.languageServerExperimentalFeatures": {
         "diagnostics": true,
@@ -846,4 +859,39 @@
     "cSpell.enabled": false,
     "gitlens.views.repositories.enabled": true,
     "gitlens.views.repositories.files.layout": "list",
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "NOTE",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "surround.with.arrowFunction": {
+        "label": "arrowFunction",
+        "disabled": true,
+    },
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "icon": "check",
+            "type": "line"
+        },
+        "NOTE": {
+            "icon": "question",
+            "type": "line"
+        },
+        "FIXME": {
+            "foreground": "black",
+            "iconColour": "yellow",
+            "gutterIcon": true
+        }
+    }
 }
