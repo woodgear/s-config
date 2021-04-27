@@ -117,10 +117,14 @@ sudo chmod a+x  /usr/local/bin/docker-compose
 # go
 sudo rm -rf ~/.gvm
 curl --socks5 127.0.0.1:20170 -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer  >./gvm.sh
+# echo "sudo rm -rf ~/.gvm &&  bash ./gvm.sh" |bash
+chmod a+x ./gvm.sh
+./gvm.sh
+# [[ -s "~/.gvm/scripts/gvm" ]]  source "~/.gvm/scripts/gvm"
+export GVM_ROOT=~/.gvm
+. $GVM_ROOT/scripts/gvm-default
 
-bash < ./gvm.sh
-[[ -s "~/.gvm/scripts/gvm" ]]  source "~/.gvm/scripts/gvm"
-sudo apt get install bison -y
+sudo apt install bison -y
 gvm install go1.4 -B
 gvm use go1.4
 export GOROOT_BOOTSTRAP=$GOROOT
