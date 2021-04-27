@@ -2,9 +2,15 @@
 ## docker
 ```bash
 sudo apt install docker.io &&\
-sudo systemctl enable --now docker &&\
-sudo usermod -aG docker $USER &&\
-docker --version &&\
+sudo systemctl enable --now docker
+
+# fix permission issue
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+newgrp docker
+
+id -Gn |grep docker
+docker --version
 docker run hello-world 
 
 docker run -d \
@@ -16,6 +22,13 @@ docker run -d \
  -v /etc/v2raya:/etc/v2raya \
  mzz2017/v2raya
 ```
+* login to firefox
+* login in to lastpass in firefix
+* find the aireplane,login
+* copy link
+* open localhost:2017
+* setting proxy http/https 20172 socks5 20170
+* relaunch terminal env |grep proxy to make sure the proxy setting is work
 # install via script
 ```
 ./ubuntu20.sh

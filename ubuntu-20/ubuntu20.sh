@@ -1,3 +1,9 @@
+# make sure apt proxy
+echo 'Acquire {
+  HTTP::proxy "http://127.0.0.1:20172";
+  HTTPS::proxy "http://127.0.0.1:20172";
+}' |sudo tee  /etc/apt/apt.conf.d/proxy.conf
+
 sudo apt update
 sudo apt install curl -y &&
 sudo apt install gcc  g++ make perl -y &&
