@@ -31,8 +31,8 @@ docker run -d \
 * relaunch terminal env |grep proxy to make sure the proxy setting is work
 # install via script
 ```
-cd ~/sm/pv/s-config/ubuntu-20
-sudo chmod a+x ./ubuntu20.sh
+cd ~/sm/pv/s-config/
+sudo chmod a+x ./ubuntu-20/ubuntu20.sh
 sudo ./ubuntu20.sh
 ```
 # 坚果云
@@ -94,3 +94,8 @@ wget https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/act
 ```
 ## init ssh
 ssh-copy-id root@45.32.114.140 
+
+
+* config system monitor
+* catlog
+* utools

@@ -39,7 +39,7 @@ sudo apt update
 
 sudo add-apt-repository ppa:peek-developers/stable -y 
 sudo apt update 
-sudo apt install peek 
+sudo apt install peek -y
 
 sudo apt install jq -y 
 
@@ -65,7 +65,7 @@ gh alias set --shell  mg 'gh pr review $1 -a  gh pr merge $1 -d -r'
 sudo apt install libyaml-cpp-dev  -y 
 sudo apt install libevdev-dev  -y  
 sudo apt install libudev-dev  -y  
-sudo apt install build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev 
+sudo apt install build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev -y 
 rm -rf caps2esc
 mkdir caps2esc
 cd caps2esc
@@ -104,7 +104,7 @@ make
 sudo make install
 
 sudo systemctl enable --now udevmon
-sudo systemctl status  udevmon
+sudo systemctl status  udevmon --no-block
 cd ../../../
 rm -rf caps2esc/
 
@@ -115,7 +115,7 @@ sudo mv ./docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
 sudo chmod a+x  /usr/local/bin/docker-compose
 
 # go
-bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+bash < <(curl --socks5 127.0.0.1:20170 -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 [[ -s "/home/wucong/.gvm/scripts/gvm" ]]  source "/home/wucong/.gvm/scripts/gvm"
 sudo apt get install bison -y
 gvm install go1.4 -B
@@ -125,7 +125,7 @@ gvm install go1.5 --binary
 gvm use go1.5 --default
 
 # rust
-curl https://sh.rustup.rs >./rust-installer.sh
+curl  --socks5 127.0.0.1:20170  https://sh.rustup.rs >./rust-installer.sh
 chmod a+x ./rust-installer.sh
 ./rust-installer.sh --default-host x86_64-unknown-linux-gnu  --default-toolchain nightly --profile default -v -y
 rm -rf ./rust-installer.sh
@@ -139,7 +139,7 @@ cargo install cargo-edit
 cargo install starship
 # rust-analyzer
 rustup component add rust-src
-sudo curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux -o /usr/local/bin/rust-analyzer
+sudo curl --socks5 127.0.0.1:20170 -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux -o /usr/local/bin/rust-analyzer
 sudo chmod a+x  /usr/local/bin/rust-analyzer
 # node
 sudo apt install npm -y
@@ -190,7 +190,7 @@ zsh
 
 # increase max_map_count
 sudo echo 'vm.max_map_count=262144' >>/etc/sysctl.conf
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl  --socks5 127.0.0.1:20170  -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod a+x /usr/local/bin/docker-compose
 
 # espanso
