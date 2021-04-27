@@ -1,3 +1,6 @@
+#!/bin/bash                                                                     
+set -e # exit when error
+set -x # echo on
 # make sure apt proxy
 echo 'Acquire {
   HTTP::proxy "http://127.0.0.1:20172";

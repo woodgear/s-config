@@ -31,7 +31,9 @@ docker run -d \
 * relaunch terminal env |grep proxy to make sure the proxy setting is work
 # install via script
 ```
-./ubuntu20.sh
+cd ~/sm/pv/s-config/ubuntu-20
+sudo chmod a+x ./ubuntu20.sh
+sudo ./ubuntu20.sh
 ```
 # 输入法
 
