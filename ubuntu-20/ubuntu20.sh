@@ -130,15 +130,20 @@ gvm use go1.4
 export GOROOT_BOOTSTRAP=$GOROOT
 gvm install go1.5 --binary
 gvm use go1.5 --default
+latest_go=$(gvm listall|grep go |tail -n 1|tr -d '\n')
+gvm install $latest_go --binary
+gvm use $latest_go --default
+
 
 # rust
 curl  --socks5 127.0.0.1:20170  https://sh.rustup.rs >./rust-installer.sh
 chmod a+x ./rust-installer.sh
 ./rust-installer.sh --default-host x86_64-unknown-linux-gnu  --default-toolchain nightly --profile default -v -y
 rm -rf ./rust-installer.sh
-rustup update
 
 source $HOME/.cargo/env
+rustup update
+
 sudo apt install libssl-dev
 cargo install ripgrep
 cargo install fd-find
