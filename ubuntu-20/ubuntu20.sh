@@ -110,7 +110,7 @@ rm -rf caps2esc/
 
 
 # docker-compose
-wget https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Linux-x86_64
+wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172  https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Linux-x86_64
 sudo mv ./docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
 sudo chmod a+x  /usr/local/bin/docker-compose
 
