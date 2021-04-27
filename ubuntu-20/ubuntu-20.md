@@ -1,4 +1,27 @@
+# fuck the wall
+## docker
+```bash
+sudo apt install docker.io
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+docker --version
+docker run hello-world
+
+docker run -d \
+ --restart=always \
+ --privileged \
+ --network=host \
+ --name v2raya \
+ -v /etc/resolv.conf:/etc/resolv.conf \
+ -v /etc/v2raya:/etc/v2raya \
+ mzz2017/v2raya
+```
+# install via script
+```
+./ubuntu20.sh
+```
 # 输入法
+
 ## fictx
 ```bash
 sudo apt-get install fcitx fcitx-googlepinyin fcitx-config-gtk im-config -y

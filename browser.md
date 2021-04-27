@@ -7,6 +7,7 @@ time: '2020-11-12T16:47:33+08:00'
 
 ## chrome
 [burning-vocabulary](https://chrome.google.com/webstore/detail/burning-vocabulary-highli/ljfjnlcnpmabfcgcmffkmgainghokdpl)
+https://addons.mozilla.org/en-US/firefox/addon/link-to-text-fragment/
 
 ## firefox
 ## greasyfork

@@ -62,5 +62,14 @@
             "$1 := $2"
         ],
         "description": "define-variable"
+    },
+    "for-of-map": {
+        "body": [
+            " for key, val := range $1{",
+            " ",
+            "}"
+        ],
+        "prefix": "formp",
+        "description": "for of map"
     }
 }

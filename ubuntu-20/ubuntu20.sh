@@ -1,13 +1,3 @@
-# fq
-# docker run -d \
-# 	--restart=always \
-# 	--privileged \
-# 	--network=host \
-# 	--name v2raya \
-# 	-v /etc/resolv.conf:/etc/resolv.conf \
-# 	-v /etc/v2raya:/etc/v2raya \
-# 	mzz2017/v2raya
-# make sure you are cross the wall
 sudo apt update
 sudo apt install curl -y &&
 sudo apt install gcc  g++ make perl -y &&
@@ -40,6 +30,8 @@ sudo apt update &&
 
 sudo add-apt-repository ppa:peek-developers/stable -y &&
 sudo apt update &&
+sudo apt install peek &&
+
 sudo apt install jq -y &&
 
 # conky
@@ -123,7 +115,9 @@ rm -r 'Nutstore Files'
 rm nautilus_nutstore_amd64.deb
 
 # docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+wget https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Linux-x86_64
+sudo mv ./docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
+sudo chmod a+x  /usr/local/bin/docker-compose
 
 # go
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
@@ -223,7 +217,7 @@ sudo pip3 install thefuck
 docker pull swaggerapi/swagger-editor:latest
 ```
 ## baiduyun
-#docker run -d --name baidupcs -p 5299:5299 -v /home/oaa/Downloads/bd:/downloads  oldiy/baidupcs:latest
+#docker run -d --name baidupcs -p 5299:5299 -v /home/wucong/Downloads/bd:/downloads  oldiy/baidupcs:latest
 ## wechat
 #curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh | bash
 function runDoChat() {
@@ -277,7 +271,10 @@ sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 
 bash -c ./vscode/vscode.sh
-### vim
+### nvim
+sudo apt-get install python3-neovim -y
+mkdir -p ~/.config/nvim
+ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
 
 ### emacs
 sudo add-apt-repository ppa:kelleyk/emacs
@@ -301,3 +298,18 @@ rm ~/.config/fcitx/config
 ln -s ~/sm/lab/s-config/fcitx/config ~/.config/fcitx/config 
 
 ## polar
+
+## wavebox mail client
+wget https://download.wavebox.app/latest/stable/linux/deb -O ./wavebox.deb 
+sudo dpkg -i ./wavebox.deb
+echo '[Desktop Entry]
+Type=Application
+Exec=/opt/wavebox.io/wavebox/wavebox-launcher &
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=wavebox
+Name=wavebox
+Comment[en_US]=
+Comment='  | tee  ~/.config/autostart/wavebox.desktop
+rm ./wavebox.deb

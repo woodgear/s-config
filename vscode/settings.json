@@ -665,7 +665,6 @@
         "staticcheck": false,
     },
     "debug.allowBreakpointsEverywhere": true,
-    "go.formatTool": "goimports",
     "workbench.colorTheme": "Quiet Light",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
@@ -893,5 +892,10 @@
             "iconColour": "yellow",
             "gutterIcon": true
         }
+    },
+    "go.formatTool": "goimports",
+    "go.toolsManagement.autoUpdate": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     }
 }

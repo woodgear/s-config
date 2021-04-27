@@ -108,4 +108,9 @@
         "key": "ctrl+e",
         "command": "-workbench.action.quickOpen"
     },
+    {
+        "key": "ctrl+shift+v",
+        "command": "-markdown.showPreview",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
 ]

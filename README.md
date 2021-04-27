@@ -2,8 +2,8 @@
 目前主力使用ubuntu 20.04+vscode 因此这两个文件夹里的内容比较有趣
 # ubuntu 20.04
 ```
-apt update
-apt install git -y
+sudo apt update
+sudo apt install git -y
 mkdir ~/app
 mkdir ~/sm
 mkdir ~/sm/lab

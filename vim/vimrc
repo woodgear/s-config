@@ -70,6 +70,7 @@ Plug 'skywind3000/vim-terminal-help'
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dracula/vim', { 'as': 'dracula' }
+
 call plug#end()
 
 colorscheme ron
