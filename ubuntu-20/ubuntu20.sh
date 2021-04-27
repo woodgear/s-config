@@ -115,8 +115,10 @@ sudo mv ./docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
 sudo chmod a+x  /usr/local/bin/docker-compose
 
 # go
-bash < <(curl --socks5 127.0.0.1:20170 -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-[[ -s "/home/wucong/.gvm/scripts/gvm" ]]  source "/home/wucong/.gvm/scripts/gvm"
+curl --socks5 127.0.0.1:20170 -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer  >./gvm.sh
+
+bash < ./gvm.sh
+[[ -s "~/.gvm/scripts/gvm" ]]  source "~/.gvm/scripts/gvm"
 sudo apt get install bison -y
 gvm install go1.4 -B
 gvm use go1.4
