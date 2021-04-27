@@ -115,6 +115,7 @@ sudo mv ./docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
 sudo chmod a+x  /usr/local/bin/docker-compose
 
 # go
+sudo rm -rf ~/.gvm
 curl --socks5 127.0.0.1:20170 -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer  >./gvm.sh
 
 bash < ./gvm.sh
