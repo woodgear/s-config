@@ -35,6 +35,22 @@ cd ~/sm/pv/s-config/ubuntu-20
 sudo chmod a+x ./ubuntu20.sh
 sudo ./ubuntu20.sh
 ```
+# 坚果云
+```
+wget https://www.jianguoyun.com/static/exe/installer/ubuntu/nautilus_nutstore_amd64.deb
+
+sudo apt-get install libglib2.0-dev libgtk2.0-dev libnautilus-extension-dev gvfs-bin python-gi gir1.2-appindicator3-0.1 -y
+wget https://www.jianguoyun.com/static/exe/installer/nutstore_linux_src_installer.tar.gz
+tar zxf nutstore_linux_src_installer.tar.gz
+cd nutstore_linux_src_installer  ./configure  make
+nautilus -q
+sudo make install
+./runtime_bootstrap
+cd ../
+rm -rf ./nutstore_linux_src_installer nutstore_linux_src_installer.tar.gz
+rm -r 'Nutstore Files'
+rm nautilus_nutstore_amd64.deb
+```
 # 输入法
 
 ## fictx
@@ -44,7 +60,9 @@ sudo apt-get install fcitx fcitx-googlepinyin fcitx-config-gtk im-config -y
 # 重启一下
 fcitx-config-gtk3
 # 假设常用英文输入法 那么应该将英文输入法放到第一个
-# 取消ctrl+shift+f 中文简繁转换
+
+rm ~/.config/fcitx/config
+ln -s ~/sm/pv/s-config/fcitx/config ~/.config/fcitx/config 
 ```
 # git
 ```

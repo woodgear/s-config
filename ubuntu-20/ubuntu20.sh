@@ -8,64 +8,64 @@ echo 'Acquire {
 }' |sudo tee  /etc/apt/apt.conf.d/proxy.conf
 
 sudo apt update
-sudo apt install curl -y &&
-sudo apt install gcc  g++ make perl -y &&
-sudo apt install git -y &&
-sudo apt install hashalot -y &&  # for sha256 etc
-sudo apt install gdebi-core -y  && # install deb
-sudo apt install openjdk-11-jdk -y  &&
-sudo apt install autojump -y&&
-sudo apt install cmake -y &&
-sudo apt install graphviz -y &&
-sudo apt install xclip -y &&
-sudo apt install xsel -y &&
-sudo apt install aria2 -y &&
-sudo apt install nfs-common -y &&
-sudo apt install net-tools -y &&
-sudo apt install baobab -y && 
-sudo apt install openssh-server -y &&
-sudo systemctl enable ssh &&
-sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y &&
-sudo apt update &&
+sudo apt install curl -y 
+sudo apt install gcc  g++ make perl -y 
+sudo apt install git -y 
+sudo apt install hashalot -y   # for sha256 etc
+sudo apt install gdebi-core -y   # install deb
+sudo apt install openjdk-11-jdk -y  
+sudo apt install autojump -y
+sudo apt install cmake -y 
+sudo apt install graphviz -y 
+sudo apt install xclip -y 
+sudo apt install xsel -y 
+sudo apt install aria2 -y 
+sudo apt install nfs-common -y 
+sudo apt install net-tools -y 
+sudo apt install baobab -y  
+sudo apt install openssh-server -y 
+sudo systemctl enable ssh 
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y 
+sudo apt update 
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret -y 
-sudo add-apt-repository ppa:mc3man/mpv-tests -y &&
-sudo apt-get update &&
-sudo apt install mpv -y &&
+sudo add-apt-repository ppa:mc3man/mpv-tests -y 
+sudo apt-get update 
+sudo apt install mpv -y 
 
-sudo apt install thefuck -y &&
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 &&
-sudo apt-add-repository https://cli.github.com/packages -y &&
-sudo apt update &&
+sudo apt install thefuck -y 
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 
+sudo apt-add-repository https://cli.github.com/packages -y 
+sudo apt update 
 
-sudo add-apt-repository ppa:peek-developers/stable -y &&
-sudo apt update &&
-sudo apt install peek &&
+sudo add-apt-repository ppa:peek-developers/stable -y 
+sudo apt update 
+sudo apt install peek 
 
-sudo apt install jq -y &&
+sudo apt install jq -y 
 
 # conky
-sudo apt install conky -y &&
+sudo apt install conky -y 
 
 # bpf
-sudo apt install sysstat -y && 
+sudo apt install sysstat -y  
 
 # bpftool
-sudo apt install linux-tools-common -y && 
-sudo apt-get install bpfcc-tools linux-headers-$(uname -r) -y &&
-sudo apt-get install bpftrace -y &&
+sudo apt install linux-tools-common -y  
+sudo apt-get install bpfcc-tools linux-headers-$(uname -r) -y 
+sudo apt-get install bpftrace -y 
 
 # gh
-sudo apt install gh -y &&
+sudo apt install gh -y 
 gh alias set cpr 'pr create -f'
-gh alias set --shell see "gh pr list |cat|tail |awk '{print \$1}' | xargs -I {} sh -c 'echo {} &&gh pr diff {}'"
-gh alias set --shell  mg 'gh pr review $1 -a && gh pr merge $1 -d -r'
+gh alias set --shell see "gh pr list |cat|tail |awk '{print \$1}' | xargs -I {} sh -c 'echo {} gh pr diff {}'"
+gh alias set --shell  mg 'gh pr review $1 -a  gh pr merge $1 -d -r'
 
 # caps2esc
 
-sudo apt install libyaml-cpp-dev  -y &&
-sudo apt install libevdev-dev  -y && 
-sudo apt install libudev-dev  -y && 
-sudo apt install build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev &&
+sudo apt install libyaml-cpp-dev  -y 
+sudo apt install libevdev-dev  -y  
+sudo apt install libudev-dev  -y  
+sudo apt install build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev 
 rm -rf caps2esc
 mkdir caps2esc
 cd caps2esc
@@ -108,20 +108,6 @@ sudo systemctl status  udevmon
 cd ../../../
 rm -rf caps2esc/
 
-# nutstore 坚果云
-wget https://www.jianguoyun.com/static/exe/installer/ubuntu/nautilus_nutstore_amd64.deb
-
-sudo apt-get install libglib2.0-dev libgtk2.0-dev libnautilus-extension-dev gvfs-bin python-gi gir1.2-appindicator3-0.1 -y
-wget https://www.jianguoyun.com/static/exe/installer/nutstore_linux_src_installer.tar.gz
-tar zxf nutstore_linux_src_installer.tar.gz
-cd nutstore_linux_src_installer && ./configure && make
-nautilus -q
-sudo make install
-./runtime_bootstrap
-cd ../
-rm -rf ./nutstore_linux_src_installer nutstore_linux_src_installer.tar.gz
-rm -r 'Nutstore Files'
-rm nautilus_nutstore_amd64.deb
 
 # docker-compose
 wget https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Linux-x86_64
@@ -130,7 +116,7 @@ sudo chmod a+x  /usr/local/bin/docker-compose
 
 # go
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-[[ -s "/home/wucong/.gvm/scripts/gvm" ]] && source "/home/wucong/.gvm/scripts/gvm"
+[[ -s "/home/wucong/.gvm/scripts/gvm" ]]  source "/home/wucong/.gvm/scripts/gvm"
 sudo apt get install bison -y
 gvm install go1.4 -B
 gvm use go1.4
@@ -174,7 +160,7 @@ sudo apt install wireshark -y
  sudo apt-get install zeal -y
 
 # increase file watch limit
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf  sudo sysctl -p
 
 # tmux
 sudo apt  install tmux -y
@@ -194,10 +180,10 @@ sudo apt-get install indicator-sysmonitor -y
 
 # zsh
 
-mkdir -p ~/.zsh &&
+mkdir -p ~/.zsh 
 
-sudo apt install zsh -y &&
-sudo apt install autojump -y &&
+sudo apt install zsh -y 
+sudo apt install autojump -y 
 
 git clone https://gitclone.com/github.com/zsh-users/antigen ~/antigen
 zsh
@@ -225,38 +211,7 @@ sudo pip3 install thefuck
 # docker run --name swagger-editor -d --restart=always -p 10000:8080 swaggerapi/swagger-editor:latest 
 docker pull swaggerapi/swagger-editor:latest
 ```
-## baiduyun
-#docker run -d --name baidupcs -p 5299:5299 -v /home/wucong/Downloads/bd:/downloads  oldiy/baidupcs:latest
-## wechat
-#curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh | bash
-function runDoChat() {
-
-docker run -d \
-  --name DoChat \
-  --rm \
-  -i \
-  \
-  -v "$HOME/DoChat/WeChat Files/":'/home/user/WeChat Files/' \
-  -v "$HOME/DoChat/Applcation Data":'/home/user/.wine/drive_c/users/user/Application Data/' \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  \
-  -e DISPLAY \
-  \
-  -e XMODIFIERS=@im=fcitx \
-  -e GTK_IM_MODULE=fcitx \
-  -e QT_IM_MODULE=fcitx \
-  -e GID="$(id -g)" \
-  -e UID="$(id -u)" \
-  \
-  --ipc=host \
-  --privileged \
-  \
-  zixia/wechat
-
-
-}
-# k8s kind
-# GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
+GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
 
 ## kubectl todo
 
@@ -264,14 +219,13 @@ docker run -d \
 ## XMind
 #wget https://apprepo.de/appimage/download/xmind -o ~/app/Xmind.AppImage
 #chmod +x ~/app/Xmind.Appimage
-ail-cli integrate  ~/app/Xmind.AppImage
+# ail-cli integrate  ~/app/Xmind.AppImage
 ## telagram
 #wget  https://apprepo.de/appimage/download/telegram -o ~/app/Telegram.AppImage
 #chmod +x ~/app/Telegram.AppImage
 #ail-cli integrate  ~/app/Telegram.AppImage
 ## config
-git clone https://github.com/woodgear/s-config.git
-cd s-config
+cd ~/sm/pv/s-config
 export S_CONFIG_DIR=$(pwd)
 
 ### vscode 
@@ -287,24 +241,13 @@ ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
 
 ### emacs
 sudo add-apt-repository ppa:kelleyk/emacs
-sudo apt-get update
-sudo apt install emacs27
+sudo apt-get update -y
+sudo apt install emacs27 -y
 ln -s ./emacs/init.el ~/.emacs.d/init.el
 
 
 ### conky
 ln -s $S_CONFIG_DIR/conky/conky.conf /etc/conky/conky.conf
-
-cd ~/sm/lab
-gitclone git@github.com:woodgear/t.git
-gitclone git@github.com:woodgear/tpm.git
-gitclone git@github.com:woodgear/Note.git
-
-
-
-## config fcitx
-rm ~/.config/fcitx/config 
-ln -s ~/sm/lab/s-config/fcitx/config ~/.config/fcitx/config 
 
 ## polar
 
