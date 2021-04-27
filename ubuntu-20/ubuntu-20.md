@@ -1,11 +1,11 @@
 # fuck the wall
 ## docker
 ```bash
-sudo apt install docker.io
-sudo systemctl enable --now docker
-sudo usermod -aG docker $USER
-docker --version
-docker run hello-world
+sudo apt install docker.io &&\
+sudo systemctl enable --now docker &&\
+sudo usermod -aG docker $USER &&\
+docker --version &&\
+docker run hello-world 
 
 docker run -d \
  --restart=always \
