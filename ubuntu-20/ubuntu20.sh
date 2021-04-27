@@ -190,6 +190,7 @@ zsh
 
 # increase max_map_count
 sudo echo 'vm.max_map_count=262144' >>/etc/sysctl.conf
+
 sudo curl  --socks5 127.0.0.1:20170  -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod a+x /usr/local/bin/docker-compose
 
