@@ -201,7 +201,7 @@ git clone https://gitclone.com/github.com/zsh-users/antigen ~/antigen
 zsh
 
 # increase max_map_count
-sudo echo 'vm.max_map_count=262144' >>/etc/sysctl.conf
+echo 'vm.max_map_count=262144' sudo tee /etc/sysctl.conf
 
 sudo curl  --socks5 127.0.0.1:20170  -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod a+x /usr/local/bin/docker-compose
@@ -211,7 +211,8 @@ sudo snap install espanso --classic
 espanso start
 
 # activitywatch
-wget https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
+wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
+unzip activitywatch-v0.9.2-linux-x86_64.zip -d ~/sm/app
 # mongo
 docker pull mongno
 # thefuck
@@ -242,7 +243,7 @@ cd ~/sm/pv/s-config
 export S_CONFIG_DIR=$(pwd)
 
 ### vscode 
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 
@@ -265,7 +266,8 @@ ln -s $S_CONFIG_DIR/conky/conky.conf /etc/conky/conky.conf
 ## polar
 
 ## wavebox mail client
-wget https://download.wavebox.app/latest/stable/linux/deb -O ./wavebox.deb 
+
+wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   https://download.wavebox.app/latest/stable/linux/deb -O ./wavebox.deb 
 sudo dpkg -i ./wavebox.deb
 echo '[Desktop Entry]
 Type=Application
