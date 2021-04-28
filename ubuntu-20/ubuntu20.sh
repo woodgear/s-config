@@ -165,8 +165,6 @@ sudo npm install cnpm -g --registry=https://r.npm.taobao.org
 sudo apt install python3-pip -y
 # qemu kvm 
 sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager -y
-# wireshark
-sudo apt install wireshark -y
 
 # zeal
  sudo apt install zeal -y
@@ -218,16 +216,17 @@ docker pull mongo
 docker pull redis
 docker pull mysql
 docker pull nginx
+
+docker pull swaggerapi/swagger-editor:latest
+
+```
+# docker run --name swagger-editor -d --restart=always -p 10000:8080 swaggerapi/swagger-editor:latest 
+```
 # thefuck
 sudo apt update
 sudo apt install python3-dev python3-pip python3-setuptools
 sudo pip3 install thefuck
-# docker-images
-## mongo
-```
-# docker run --name swagger-editor -d --restart=always -p 10000:8080 swaggerapi/swagger-editor:latest 
-docker pull swaggerapi/swagger-editor:latest
-```
+
 GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
 
 ## kubectl todo
