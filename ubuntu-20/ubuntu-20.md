@@ -98,3 +98,4 @@ sudo apt install gnome-shell-extensions -y # needrelogin
 * config auto start utools wavebox
 * switch default terminal
 * ssh proxy
+* guake terminal
