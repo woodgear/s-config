@@ -28,7 +28,7 @@ antigen apply
 
 export PATH=~/bin:$PATH
 
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:~/.local/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -89,3 +89,8 @@ export HTTP_PROXY=http://127.0.0.1:20172/
 export NO_PROXY=localhost,127.0.0.0/8,::1
 
 alias vim=nvim
+
+
+
+ME=$(who|head -n 1 | awk '{print $1}')
+HOME=/home/${ME}

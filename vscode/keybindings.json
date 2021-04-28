@@ -1,5 +1,10 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
+
+    {
+        "key": "ctrl+shift+p",
+        "command": "workbench.action.quickOpen"
+    },
     {
         "key": "alt+m",
         "command": "workbench.action.terminal.focus",

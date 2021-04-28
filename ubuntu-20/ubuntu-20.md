@@ -35,22 +35,7 @@ cd ~/sm/pv/s-config/
 sudo chmod a+x ./ubuntu-20/ubuntu20.sh
 sudo ./ubuntu20.sh
 ```
-# 坚果云
-```
-wget https://www.jianguoyun.com/static/exe/installer/ubuntu/nautilus_nutstore_amd64.deb
 
-sudo apt-get install libglib2.0-dev libgtk2.0-dev libnautilus-extension-dev gvfs-bin python-gi gir1.2-appindicator3-0.1 -y
-wget https://www.jianguoyun.com/static/exe/installer/nutstore_linux_src_installer.tar.gz
-tar zxf nutstore_linux_src_installer.tar.gz
-cd nutstore_linux_src_installer  ./configure  make
-nautilus -q
-sudo make install
-./runtime_bootstrap
-cd ../
-rm -rf ./nutstore_linux_src_installer nutstore_linux_src_installer.tar.gz
-rm -r 'Nutstore Files'
-rm nautilus_nutstore_amd64.deb
-```
 # install some software manuly
 
 ```bash
@@ -64,21 +49,30 @@ sudo apt-get install fcitx fcitx-googlepinyin fcitx-config-gtk im-config -y
 fcitx-config-gtk3
 # 假设常用英文输入法 那么应该将英文输入法放到第一个
 
+
 rm ~/.config/fcitx/config
 ln -s ~/sm/pv/s-config/fcitx/config ~/.config/fcitx/config 
 ```
+
 # git
 ```
 git remote set-url origin git@github.com:woodgear/s-config.git
 
-ssh-keygen -t rsa -b 4096 -C "q1875486458@gmail.com"
+ssh-keygen -t rsa  -N '' -b 4096 -C "q1875486458@gmail.com"  -f ~/.ssh/id_rsa <<<y 2>&1 >/dev/null
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub
 # copy to github/settings/sshkey
 ```
+# system monitor indicator
+```
+W:{wall} C:{cpu}:{amd_cputemp} M: {mem}{meminfo}
+amd_cputemp: sensors |grep Tctl|awk '{print $2}'
+meminfo: free -mh|sed '1d'|awk '{print $2"/"$3 " "}'|tr -d '\n'
+wall : (curl -m 2 -I  --socks5 127.0.0.1:20170  -s  -o /dev/null -w "%{time_total}  code:%{http_code}" www.google.com || echo "error")|xargs -i{} bash -c 'if [[ "{}" == *"code:200"* ]]; then echo "{}" | awk "{print \$1}";else echo "been fuck";fi'
 
-# bycompare Beyond Compare 4
+```
+# bycompare Beyond Compare 5
 rm bcompare-4.3.7.25118_amd64.deb
 wget https://www.scootersoftware.com/bcompare-4.3.7.25118_amd64.deb
 sudo apt update
@@ -88,7 +82,10 @@ rm bcompare-4.3.7.25118_amd64.deb
 
 ## init ssh
 ssh-copy-id root@45.32.114.140 
-
+## gnome shell
+```bash
+sudo apt install gnome-shell-extensions -y # needrelogin 
+```
 * utools
 * wavebox login
 * login tabnine
@@ -100,3 +97,4 @@ ssh-copy-id root@45.32.114.140
 * emacs install package
 * config auto start utools wavebox
 * switch default terminal
+* ssh proxy

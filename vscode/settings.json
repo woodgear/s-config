@@ -2,7 +2,6 @@
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     "editor.detectIndentation": false,
-    "window.zoomLevel": 0,
     "files.autoSave": "afterDelay",
     "window.menuBarVisibility": "default",
     "workbench.activityBar.visible": true,
@@ -897,5 +896,6 @@
     "go.toolsManagement.autoUpdate": true,
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
-    }
+    },
+    "window.zoomLevel": -1
 }
