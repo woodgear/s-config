@@ -213,8 +213,11 @@ espanso start
 # activitywatch
 wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
 unzip activitywatch-v0.9.2-linux-x86_64.zip -d ~/sm/app
-# mongo
+# common docker images
 docker pull mongno
+docker pull redis
+docker pull mysql
+docker pull nginx
 # thefuck
 sudo apt update
 sudo apt install python3-dev python3-pip python3-setuptools
