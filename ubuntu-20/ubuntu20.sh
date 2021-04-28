@@ -8,7 +8,8 @@ echo 'Acquire {
 }' |sudo tee  /etc/apt/apt.conf.d/proxy.conf
 export http_proxy=http://127.0.0.1:20172
 export https_proxy=http://127.0.0.1:20172
-
+ME=$(who|head -n 1 | awk '{print $1}')
+HOME=/home/${ME}
 sudo apt update
 sudo apt install curl -y 
 sudo apt install gcc  g++ make perl -y 
@@ -232,9 +233,8 @@ sudo pip3 install thefuck
 
 # reset go env(sometimes we run this script like sed '1,200d xx|bash')
 ## init go software
-ME=$(who|head -n 1 | awk '{print $1}')
 echo -- $ME --
-export GVM_ROOT=/home/${ME}/.gvm
+export GVM_ROOT=${HOME}/.gvm
 . $GVM_ROOT/scripts/gvm-default
 
 latest_go=$(gvm listall|grep go |tail -n 1|tr -d '\n')
@@ -242,7 +242,8 @@ latest_go=$(gvm listall|grep go |tail -n 1|tr -d '\n')
 gvm install $latest_go --binary
 gvm use $latest_go --default
 GO111MODULE="on" go get -v sigs.k8s.io/kind@v0.9.0
-
+HTTPS_PROXY="" HTTP_PROXY="" ALL_PROXY="" kind create cluster --name k-1.16.5 --image kindest/node:v1.16.15@sha256:c10a63a5bda231c0a379bf91aebf8ad3c79146daca59db816fb963f731852a99
+HTTPS_PROXY="" HTTP_PROXY="" ALL_PROXY="" kind create cluster --name k-1.20.2 --image kindest/node:v1.20.2@sha256:8f7ea6e7642c0da54f04a7ee10431549c0257315b3a634f6ef2fecaaedb19bab
 
 
 ## XMind
@@ -254,7 +255,7 @@ GO111MODULE="on" go get -v sigs.k8s.io/kind@v0.9.0
 #chmod +x ~/app/Telegram.AppImage
 #ail-cli integrate  ~/app/Telegram.AppImage
 ## config
-cd ~/sm/pv/s-config
+cd ${HOME}/sm/pv/s-config
 export S_CONFIG_DIR=$(pwd)
 
 ### vscode 
@@ -265,14 +266,14 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/p
 bash -c ./vscode/vscode.sh
 ### nvim
 sudo apt-get install python3-neovim -y
-mkdir -p ~/.config/nvim
-ln -s $S_CONFIG_DIR/vim/vimrc ~/.config/nvim/init.vim
+mkdir -p ${HOME}/.config/nvim
+ln -s $S_CONFIG_DIR/vim/vimrc ${HOME}/.config/nvim/init.vim
 
 ### emacs
 sudo add-apt-repository ppa:kelleyk/emacs
 sudo apt-get update -y
 sudo apt install emacs27 -y
-ln -s ./emacs/init.el ~/.emacs.d/init.el
+ln -s ./emacs/init.el ${HOME}/.emacs.d/init.el
 
 
 ### conky
@@ -293,5 +294,5 @@ X-GNOME-Autostart-enabled=true
 Name[en_US]=wavebox
 Name=wavebox
 Comment[en_US]=
-Comment='  | tee  ~/.config/autostart/wavebox.desktop
+Comment='  | tee  ${HOME}/.config/autostart/wavebox.desktop
 rm ./wavebox.deb
