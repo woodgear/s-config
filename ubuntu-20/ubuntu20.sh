@@ -321,7 +321,8 @@ Comment[en_US]=
 Comment='  | tee  ${HOME}/.config/autostart/wavebox.desktop
 rm ./wavebox.deb
 
-
+wget https://res.u-tools.cn/currentversion/utools_1.3.5_amd64.deb
+sudo dpkg -i ./utools_1.3.5_amd64.deb
 # todo 
 # helm
 # kubevela

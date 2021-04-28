@@ -89,11 +89,13 @@ rm bcompare-4.3.7.25118_amd64.deb
 ## init ssh
 ssh-copy-id root@45.32.114.140 
 
-
+* utools
+* wavebox login
 * login tabnine
 * config system monitor
 * catlog
-* utools
-* wavebox login
 * virtualbox window config
 * config for work
+* vim install package
+* emacs install package
+* config auto start utools wavebox
