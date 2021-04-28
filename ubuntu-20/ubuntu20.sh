@@ -10,6 +10,14 @@ export http_proxy=http://127.0.0.1:20172
 export https_proxy=http://127.0.0.1:20172
 ME=$(who|head -n 1 | awk '{print $1}')
 HOME=/home/${ME}
+
+
+
+
+
+
+
+
 sudo apt update
 sudo apt install curl -y 
 sudo apt install gcc  g++ make perl -y 
