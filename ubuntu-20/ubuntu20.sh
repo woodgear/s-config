@@ -214,7 +214,7 @@ espanso start
 wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
 unzip activitywatch-v0.9.2-linux-x86_64.zip -d ~/sm/app
 # common docker images
-docker pull mongno
+docker pull mongo
 docker pull redis
 docker pull mysql
 docker pull nginx
