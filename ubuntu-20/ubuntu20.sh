@@ -281,8 +281,8 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code # or code-insiders
 
-
-bash -c ./vscode/vscode.sh
+chmod a+x ./vscode/vscode.sh
+sudo -u ${ME} ./vscode/vscode.sh
 ### nvim
 sudo apt-get install python3-neovim -y
 mkdir -p ${HOME}/.config/nvim
@@ -296,6 +296,7 @@ ln -s ./emacs/init.el ${HOME}/.emacs.d/init.el
 
 
 ### conky
+sudo apt-get install conky
 ln -s $S_CONFIG_DIR/conky/conky.conf /etc/conky/conky.conf
 
 ## polar
