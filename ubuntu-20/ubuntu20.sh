@@ -120,7 +120,6 @@ curl --socks5 127.0.0.1:20170 -s -S -L https://raw.githubusercontent.com/moovweb
 # echo "sudo rm -rf ~/.gvm &&  bash ./gvm.sh" |bash
 chmod a+x ./gvm.sh
 ./gvm.sh
-# [[ -s "~/.gvm/scripts/gvm" ]]  source "~/.gvm/scripts/gvm"
 export GVM_ROOT=~/.gvm
 . $GVM_ROOT/scripts/gvm-default
 
@@ -227,6 +226,9 @@ sudo apt update
 sudo apt install python3-dev python3-pip python3-setuptools
 sudo pip3 install thefuck
 
+# reset go env(sometimes we run this script like sed '1,200d xx|bash')
+export GVM_ROOT=~/.gvm
+. $GVM_ROOT/scripts/gvm-default
 GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
 
 ## kubectl todo
