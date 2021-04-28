@@ -100,3 +100,4 @@ ssh-copy-id root@45.32.114.140
 * emacs install package
 * config auto start utools wavebox
 * switch default terminal
+* guake terminal
