@@ -1,4 +1,7 @@
-code --install-extension streetsidesoftware.code-spell-checker
+#!/bin/bash
+set -e
+set -x
+code --install-extension  streetsidesoftware.code-spell-checker
 code --install-extension aaron-bond.better-comments
 code --install-extension Cameron.rerun-last-command
 code --install-extension in4margaret.compareit
