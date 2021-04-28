@@ -6,6 +6,8 @@ echo 'Acquire {
   HTTP::proxy "http://127.0.0.1:20172";
   HTTPS::proxy "http://127.0.0.1:20172";
 }' |sudo tee  /etc/apt/apt.conf.d/proxy.conf
+export http_proxy=http://127.0.0.1:20172
+export https_proxy=http://127.0.0.1:20172
 
 sudo apt update
 sudo apt install curl -y 
@@ -226,12 +228,21 @@ sudo apt update
 sudo apt install python3-dev python3-pip python3-setuptools
 sudo pip3 install thefuck
 
+## kubectl todo
+
 # reset go env(sometimes we run this script like sed '1,200d xx|bash')
-export GVM_ROOT=~/.gvm
+## init go software
+ME=$(who|head -n 1 | awk '{print $1}')
+echo -- $ME --
+export GVM_ROOT=/home/${ME}/.gvm
 . $GVM_ROOT/scripts/gvm-default
+
+latest_go=$(gvm listall|grep go |tail -n 1|tr -d '\n')
+
+gvm install $latest_go --binary
+gvm use $latest_go --default
 GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
 
-## kubectl todo
 
 
 ## XMind
