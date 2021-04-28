@@ -218,6 +218,7 @@ chmod a+x /usr/local/bin/docker-compose
 sudo snap install espanso --classic
 espanso start
 
+
 # activitywatch
 wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
 unzip activitywatch-v0.9.2-linux-x86_64.zip -d ~/sm/app
@@ -301,6 +302,7 @@ ln -s ./emacs/init.el ${HOME}/.emacs.d/init.el
 sudo apt-get install conky
 ln -s $S_CONFIG_DIR/conky/conky.conf /etc/conky/conky.conf
 
+ln -s $S_CONFIG_DIR/espanso ${HOME}/.config 
 ## polar
 
 ## wavebox mail client
@@ -318,3 +320,10 @@ Name=wavebox
 Comment[en_US]=
 Comment='  | tee  ${HOME}/.config/autostart/wavebox.desktop
 rm ./wavebox.deb
+
+
+# todo 
+# helm
+# kubevela
+# slack/discord/tg
+# system indicator

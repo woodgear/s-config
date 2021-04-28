@@ -22,7 +22,7 @@ code --install-extension Gruntfuggly.todo-tree
 code --install-extension lindraupe.aw-watcher-vscode
 code --install-extension rid9.datetime
 code --install-extension christian-kohler.path-intellisense
-code --install-extension vscode-fileutils
+code --install-extension sleistner.vscode-fileutils
 code --install-extension kentos.move-selection-to-new-file
 kentos.move-selection-to-new-file
 code --install-extension codeinchinese.englishchinesedictionary

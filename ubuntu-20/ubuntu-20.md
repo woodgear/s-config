@@ -86,19 +86,14 @@ sudo apt install gdebi-core -y
 sudo gdebi bcompare-4.3.7.25118_amd64.deb 
 rm bcompare-4.3.7.25118_amd64.deb
 
-# espanso
-```bash
-export VSCODE_CONFIG_DIR=$(pwd) # 默认当前路径是s-config
-ln -s $VSCODE_CONFIG_DIR/espanso ~/.config 
-```
-# activitywatch
-```
-wget https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
-```
 ## init ssh
 ssh-copy-id root@45.32.114.140 
 
 
+* login tabnine
 * config system monitor
 * catlog
 * utools
+* wavebox login
+* virtualbox window config
+* config for work
