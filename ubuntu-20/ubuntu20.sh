@@ -169,7 +169,7 @@ sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils vir
 sudo apt install wireshark -y
 
 # zeal
- sudo apt-get install zeal -y
+ sudo apt install zeal -y
 
 # increase file watch limit
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf  sudo sysctl -p
@@ -184,7 +184,7 @@ sudo apt install copyq -y
 # Indicator Stickynotes 便签
 sudo add-apt-repository ppa:umang/indicator-stickynotes
 sudo apt-get update 
-sudo apt-get install indicator-stickynotes
+sudo apt-get install indicator-stickynotes -y
 # indicator-sysmonitor
 sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
 sudo apt-get update
