@@ -257,7 +257,7 @@ gvm use $latest_go --default
 GO111MODULE="on" go get -v sigs.k8s.io/kind@v0.9.0
 HTTPS_PROXY="" HTTP_PROXY="" ALL_PROXY="" kind create cluster --name k-1.16.5 --image kindest/node:v1.16.15@sha256:c10a63a5bda231c0a379bf91aebf8ad3c79146daca59db816fb963f731852a99
 HTTPS_PROXY="" HTTP_PROXY="" ALL_PROXY="" kind create cluster --name k-1.20.2 --image kindest/node:v1.20.2@sha256:8f7ea6e7642c0da54f04a7ee10431549c0257315b3a634f6ef2fecaaedb19bab
-
+sudo chmod a+rx ${HOME}/.kube/config
 
 ## XMind
 #wget https://apprepo.de/appimage/download/xmind -o ~/app/Xmind.AppImage
