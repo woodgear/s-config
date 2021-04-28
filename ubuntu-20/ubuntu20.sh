@@ -281,6 +281,7 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code # or code-insiders
 
+mkdir -p ${HOME}/.config/Code
 chmod a+x ./vscode/vscode.sh
 sudo -u ${ME} ./vscode/vscode.sh
 ### nvim
