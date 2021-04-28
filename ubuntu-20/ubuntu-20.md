@@ -51,10 +51,13 @@ rm -rf ./nutstore_linux_src_installer nutstore_linux_src_installer.tar.gz
 rm -r 'Nutstore Files'
 rm nautilus_nutstore_amd64.deb
 ```
-# 输入法
+# install some software manuly
 
-## fictx
 ```bash
+sudo apt install wireshark -y
+```
+```bash
+# 输入法
 sudo apt-get install fcitx fcitx-googlepinyin fcitx-config-gtk im-config -y
 # 手动搜索 lauange support 应该会提示下载语言,下载完成后,将keyboard method system 设成 fcitx
 # 重启一下
