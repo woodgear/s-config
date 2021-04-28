@@ -241,7 +241,7 @@ latest_go=$(gvm listall|grep go |tail -n 1|tr -d '\n')
 
 gvm install $latest_go --binary
 gvm use $latest_go --default
-GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
+GO111MODULE="on" go get -v sigs.k8s.io/kind@v0.9.0
 
 
 
