@@ -44,7 +44,7 @@ sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret -y
 sudo add-apt-repository ppa:mc3man/mpv-tests -y 
 sudo apt-get update 
 sudo apt install mpv -y 
-
+sudo apt-get install fzf -y
 sudo apt install thefuck -y 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 
 sudo apt-add-repository https://cli.github.com/packages -y 
@@ -61,7 +61,7 @@ sudo apt install conky -y
 
 # bpf
 sudo apt install sysstat -y  
-
+sudo apt-get install guake -y
 # bpftool
 sudo apt install linux-tools-common -y  
 sudo apt-get install bpfcc-tools linux-headers-$(uname -r) -y 
@@ -204,7 +204,7 @@ ret=$?
 if [ $ret -ne 0 ]; then
         echo "been fuck"
 else
-        echo $wall_status |awk "{print $1}"
+        echo $wall_status |awk "{print \$1}"
 fi' > ${HOME}/scripts/wall.sh
 chmod a+x ${HOME}/scripts/wall.sh
 
@@ -331,7 +331,9 @@ ln -s $S_CONFIG_DIR/vim/vimrc ${HOME}/.config/nvim/init.vim
 sudo add-apt-repository ppa:kelleyk/emacs
 sudo apt-get update -y
 sudo apt install emacs27 -y
-ln -s ./emacs/init.el ${HOME}/.emacs.d/init.el
+
+mkdir -p ~/.emacs.d
+ln -s $S_CONFIG_DIR/emacs/init.el ${HOME}/.emacs.d/init.el
 
 
 ### conky
@@ -400,3 +402,30 @@ echo No|./runtime_bootstrap
 cd ../
 rm -rf ./nutstore_linux_src_installer nutstore_linux_src_installer.tar.gz
 rm nautilus_nutstore_amd64.deb
+
+
+curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+sudo apt-get install apt-transport-https --yes
+echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
+
+
+
+
+## init my project
+cd ${HOME}/sm/project
+ln -s $(pwd)/awesome-shell-actions ~/.zsh/awesome-shell-actions
+
+
+## virtualbox
+
+## helm
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+
+
+## gnome shell extension
+# 减少topbar的间距  https://extensions.gnome.org/extension/1287/unite/
+# 透明topbar https://extensions.gnome.org/extension/3518/transparent-shell/

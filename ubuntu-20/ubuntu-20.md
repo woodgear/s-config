@@ -52,6 +52,8 @@ fcitx-config-gtk3
 
 rm ~/.config/fcitx/config
 ln -s ~/sm/pv/s-config/fcitx/config ~/.config/fcitx/config 
+## reload fcitx config
+fcitx-remote -r
 ```
 
 # git

@@ -3,7 +3,7 @@
     "editor.insertSpaces": true,
     "editor.detectIndentation": false,
     "files.autoSave": "afterDelay",
-    "window.menuBarVisibility": "default",
+    "window.menuBarVisibility": "compact",
     "workbench.activityBar.visible": true,
     "vim.easymotion": true,
     "vim.sneak": true,
@@ -641,8 +641,6 @@
             ]
         },
     ],
-    // golang config
-    "go.useLanguageServer": true,
     "[go]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
@@ -664,7 +662,7 @@
         "staticcheck": false,
     },
     "debug.allowBreakpointsEverywhere": true,
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Monokai Dimmed",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
@@ -846,8 +844,6 @@
         "/home/oaa/ns/share/blog",
         "/home/oaa/sm/ns/share/blog"
     ],
-    "go.gopath": "/home/wucong/.gvm/pkgsets/go1.16.3/global",
-    "go.goroot": "/home/wucong/.gvm/gos/go1.16.3",
     "markdown-preview-enhanced.liveUpdate": true,
     "go.languageServerExperimentalFeatures": {
         "diagnostics": true,
