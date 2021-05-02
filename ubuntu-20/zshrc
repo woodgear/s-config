@@ -1,3 +1,4 @@
+set -o vi # vim style
 source ~/antigen/antigen.zsh
 
 antigen use oh-my-zsh
@@ -17,6 +18,9 @@ antigen bundle kubectl
 antigen bundle zsh-users/zsh-autosuggestions
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
+# y copy to system clipboard
+antigen bundle "https://github.com/kutsan/zsh-system-clipboard.git"
+antigen bundle "https://github.com/joshskidmore/zsh-fzf-history-search.git"
 
 # Load the theme
 # https://github.com/zsh-users/antigen/issues/675#issuecomment-452764451
@@ -28,7 +32,7 @@ antigen apply
 
 export PATH=~/bin:$PATH
 
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:~/.local/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -89,3 +93,15 @@ export HTTP_PROXY=http://127.0.0.1:20172/
 export NO_PROXY=localhost,127.0.0.0/8,::1
 
 alias vim=nvim
+
+
+
+ME=$(who|head -n 1 | awk '{print $1}')
+HOME=/home/${ME}
+
+
+## gvm
+source ~/.gvm/scripts/gvm
+export PATH=~/sm/scripts:$PATH
+
+export S_CONFIG_DIR=~/sm/pv/s-config

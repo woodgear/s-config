@@ -32,6 +32,8 @@ sudo apt install xclip -y
 sudo apt install xsel -y 
 sudo apt install aria2 -y 
 sudo apt install nfs-common -y 
+sudo apt install ncat -y 
+sudo apt install wmctrl -y 
 sudo apt install net-tools -y 
 sudo apt install baobab -y  
 sudo apt install openssh-server -y 
@@ -42,7 +44,7 @@ sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret -y
 sudo add-apt-repository ppa:mc3man/mpv-tests -y 
 sudo apt-get update 
 sudo apt install mpv -y 
-
+sudo apt-get install fzf -y
 sudo apt install thefuck -y 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 
 sudo apt-add-repository https://cli.github.com/packages -y 
@@ -59,7 +61,7 @@ sudo apt install conky -y
 
 # bpf
 sudo apt install sysstat -y  
-
+sudo apt-get install guake -y
 # bpftool
 sudo apt install linux-tools-common -y  
 sudo apt-get install bpfcc-tools linux-headers-$(uname -r) -y 
@@ -193,11 +195,34 @@ sudo apt install copyq -y
 sudo add-apt-repository ppa:umang/indicator-stickynotes
 sudo apt-get update 
 sudo apt-get install indicator-stickynotes -y
+
 # indicator-sysmonitor
+mkdir ${HOME}/scripts
+echo 'wall_status=""
+wall_status=$(curl -m 3 -I  --socks5 127.0.0.1:20170  -s  -o /dev/null -w "%{time_total}  code:%{http_code}" www.google.com)
+ret=$?
+if [ $ret -ne 0 ]; then
+        echo "been fuck"
+else
+        echo $wall_status |awk "{print \$1}"
+fi' > ${HOME}/scripts/wall.sh
+chmod a+x ${HOME}/scripts/wall.sh
+
 sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
 sudo apt-get update
 sudo apt-get install indicator-sysmonitor -y
-
+ln -s ${HOME}/sm/pv/s-config/ubuntu-20/indicator-sysmonitor.json ${HOME}/.indicator-sysmonitor.json
+echo "
+[Desktop Entry]
+Name=System Monitor Indicator
+Comment=Basic sysmonitor indicator applet
+Exec=indicator-sysmonitor
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Utility;
+Icon=gnome-system-monitor
+" > ~/.config/autostart/indicator-sysmonitor.desktop
 # zsh
 
 mkdir -p ~/.zsh 
@@ -206,8 +231,6 @@ sudo apt install zsh -y
 sudo apt install autojump -y 
 
 git clone https://gitclone.com/github.com/zsh-users/antigen ~/antigen
-zsh
-
 # increase max_map_count
 echo 'vm.max_map_count=262144' sudo tee /etc/sysctl.conf
 
@@ -222,6 +245,17 @@ espanso start
 # activitywatch
 wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
 unzip activitywatch-v0.9.2-linux-x86_64.zip -d ~/sm/app
+
+echo "[Desktop Entry]
+Type=Application
+Exec= ${HOME}/sm/app/activitywatch/aw-qt &
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=activitywatch
+Name=activitywatch
+Comment[en_US]=
+Comment="  | tee  ~/.config/autostart/activitywatch.desktop
 # common docker images
 docker pull mongo
 docker pull redis
@@ -272,6 +306,8 @@ sudo chmod a+rx ${HOME}/.kube/config
 cd ${HOME}/sm/pv/s-config
 export S_CONFIG_DIR=$(pwd)
 
+
+ln -s $S_CONFIG_DIR/ubuntu-20/zshrc ~/.zshrc
 ### vscode 
 wget  -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -295,7 +331,9 @@ ln -s $S_CONFIG_DIR/vim/vimrc ${HOME}/.config/nvim/init.vim
 sudo add-apt-repository ppa:kelleyk/emacs
 sudo apt-get update -y
 sudo apt install emacs27 -y
-ln -s ./emacs/init.el ${HOME}/.emacs.d/init.el
+
+mkdir -p ~/.emacs.d
+ln -s $S_CONFIG_DIR/emacs/init.el ${HOME}/.emacs.d/init.el
 
 
 ### conky
@@ -318,17 +356,78 @@ X-GNOME-Autostart-enabled=true
 Name[en_US]=wavebox
 Name=wavebox
 Comment[en_US]=
-Comment='  | tee  ${HOME}/.config/autostart/wavebox.desktop
+Comment='  | tee  ~/.config/autostart/wavebox.desktop
 rm ./wavebox.deb
 
 wget https://res.u-tools.cn/currentversion/utools_1.3.5_amd64.deb
 sudo dpkg -i ./utools_1.3.5_amd64.deb
 rm ./utools_1.3.5_amd64.deb
+
+
+
+wget https://www.jianguoyun.com/static/exe/installer/ubuntu/nautilus_nutstore_amd64.deb
+
+sudo apt-get install libglib2.0-dev libgtk2.0-dev libnautilus-extension-dev gvfs-bin python-gi gir1.2-appindicator3-0.1 -y
+wget https://www.jianguoyun.com/static/exe/installer/nutstore_linux_src_installer.tar.gz
+tar zxf nutstore_linux_src_installer.tar.gz
+cd nutstore_linux_src_installer 
+./configure 
+make
+nautilus -q
+sudo make install
+echo No|./runtime_bootstrap
+cd ../
+rm -rf ./nutstore_linux_src_installer nutstore_linux_src_installer.tar.gz
+rm nautilus_nutstore_amd64.deb
 # todo 
 # helm
 # kubevela
 # slack/discord/tg
 # system indicator
+
+
+
+## 坚果云
+wget https://www.jianguoyun.com/static/exe/installer/ubuntu/nautilus_nutstore_amd64.deb
+
+sudo apt-get install libglib2.0-dev libgtk2.0-dev libnautilus-extension-dev gvfs-bin python-gi gir1.2-appindicator3-0.1 -y
+wget https://www.jianguoyun.com/static/exe/installer/nutstore_linux_src_installer.tar.gz
+tar zxf nutstore_linux_src_installer.tar.gz
+cd nutstore_linux_src_installer 
+./configure 
+make
+nautilus -q
+sudo make install
+echo No|./runtime_bootstrap
+cd ../
+rm -rf ./nutstore_linux_src_installer nutstore_linux_src_installer.tar.gz
+rm nautilus_nutstore_amd64.deb
+
+
+curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+sudo apt-get install apt-transport-https --yes
+echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
+
+
+
+
+## init my project
+cd ${HOME}/sm/project
+ln -s $(pwd)/awesome-shell-actions ~/.zsh/awesome-shell-actions
+
+
+## virtualbox
+
+## helm
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+
+
+## gnome shell extension
+# 减少topbar的间距  https://extensions.gnome.org/extension/1287/unite/
 
 
 # postman
