@@ -329,3 +329,22 @@ rm ./utools_1.3.5_amd64.deb
 # kubevela
 # slack/discord/tg
 # system indicator
+
+
+# postman
+snap install postman 
+echo "
+[Desktop Entry]
+Encoding=UTF-8
+Name=Postman
+Exec=/opt/Postman/app/Postman %U
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Development;
+" > ~/.local/share/applications/Postman.desktop
+# ocr
+sudo add-apt-repository ppa:daniel.p/dpscreenocr
+sudo apt-get update
+sudo apt install dpscreenocr
+sudo apt install tesseract-ocr-eng 

@@ -847,8 +847,6 @@
         "/home/oaa/ns/share/blog",
         "/home/oaa/sm/ns/share/blog"
     ],
-    "go.gopath": "/home/wucong/.gvm/pkgsets/go1.16.3/global",
-    "go.goroot": "/home/wucong/.gvm/gos/go1.16.3",
     "markdown-preview-enhanced.liveUpdate": true,
     "go.languageServerExperimentalFeatures": {
         "diagnostics": true,
