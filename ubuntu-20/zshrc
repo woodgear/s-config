@@ -105,3 +105,4 @@ source ~/.gvm/scripts/gvm
 export PATH=~/sm/scripts:$PATH
 
 export S_CONFIG_DIR=~/sm/pv/s-config
+alias wget-proxy="wget  -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172 "

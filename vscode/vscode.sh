@@ -10,12 +10,9 @@ code --install-extension ms-python.python
 code --install-extension golang.go
 code --install-extension redguardtoo.matchit
 code --install-extension vscodevim.vim
-code --install-extension yatki.vscode-surround 
-code --install-extension bhughes339.replacerules
 code --install-extension michelemelluso.gitignore
 code --install-extension ms-vscode.cpptools
 code --install-extension richie5um2.vscode-statusbar-json-path
-code --install-extension bhughes339.replacerules
 code --install-extension TabNine.tabnine-vscode
 code --install-extension albymor.increment-selection
 code --install-extension Gruntfuggly.todo-tree
@@ -26,7 +23,7 @@ code --install-extension sleistner.vscode-fileutils
 code --install-extension kentos.move-selection-to-new-file
 code --install-extension codeinchinese.englishchinesedictionary
 code --install-extension reduckted.vscode-gitweblinks
-
+code --install-extension cubicle6.scriptbox
 ln -s ~/.config/Code\ -\ OSS  ~/.config/Code # 保证oss版本和mircosoft版本配置文件位置兼容
 rm -rf  ~/.config/Code/User/*   # 删除旧有全部数据
 

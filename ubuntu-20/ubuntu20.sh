@@ -62,6 +62,7 @@ sudo apt install conky -y
 # bpf
 sudo apt install sysstat -y  
 sudo apt-get install guake -y
+
 # bpftool
 sudo apt install linux-tools-common -y  
 sudo apt-get install bpfcc-tools linux-headers-$(uname -r) -y 
@@ -145,7 +146,8 @@ gvm use go1.5 --default
 latest_go=$(gvm listall|grep go |tail -n 1|tr -d '\n')
 gvm install $latest_go --binary
 gvm use $latest_go --default
-
+sudo chmod a+rwx -R ~/.gvm 
+sudo chmod -R a+rwx ~/.cache 
 
 # rust
 curl  --socks5 127.0.0.1:20170  https://sh.rustup.rs >./rust-installer.sh
@@ -205,7 +207,7 @@ if [ $ret -ne 0 ]; then
         echo "been fuck"
 else
         echo $wall_status |awk "{print \$1}"
-fi' > ${HOME}/scripts/wall.sh
+fi' > ${HOME}/sm/scripts/wall.sh
 chmod a+x ${HOME}/scripts/wall.sh
 
 sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
@@ -238,24 +240,33 @@ sudo curl  --socks5 127.0.0.1:20170  -L "https://github.com/docker/compose/relea
 chmod a+x /usr/local/bin/docker-compose
 
 # espanso
-sudo snap install espanso --classic
+rm -rf ~/.config/espanso
+sudo apt update
+sudo apt install libxtst6 libxdo3 xclip libnotify-bin
+curl -L https://github.com/federico-terzi/espanso/releases/latest/download/espanso-linux.tar.gz | tar -xz -C /tmp/
+sudo mv /tmp/espanso /usr/local/bin/espanso
 espanso start
-
+ln -s $S_CONFIG_DIR/espanso ${HOME}/.config 
 
 # activitywatch
 wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
 unzip activitywatch-v0.9.2-linux-x86_64.zip -d ~/sm/app
 
+rm ${HOME}/.config/autostart/activitywatch.desktop
 echo "[Desktop Entry]
-Type=Application
-Exec= ${HOME}/sm/app/activitywatch/aw-qt &
+Comment=Track everything on your computer.
+GenericName=Log what you do on your computer.
+Name=ActivityWatch
+Exec=${HOME}/sm/app/activitywatch/aw-qt
 Hidden=false
-NoDisplay=false
+StartupNotify=true
+Terminal=false
+Type=Application
 X-GNOME-Autostart-enabled=true
-Name[en_US]=activitywatch
-Name=activitywatch
-Comment[en_US]=
-Comment="  | tee  ~/.config/autostart/activitywatch.desktop
+Version=1.0
+Icon=activitywatch
+Categories=Utility;"  | tee  ${HOME}/.config/autostart/activitywatch.desktop
+rm  activitywatch-v0.9.2-linux-x86_64.zip
 # common docker images
 docker pull mongo
 docker pull redis
@@ -324,6 +335,8 @@ chmod a+x ./vscode/vscode.sh
 sudo -u ${ME} ./vscode/vscode.sh
 ### nvim
 sudo apt-get install python3-neovim -y
+
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 mkdir -p ${HOME}/.config/nvim
 ln -s $S_CONFIG_DIR/vim/vimrc ${HOME}/.config/nvim/init.vim
 
@@ -331,16 +344,13 @@ ln -s $S_CONFIG_DIR/vim/vimrc ${HOME}/.config/nvim/init.vim
 sudo add-apt-repository ppa:kelleyk/emacs
 sudo apt-get update -y
 sudo apt install emacs27 -y
-
-mkdir -p ~/.emacs.d
-ln -s $S_CONFIG_DIR/emacs/init.el ${HOME}/.emacs.d/init.el
-
+sudo -u mkdir -p ~/.emacs.d
+sudo -u ln -s $S_CONFIG_DIR/emacs/init.el ${HOME}/.emacs.d/init.el
 
 ### conky
 sudo apt-get install conky
 ln -s $S_CONFIG_DIR/conky/conky.conf /etc/conky/conky.conf
 
-ln -s $S_CONFIG_DIR/espanso ${HOME}/.config 
 ## polar
 
 ## wavebox mail client
@@ -361,6 +371,17 @@ rm ./wavebox.deb
 
 wget https://res.u-tools.cn/currentversion/utools_1.3.5_amd64.deb
 sudo dpkg -i ./utools_1.3.5_amd64.deb
+
+echo '[Desktop Entry]
+Type=Application
+Exec=setsid /usr/bin/utools
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=utools
+Name=utools
+Comment[en_US]=
+Comment='  | tee  ~/.config/autostart/utools.desktop
 rm ./utools_1.3.5_amd64.deb
 
 
@@ -429,3 +450,23 @@ chmod 700 get_helm.sh
 ## gnome shell extension
 # 减少topbar的间距  https://extensions.gnome.org/extension/1287/unite/
 # 透明topbar https://extensions.gnome.org/extension/3518/transparent-shell/
+
+
+# guake config
+ln -s $S_CONFIG_DIR/ubuntu-20/guake.conf ${HOME}/.guake.conf
+guake  --restore-preferences=~/.guake.conf 
+echo "
+[Desktop Entry]
+Name=guake
+Comment=guake
+TryExec=guake
+Exec=guake
+Icon=guake
+Type=Application
+Categories=GNOME;GTK;System;Utility;TerminalEmulator;
+StartupNotify=true
+X-Desktop-File-Install-Version=0.22
+X-GNOME-Autostart-enabled=true
+Hidden=false
+NoDisplay=false
+" > ~/.config/autostart/guake.desktop

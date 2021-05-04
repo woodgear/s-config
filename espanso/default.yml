@@ -39,6 +39,3 @@ matches:
         type: shell
         params:
           cmd: "echo Hello from your shell"
-  # git commit 
-  - trigger: ":gm"
-    replace: "git commit -m"
