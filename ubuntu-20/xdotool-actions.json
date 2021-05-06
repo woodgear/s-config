@@ -1,0 +1,13 @@
+{
+    "gmail": {
+        "selector": "wavebox",
+        "actions": [
+            {
+                "key": "Alt+1"
+            },
+            {
+                "key": "Ctrl+Shift+3"
+            }
+        ]
+    }
+}
