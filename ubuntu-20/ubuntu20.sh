@@ -11,7 +11,7 @@ export https_proxy=http://127.0.0.1:20172
 ME=$(who|head -n 1 | awk '{print $1}')
 HOME=/home/${ME}
 
-
+  
 
 
 
@@ -118,7 +118,7 @@ make
 sudo make install
 
 sudo systemctl enable --now udevmon
-sudo systemctl status  udevmon --no-block
+# sudo systemctl status  udevmon --no-block
 cd ../../../
 rm -rf caps2esc/
 
@@ -194,7 +194,7 @@ sudo apt update
 sudo apt install copyq -y
 
 # Indicator Stickynotes 便签
-sudo add-apt-repository ppa:umang/indicator-stickynotes
+sudo add-apt-repository ppa:umang/indicator-stickynotes -y
 sudo apt-get update 
 sudo apt-get install indicator-stickynotes -y
 
@@ -214,25 +214,14 @@ sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
 sudo apt-get update
 sudo apt-get install indicator-sysmonitor -y
 ln -s ${HOME}/sm/pv/s-config/ubuntu-20/indicator-sysmonitor.json ${HOME}/.indicator-sysmonitor.json
-echo "
-[Desktop Entry]
-Name=System Monitor Indicator
-Comment=Basic sysmonitor indicator applet
-Exec=indicator-sysmonitor
-Terminal=false
-StartupNotify=true
-Type=Application
-Categories=Utility;
-Icon=gnome-system-monitor
-" > ~/.config/autostart/indicator-sysmonitor.desktop
 # zsh
 
-mkdir -p ~/.zsh 
+mkdir -p ${HOME}/.zsh 
 
 sudo apt install zsh -y 
 sudo apt install autojump -y 
 
-git clone https://gitclone.com/github.com/zsh-users/antigen ~/antigen
+git clone https://gitclone.com/github.com/zsh-users/antigen ${HOME}/antigen
 # increase max_map_count
 echo 'vm.max_map_count=262144' sudo tee /etc/sysctl.conf
 
@@ -251,7 +240,6 @@ ln -s $S_CONFIG_DIR/espanso ${HOME}/.config
 # activitywatch
 wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
 unzip activitywatch-v0.9.2-linux-x86_64.zip -d ~/sm/app
-
 rm ${HOME}/.config/autostart/activitywatch.desktop
 echo "[Desktop Entry]
 Comment=Track everything on your computer.
@@ -267,6 +255,7 @@ Version=1.0
 Icon=activitywatch
 Categories=Utility;"  | tee  ${HOME}/.config/autostart/activitywatch.desktop
 rm  activitywatch-v0.9.2-linux-x86_64.zip
+
 # common docker images
 docker pull mongo
 docker pull redis
@@ -349,6 +338,7 @@ sudo -u ln -s $S_CONFIG_DIR/emacs/init.el ${HOME}/.emacs.d/init.el
 
 ### conky
 sudo apt-get install conky
+rm /etc/conky/conky.conf
 ln -s $S_CONFIG_DIR/conky/conky.conf /etc/conky/conky.conf
 
 ## polar
@@ -357,6 +347,7 @@ ln -s $S_CONFIG_DIR/conky/conky.conf /etc/conky/conky.conf
 
 wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   https://download.wavebox.app/latest/stable/linux/deb -O ./wavebox.deb 
 sudo dpkg -i ./wavebox.deb
+mkdir -p ~/.config/autostart
 echo '[Desktop Entry]
 Type=Application
 Exec=/opt/wavebox.io/wavebox/wavebox-launcher &
@@ -366,7 +357,7 @@ X-GNOME-Autostart-enabled=true
 Name[en_US]=wavebox
 Name=wavebox
 Comment[en_US]=
-Comment='  | tee  ~/.config/autostart/wavebox.desktop
+Comment='  | tee  ${HOME}/.config/autostart/wavebox.desktop
 rm ./wavebox.deb
 
 wget https://res.u-tools.cn/currentversion/utools_1.3.5_amd64.deb
@@ -436,7 +427,7 @@ sudo apt-get install helm
 
 ## init my project
 cd ${HOME}/sm/project
-ln -s $(pwd)/awesome-shell-actions ~/.zsh/awesome-shell-actions
+ln -s $(pwd)/awesome-shell-actions ${HOME}/.zsh/awesome-shell-actions
 
 
 ## virtualbox
@@ -444,11 +435,12 @@ ln -s $(pwd)/awesome-shell-actions ~/.zsh/awesome-shell-actions
 ## helm
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
 chmod 700 get_helm.sh
-./get_helm.sh
+./get_helm.sh # TODO break point
 
 
 ## gnome shell extension
 # 减少topbar的间距  https://extensions.gnome.org/extension/1287/unite/
+<<<<<<< HEAD
 # 透明topbar https://extensions.gnome.org/extension/3518/transparent-shell/
 
 
@@ -470,3 +462,36 @@ X-GNOME-Autostart-enabled=true
 Hidden=false
 NoDisplay=false
 " > ~/.config/autostart/guake.desktop
+
+
+# postman
+snap install postman 
+echo "
+[Desktop Entry]
+Encoding=UTF-8
+Name=Postman
+Exec=/opt/Postman/app/Postman %U
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Development;
+" > ${HOME}.local/share/applications/Postman.desktop
+# ocr
+sudo add-apt-repository ppa:daniel.p/dpscreenocr
+sudo apt-get update
+sudo apt install dpscreenocr
+sudo apt install tesseract-ocr-eng 
+
+
+# sublimetext3
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt update
+sudo apt-get install sublime-text
+
+# crystal
+curl -fsSL https://crystal-lang.org/install.sh | sudo bash
+
+# init xdotool-ext
+
+>>>>>>> 40ed32fa06b411ac9a98ffbaff4cb0abeda213f2

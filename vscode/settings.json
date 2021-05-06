@@ -700,7 +700,7 @@
     "editor.fontFamily": "hack,Iosevka,monospace",
     "go.autocompleteUnimportedPackages": true,
     "debug.console.fontFamily": "Iosevka",
-    "editor.fontSize": 16,
+    "editor.fontSize": 18,
     "rust-analyzer.updates.askBeforeDownload": false,
     "rust-analyzer.updates.channel": "nightly",
     "terminal.integrated.fontFamily": "Iosevka,monospace",
@@ -802,5 +802,6 @@
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "window.zoomLevel": -1
+    "window.zoomLevel": -1,
+    "terminal.integrated.fontSize": 18
 }
