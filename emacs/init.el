@@ -18,6 +18,7 @@
 
 ;; showcase of how to use alias
 (defalias 'rcf 'reload-config-file)
+(defalias 'get-current-mode 'describe-mode)
 
 
 
@@ -31,6 +32,7 @@
 (package-initialize)
 ;; 使用escape 退出正常的minibuffer
 (global-set-key [escape] 'keyboard-escape-quit)  
+
 ;; bootstrap use-package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -94,13 +96,6 @@
   (define-key ivy-minibuffer-map [escape] 'minibuffer-keyboard-quit)
 )
 
-;; (use-package flx
-;;   :ensure t
-;; )
-
-;; (setq ivy-initial-inputs-alist nil)
-
-
 ;; init my custom shortcut
 (use-package general
   :ensure t
@@ -124,8 +119,7 @@
 )
 
 ;; init some lsp relate stuff
-
-
+)
 
 
 ;; some other config

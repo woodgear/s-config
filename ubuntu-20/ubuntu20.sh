@@ -301,6 +301,8 @@ sudo apt install code # or code-insiders
 sudo -u ${ME} mkdir -p ${HOME}/.config/Code
 chmod a+x ./vscode/vscode.sh
 sudo -u ${ME} ./vscode/vscode.sh
+## init scriptbox
+ln -s $HOME/sm/ns/share/scriptbox $HOME/.scriptbox
 ### nvim
 sudo apt-get install python3-neovim -y
 mkdir -p ${HOME}/.config/nvim

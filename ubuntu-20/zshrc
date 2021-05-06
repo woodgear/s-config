@@ -1,4 +1,4 @@
-set -o vi # vim style
+set -o emacs # emacs style
 source ~/antigen/antigen.zsh
 
 antigen use oh-my-zsh
@@ -105,3 +105,8 @@ source ~/.gvm/scripts/gvm
 export PATH=~/sm/scripts:$PATH
 
 export S_CONFIG_DIR=~/sm/pv/s-config
+
+
+
+## https://unix.stackexchange.com/questions/499317/prevent-completion-of-files-for-make-command-in-zsh-shell
+zstyle ':completion:*:*:make:*' tag-order 'targets'
