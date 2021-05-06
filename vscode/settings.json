@@ -551,6 +551,17 @@
                 ":wq"
             ],
         },
+        {
+            // 运行scriptbox 脚本  cc => custom command
+            "before": [
+                "<leader>",
+                "c",
+                "c"
+            ],
+            "commands": [
+                "extension.runScript",
+            ]
+        },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -638,6 +649,17 @@
             ],
             "commands": [
                 "editor.action.startFindReplaceAction",
+            ]
+        },
+        {
+            // 运行scriptbox 脚本  cc => custom command
+            "before": [
+                "<leader>",
+                "c",
+                "c"
+            ],
+            "commands": [
+                "extension.runScript",
             ]
         },
     ],
