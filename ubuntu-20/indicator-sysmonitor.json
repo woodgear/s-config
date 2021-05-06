@@ -1,5 +1,5 @@
 {
-    "custom_text": "W:{wall} C:{cpu}:{amd_cpu_temp} M: {mem}{meminfo}",
+    "custom_text": "W:{wall} K:{kuku} C:{cpu}:{amd_cpu_temp} M: {mem}{meminfo}",
     "interval": 2.0,
     "on_startup":true,
     "sensors": {
@@ -57,7 +57,11 @@
         ],
         "wall": [
             "",
-            "/home/cong/sm/scripts/wall.sh"
+            "~/sm/ns/share/scripts/wall.sh"
+        ],
+        "kuku": [
+            "",
+            "~/sm/ns/share/scripts/kuku.sh"
         ],
         "meminfo": [
             "",

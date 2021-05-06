@@ -11,7 +11,7 @@ export https_proxy=http://127.0.0.1:20172
 ME=$(who|head -n 1 | awk '{print $1}')
 HOME=/home/${ME}
 
-
+  
 
 
 
@@ -117,7 +117,7 @@ make
 sudo make install
 
 sudo systemctl enable --now udevmon
-sudo systemctl status  udevmon --no-block
+# sudo systemctl status  udevmon --no-block
 cd ../../../
 rm -rf caps2esc/
 
@@ -192,7 +192,7 @@ sudo apt update
 sudo apt install copyq -y
 
 # Indicator Stickynotes 便签
-sudo add-apt-repository ppa:umang/indicator-stickynotes
+sudo add-apt-repository ppa:umang/indicator-stickynotes -y
 sudo apt-get update 
 sudo apt-get install indicator-stickynotes -y
 
@@ -212,25 +212,14 @@ sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
 sudo apt-get update
 sudo apt-get install indicator-sysmonitor -y
 ln -s ${HOME}/sm/pv/s-config/ubuntu-20/indicator-sysmonitor.json ${HOME}/.indicator-sysmonitor.json
-echo "
-[Desktop Entry]
-Name=System Monitor Indicator
-Comment=Basic sysmonitor indicator applet
-Exec=indicator-sysmonitor
-Terminal=false
-StartupNotify=true
-Type=Application
-Categories=Utility;
-Icon=gnome-system-monitor
-" > ~/.config/autostart/indicator-sysmonitor.desktop
 # zsh
 
-mkdir -p ~/.zsh 
+mkdir -p ${HOME}/.zsh 
 
 sudo apt install zsh -y 
 sudo apt install autojump -y 
 
-git clone https://gitclone.com/github.com/zsh-users/antigen ~/antigen
+git clone https://gitclone.com/github.com/zsh-users/antigen ${HOME}/antigen
 # increase max_map_count
 echo 'vm.max_map_count=262144' sudo tee /etc/sysctl.conf
 
@@ -246,16 +235,6 @@ espanso start
 wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
 unzip activitywatch-v0.9.2-linux-x86_64.zip -d ~/sm/app
 
-echo "[Desktop Entry]
-Type=Application
-Exec= ${HOME}/sm/app/activitywatch/aw-qt &
-Hidden=false
-NoDisplay=false
-X-GNOME-Autostart-enabled=true
-Name[en_US]=activitywatch
-Name=activitywatch
-Comment[en_US]=
-Comment="  | tee  ~/.config/autostart/activitywatch.desktop
 # common docker images
 docker pull mongo
 docker pull redis
@@ -338,6 +317,7 @@ ln -s $S_CONFIG_DIR/emacs/init.el ${HOME}/.emacs.d/init.el
 
 ### conky
 sudo apt-get install conky
+rm /etc/conky/conky.conf
 ln -s $S_CONFIG_DIR/conky/conky.conf /etc/conky/conky.conf
 
 ln -s $S_CONFIG_DIR/espanso ${HOME}/.config 
@@ -347,6 +327,7 @@ ln -s $S_CONFIG_DIR/espanso ${HOME}/.config
 
 wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   https://download.wavebox.app/latest/stable/linux/deb -O ./wavebox.deb 
 sudo dpkg -i ./wavebox.deb
+mkdir -p ~/.config/autostart
 echo '[Desktop Entry]
 Type=Application
 Exec=/opt/wavebox.io/wavebox/wavebox-launcher &
@@ -356,7 +337,7 @@ X-GNOME-Autostart-enabled=true
 Name[en_US]=wavebox
 Name=wavebox
 Comment[en_US]=
-Comment='  | tee  ~/.config/autostart/wavebox.desktop
+Comment='  | tee  ${HOME}/.config/autostart/wavebox.desktop
 rm ./wavebox.deb
 
 wget https://res.u-tools.cn/currentversion/utools_1.3.5_amd64.deb
@@ -415,7 +396,7 @@ sudo apt-get install helm
 
 ## init my project
 cd ${HOME}/sm/project
-ln -s $(pwd)/awesome-shell-actions ~/.zsh/awesome-shell-actions
+ln -s $(pwd)/awesome-shell-actions ${HOME}/.zsh/awesome-shell-actions
 
 
 ## virtualbox
@@ -423,7 +404,7 @@ ln -s $(pwd)/awesome-shell-actions ~/.zsh/awesome-shell-actions
 ## helm
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
 chmod 700 get_helm.sh
-./get_helm.sh
+./get_helm.sh # TODO break point
 
 
 ## gnome shell extension
@@ -441,7 +422,7 @@ Icon=/opt/Postman/app/resources/app/assets/icon.png
 Terminal=false
 Type=Application
 Categories=Development;
-" > ~/.local/share/applications/Postman.desktop
+" > ${HOME}.local/share/applications/Postman.desktop
 # ocr
 sudo add-apt-repository ppa:daniel.p/dpscreenocr
 sudo apt-get update

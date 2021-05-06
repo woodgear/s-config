@@ -27,6 +27,7 @@ code --install-extension kentos.move-selection-to-new-file
 code --install-extension codeinchinese.englishchinesedictionary
 code --install-extension reduckted.vscode-gitweblinks
 
+rm -rf  ~/.config/Code\ -\ OSS 
 ln -s ~/.config/Code\ -\ OSS  ~/.config/Code # 保证oss版本和mircosoft版本配置文件位置兼容
 rm -rf  ~/.config/Code/User/*   # 删除旧有全部数据
 
