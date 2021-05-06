@@ -1,7 +1,7 @@
 # fuck the wall
 ## docker
 ```bash
-sudo apt install docker.io &&\
+sudo apt install docker.io -y &&\
 sudo systemctl enable --now docker
 
 # fix permission issue
@@ -22,7 +22,7 @@ docker run -d \
  -v /etc/v2raya:/etc/v2raya \
  mzz2017/v2raya
 ```
-* login to firefox
+* login to firefox (q)
 * login in to lastpass in firefix
 * find the aireplane,login
 * copy link
@@ -33,7 +33,7 @@ docker run -d \
 ```
 cd ~/sm/pv/s-config/
 sudo chmod a+x ./ubuntu-20/ubuntu20.sh
-sudo ./ubuntu20.sh
+sudo ./ubuntu-20/ubuntu20.sh
 ```
 
 # install some software manuly
