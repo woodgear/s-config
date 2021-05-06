@@ -83,7 +83,7 @@ load_awesome_shell_actions() {
     fi
 }
 
-load_awesome_shell_actions ~/.zsh/awesome-shell-actions/
+load_awesome_shell_actions ~/.zsh/awesome-shell-actions
 
 
 ## set proxy
