@@ -9,5 +9,103 @@
                 "key": "Ctrl+Shift+3"
             }
         ]
+    },
+    "alb": {
+        "selector": "wavebox",
+        "actions": [
+            {
+                "key": "Alt+2"
+            }
+        ]
+    },
+    "jira": {
+        "selector": "wavebox",
+        "actions": [
+            {
+                "key": "Alt+3"
+            },
+            {
+                "key": "Ctrl+Shift+1"
+            }
+        ]
+    },
+    "board": {
+        "selector": "wavebox",
+        "actions": [
+            {
+                "key": "Alt+3"
+            },
+            {
+                "key": "Ctrl+Shift+2"
+            }
+        ]
+    },
+    "conflunence": {
+        "selector": "wavebox",
+        "actions": [
+            {
+                "key": "Alt+3"
+            },
+            {
+                "key": "Ctrl+Shift+3"
+            }
+        ]
+    },
+    "discord": {
+        "selector": "wavebox",
+        "actions": [
+            {
+                "key": "Alt+4"
+            },
+            {
+                "key": "Ctrl+Shift+1"
+            }
+        ]
+    },
+    "todo": {
+        "selector": "wavebox",
+        "actions": [
+            {
+                "key": "Alt+6"
+            }
+        ]
+    },
+    "rss": {
+        "selector": "wavebox",
+        "actions": [
+            {
+                "key": "Alt+7"
+            }
+        ]
+    },
+    "polar": {
+        "selector": "wavebox",
+        "actions": [
+            {
+                "key": "Alt+8"
+            }
+        ]
+    },
+    "goplay": {
+        "selector": "wavebox",
+        "actions": [
+            {
+                "key": "Alt+9"
+            },
+            {
+                "key": "Ctrl+Shift+1"
+            }
+        ]
+    },
+    "rustplay": {
+        "selector": "wavebox",
+        "actions": [
+            {
+                "key": "Alt+9"
+            },
+            {
+                "key": "Ctrl+Shift+2"
+            }
+        ]
     }
 }
