@@ -26,10 +26,13 @@
             },
             {
                 "key": "Ctrl+Shift+1"
+            },
+            {
+                "key": "F5"
             }
         ]
     },
-    "board": {
+    "acp": {
         "selector": "wavebox",
         "actions": [
             {
@@ -37,6 +40,9 @@
             },
             {
                 "key": "Ctrl+Shift+2"
+            },
+            {
+                "key": "F5"
             }
         ]
     },
@@ -48,6 +54,9 @@
             },
             {
                 "key": "Ctrl+Shift+3"
+            },
+            {
+                "key": "F5"
             }
         ]
     },

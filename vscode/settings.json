@@ -731,14 +731,24 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "cSpell.userWords": [
+        "Warningf",
+        "alauda",
         "auxre",
         "codegen",
+        "emicklei",
         "eval",
+        "fedns",
+        "gomod",
         "inmemory",
         "keyof",
+        "klog",
         "kubectl",
+        "kubernetes",
+        "mitchellh",
         "mongodump",
+        "novr",
         "testhub",
+        "vmimagetemplate",
         "worktile"
     ],
     "editor.suggestSelection": "first",
@@ -755,7 +765,7 @@
     "markdown-preview-enhanced.liveUpdate": true,
     "go.languageServerExperimentalFeatures": {
         "diagnostics": true,
-        "documentLink": true
+        "documentLink": false
     },
     "terminal.integrated.shell.linux": "/bin/zsh",
     "cSpell.enabled": false,
@@ -802,5 +812,8 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "window.zoomLevel": -1,
-    "terminal.integrated.fontSize": 18
+    "terminal.integrated.fontSize": 18,
+    "command aliases": {
+        "workbench.action.files.revealActiveFileInWindows": "focus"
+    }
 }

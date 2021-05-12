@@ -90,7 +90,7 @@ load_awesome_shell_actions ~/.zsh/awesome-shell-actions
 export HTTPS_PROXY=http://127.0.0.1:20172/
 export ALL_PROXY=socks://127.0.0.1:20170/
 export HTTP_PROXY=http://127.0.0.1:20172/
-export NO_PROXY=localhost,127.0.0.0/8,::1
+export NO_PROXY=localhost,127.0.0.0/8,127.0.0.1,::1
 
 alias vim=nvim
 

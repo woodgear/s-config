@@ -10,7 +10,8 @@ export http_proxy=http://127.0.0.1:20172
 export https_proxy=http://127.0.0.1:20172
 ME=$(who|head -n 1 | awk '{print $1}')
 HOME=/home/${ME}
-
+cd ${HOME}/sm/pv/s-config
+export S_CONFIG_DIR=$(pwd)
   
 
 
@@ -188,6 +189,7 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf  sudo sys
 
 # tmux
 sudo apt  install tmux -y
+ln -s $S_CONFIG_DIR/ubuntu-20/tmux.conf $HOME/.tmux.conf
 # copyq
 sudo add-apt-repository ppa:hluk/copyq -y
 sudo apt update
@@ -303,8 +305,6 @@ sudo chmod a+rx ${HOME}/.kube/config
 #chmod +x ~/app/Telegram.AppImage
 #ail-cli integrate  ~/app/Telegram.AppImage
 ## config
-cd ${HOME}/sm/pv/s-config
-export S_CONFIG_DIR=$(pwd)
 
 
 ln -s $S_CONFIG_DIR/ubuntu-20/zshrc ~/.zshrc

@@ -108,3 +108,6 @@ ln -s ~/sm/ns/share/scripts ~/sm/scripts
 ## keychron k1 
 ### fx 无法使用
 https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1814481
+
+
+## win7 in virtual box 无法全屏
