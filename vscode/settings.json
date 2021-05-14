@@ -815,5 +815,8 @@
     "terminal.integrated.fontSize": 18,
     "command aliases": {
         "workbench.action.files.revealActiveFileInWindows": "focus"
+    },
+    "[crystal]": {
+        "editor.defaultFormatter": "crystal-lang-tools.crystal-lang"
     }
 }

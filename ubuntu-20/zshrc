@@ -74,15 +74,12 @@ load_awesome_shell_actions() {
     if [ -d $awesome_shell_actions_path ] 
     then 
         echo "find awesome-shell-actions in ${awesome_shell_actions_path} start load"
-        for file in $awesome_shell_actions_path/scripts/*.sh; do
-            echo "load $file"
-            . "$file"
-        done
+        . $awesome_shell_actions_path/scripts/awesome-shell-actions.sh
+        awesome-shell-actions-load $awesome_shell_actions_path
     else
         echo "cloud not find awesome-shell-actions in $awesome_shell_actions_path ignore"
     fi
 }
-
 load_awesome_shell_actions ~/.zsh/awesome-shell-actions
 
 

@@ -496,4 +496,3 @@ curl -fsSL https://crystal-lang.org/install.sh | sudo bash
 
 # init xdotool-ext
 
->>>>>>> 40ed32fa06b411ac9a98ffbaff4cb0abeda213f2
