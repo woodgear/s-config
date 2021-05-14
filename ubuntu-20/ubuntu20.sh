@@ -21,6 +21,7 @@ export S_CONFIG_DIR=$(pwd)
 
 sudo apt update
 sudo apt install curl -y 
+sudo apt install tree -y 
 sudo apt install gcc  g++ make perl -y 
 sudo apt install git -y 
 sudo apt install hashalot -y   # for sha256 etc
@@ -496,4 +497,3 @@ curl -fsSL https://crystal-lang.org/install.sh | sudo bash
 
 # init xdotool-ext
 
->>>>>>> 40ed32fa06b411ac9a98ffbaff4cb0abeda213f2
