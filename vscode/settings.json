@@ -818,5 +818,9 @@
     },
     "[crystal]": {
         "editor.defaultFormatter": "crystal-lang-tools.crystal-lang"
-    }
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "terminal.integrated.scrollback": 999999999
 }
