@@ -1,0 +1,528 @@
+{
+    "key_1625uzf3bjn": {
+        "features": {
+            "code": "key_1625uzf3bjn",
+            "explain": " open alb2 vscode worksapce",
+            "cmds": [
+                "work"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "~/sm/ns/share/scripts/work.sh",
+        "output": "send",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+    "key_1byueoe3c39": {
+        "features": {
+            "code": "key_1byueoe3c39",
+            "explain": "show mail",
+            "cmds": [
+                "mail",
+                "show-mail"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json gmail",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+    "key_1f49xebvkng": {
+        "features": {
+            "code": "key_1f49xebvkng",
+            "explain": "polar",
+            "cmds": [
+                "polar"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json polar",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+    "key_1ltbcpxole2": {
+        "features": {
+            "code": "key_1ltbcpxole2",
+            "explain": "open alb gitlab",
+            "cmds": [
+                "alb"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext ~/.xdotool-actions.json alb",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": [
+            "show",
+            "alauda"
+        ]
+    },
+    "key_1nzarcy00fp": {
+        "features": {
+            "code": "key_1nzarcy00fp",
+            "explain": " open jira acp board",
+            "cmds": [
+                "kanban"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "  xdotool-ext ~/.xdotool-actions.json kanban",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": [
+            "show",
+            "alauda"
+        ]
+    },
+    "key_24132lp2aga": {
+        "features": {
+            "code": "key_24132lp2aga",
+            "explain": "show firefox",
+            "cmds": [
+                "firefox",
+                "sf",
+                "ff"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "wmctrl -a \"firefox\"",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": [
+            "show"
+        ]
+    },
+    "key_2j6ywxt647k": {
+        "features": {
+            "code": "key_2j6ywxt647k",
+            "explain": "企业微信",
+            "cmds": [
+                "qw"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "wmctrl -a \"win7\"",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+    "key_2pzjygk9b2e": {
+        "features": {
+            "code": "key_2pzjygk9b2e",
+            "explain": "show terminal",
+            "cmds": [
+                "sm",
+                "show-terminal"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "wmctrl -a \"terminal\"",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": [
+            "show"
+        ]
+    },
+    "key_bqe60kjoat": {
+        "features": {
+            "code": "key_bqe60kjoat",
+            "explain": "show note",
+            "cmds": [
+                "note",
+                "show-note"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "~/sm/ns/share/scripts/note.sh",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": [
+            "show"
+        ]
+    },
+    "key_pdxi56rv8": {
+        "features": {
+            "code": "key_pdxi56rv8",
+            "explain": " open jira",
+            "cmds": [
+                "jira",
+                "issue",
+                "my-issue"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext ~/.xdotool-actions.json jira",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": [
+            "show",
+            "alauda"
+        ]
+    },
+    "key_t5t16bjgbh": {
+        "features": {
+            "code": "key_t5t16bjgbh",
+            "explain": " open confluence",
+            "cmds": [
+                "confluence"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext ~/.xdotool-actions.json conflunence",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": [
+            "show",
+            "alauda"
+        ]
+    },
+    "key_xe886ofz4s": {
+        "features": {
+            "code": "key_xe886ofz4s",
+            "explain": "todoist",
+            "cmds": [
+                "todoist",
+                "todo",
+                "td"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json todo",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": [
+            "show"
+        ]
+    },
+    "key_znr8q69af7": {
+        "features": {
+            "code": "key_znr8q69af7",
+            "explain": "rss inoreader",
+            "cmds": [
+                "rss",
+                "inoreader"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json rss",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+    "key_anr8q69af7": {
+        "features": {
+            "code": "key_anr8q69af7",
+            "explain": "go playground",
+            "cmds": [
+                "gp",
+                "goplay"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json goplay",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+    "key_bnr8q69af7": {
+        "features": {
+            "code": "key_bnr8q69af7",
+            "explain": "rust playground",
+            "cmds": [
+                "rp",
+                "rustplay"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json rustplay",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+
+    "key_cnr8q69af7": {
+        "features": {
+            "code": "key_cnr8q69af7",
+            "explain": "open flopmo app web",
+            "cmds": [
+                "oflo",
+                "appflomo"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json appflomo",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+
+    "key_dnr8q69af7": {
+        "features": {
+            "code": "key_dnr8q69af7",
+            "explain": "gitlab cyclops",
+            "cmds": [
+                "cyclops"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json cyclops",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+    "key_enr8q69af7": {
+        "features": {
+            "code": "key_enr8q69af7",
+            "explain": "adlada init env admin view",
+            "cmds": [
+                "init-admin"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json init-admin",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+
+    "key_fnr8q69af7": {
+        "features": {
+            "code": "key_fnr8q69af7",
+            "explain": "adlada init env user view",
+            "cmds": [
+                "init-user"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json init-user",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+    "window_eak0d4slrv": {
+        "features": {
+            "code": "window_eak0d4slrv",
+            "explain": "关闭当前tab页左侧的所有tab页",
+            "cmds": [
+                "firefox",
+                "ff",
+                "close-tab-to-left-firefox"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "echo $type\necho \"xxx\"\nwmctrl -l",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": [
+            "firefox"
+        ]
+    }
+}

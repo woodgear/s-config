@@ -118,6 +118,16 @@
             ]
         },
         {
+            "before": [
+                "<leader>",
+                "x",
+                "x",
+            ],
+            "commands": [
+                "ego.power-tools.commands"
+            ]
+        },
+        {
             // 注释/取消注释当前代码
             "before": [
                 "<leader>",
@@ -811,7 +821,7 @@
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "window.zoomLevel": -1,
+    "window.zoomLevel": -2,
     "terminal.integrated.fontSize": 18,
     "command aliases": {
         "workbench.action.files.revealActiveFileInWindows": "focus"
@@ -822,5 +832,13 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "terminal.integrated.scrollback": 999999999
+    "terminal.integrated.scrollback": 999999999,
+    "ego.power-tools": {
+        "commands": {
+            "note-to-folder-mode": {
+                "script": "note-to-folder-mode.js",
+            }
+        }
+    },
+    "pasteImage.showFilePathConfirmInputBox": true
 }

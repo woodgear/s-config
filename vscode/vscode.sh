@@ -33,4 +33,5 @@ export VSCODE_CONFIG_DIR=$(pwd)/vscode # 默认当前路径是s-config
 ln -s $VSCODE_CONFIG_DIR/settings.json ~/.config/Code/User/settings.json 
 ln -s $VSCODE_CONFIG_DIR/snippets ~/.config/Code/User/snippets
 ln -s $VSCODE_CONFIG_DIR/keybindings.json ~/.config/Code/User/keybindings.json 
-
+ln -s $VSCODE_CONFIG_DIR/scriptbox ~/.scriptbox
+ln -s $VSCODE_CONFIG_DIR/power-tools ~/.vscode-powertools

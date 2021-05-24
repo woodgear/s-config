@@ -16,6 +16,26 @@
         "actions": [
             {
                 "key": "Alt+2"
+            },
+            {
+                "key": "Ctrl+Shift+1"
+            },
+            {
+                "key": "Ctrl+h"
+            }
+        ]
+    },
+    "cyclops": {
+        "selector": "wavebox",
+        "actions": [
+            {
+                "key": "Alt+2"
+            },
+            {
+                "key": "Ctrl+Shift+8"
+            },
+            {
+                "key": "Ctrl+h"
             }
         ]
     },
@@ -30,7 +50,7 @@
                 "key": "Ctrl+Shift+2"
             },
             {
-                "key": "F5"
+                "key": "Ctrl+h"
             }
         ]
     },
@@ -45,7 +65,7 @@
                 "key": "Ctrl+Shift+4"
             },
             {
-                "key": "F5"
+                "key": "Ctrl+h"
             }
         ]
     },
@@ -59,7 +79,7 @@
                 "key": "Ctrl+Shift+3"
             },
             {
-                "key": "F5"
+                "key": "Ctrl+h"
             }
         ]
     },
@@ -74,7 +94,7 @@
                 "key": "Ctrl+Shift+6"
             },
             {
-                "key": "F5"
+                "key": "Ctrl+h"
             }
         ]
     },
@@ -89,7 +109,7 @@
                 "key": "Ctrl+Shift+5"
             },
             {
-                "key": "F5"
+                "key": "Ctrl+h"
             }
         ]
     },
@@ -114,7 +134,7 @@
                 "key": "Ctrl+Shift+2"
             },
             {
-                "key": "F5"
+                "key": "Ctrl+h"
             }
         ]
     },
@@ -128,7 +148,7 @@
                 "key": "Ctrl+Shift+1"
             },
             {
-                "key": "F5"
+                "key": "Ctrl+h"
             }
         ]
     },
@@ -142,7 +162,7 @@
                 "key": "Ctrl+Shift+3"
             },
             {
-                "key": "F5"
+                "key": "Ctrl+h"
             }
         ]
     },
@@ -156,7 +176,7 @@
                 "key": "Ctrl+Shift+4"
             },
             {
-                "key": "F5"
+                "key": "Ctrl+h"
             }
         ]
     },

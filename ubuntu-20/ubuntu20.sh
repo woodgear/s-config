@@ -30,6 +30,8 @@ sudo apt install openjdk-11-jdk -y
 sudo apt install autojump -y
 sudo apt install cmake -y 
 sudo apt install graphviz -y 
+sudo apt install graphviz -y 
+sudo apt install apache2-utils -y
 sudo apt install xclip -y 
 sudo apt install xsel -y 
 sudo apt install aria2 -y 
@@ -232,13 +234,12 @@ sudo curl  --socks5 127.0.0.1:20170  -L "https://github.com/docker/compose/relea
 chmod a+x /usr/local/bin/docker-compose
 
 # espanso
-rm -rf ~/.config/espanso
 sudo apt update
 sudo apt install libxtst6 libxdo3 xclip libnotify-bin
 curl -L https://github.com/federico-terzi/espanso/releases/latest/download/espanso-linux.tar.gz | tar -xz -C /tmp/
-sudo mv /tmp/espanso /usr/local/bin/espanso
 espanso start
-ln -s $S_CONFIG_DIR/espanso ${HOME}/.config 
+rm -rf ~/.config/espanso
+ln -s $S_CONFIG_DIR/espanso ${HOME}/.config
 
 # activitywatch
 wget -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172   https://github.com/ActivityWatch/activitywatch/releases/download/v0.9.2/activitywatch-v0.9.2-linux-x86_64.zip
@@ -324,7 +325,6 @@ sudo -u ${ME} mkdir -p ${HOME}/.config/Code
 chmod a+x ./vscode/vscode.sh
 sudo -u ${ME} ./vscode/vscode.sh
 ## init scriptbox
-ln -s $HOME/sm/ns/share/scriptbox $HOME/.scriptbox
 ### nvim
 sudo apt-get install python3-neovim -y
 
