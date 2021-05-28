@@ -840,5 +840,5 @@
             }
         }
     },
-    "pasteImage.showFilePathConfirmInputBox": true
+    "pasteImage.showFilePathConfirmInputBox": true,
 }

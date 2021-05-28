@@ -4,7 +4,8 @@
             "code": "key_1625uzf3bjn",
             "explain": " open alb2 vscode worksapce",
             "cmds": [
-                "work"
+                "valb",
+                "alb"
             ],
             "icon": "logo/shell.png",
             "platform": [
@@ -14,7 +15,7 @@
             ]
         },
         "program": "shell",
-        "cmd": "~/sm/ns/share/scripts/work.sh",
+        "cmd": "~/sm/ns/share/scripts/alb.sh",
         "output": "send",
         "hasSubInput": false,
         "scptarg": "",
@@ -160,6 +161,32 @@
             "show"
         ]
     },
+    "key_2625uzf3bjn": {
+        "features": {
+            "code": "key_2625uzf3bjn",
+            "explain": " open code show case manager",
+            "cmds": [
+                "csc",
+                "code-show-case"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "~/sm/ns/share/scripts/code-show-case.sh",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
     "key_2j6ywxt647k": {
         "features": {
             "code": "key_2j6ywxt647k",
@@ -213,6 +240,54 @@
             "show"
         ]
     },
+    "key_anr8q69af7": {
+        "features": {
+            "code": "key_anr8q69af7",
+            "explain": "go playground",
+            "cmds": [
+                "gp",
+                "goplay"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json goplay",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+    "key_bnr8q69af7": {
+        "features": {
+            "code": "key_bnr8q69af7",
+            "explain": "rust playground",
+            "cmds": [
+                "rp",
+                "rustplay"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json rustplay",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
     "key_bqe60kjoat": {
         "features": {
             "code": "key_bqe60kjoat",
@@ -240,6 +315,99 @@
         "tags": [
             "show"
         ]
+    },
+    "key_cnr8q69af7": {
+        "features": {
+            "code": "key_cnr8q69af7",
+            "explain": "open flopmo app web",
+            "cmds": [
+                "oflo",
+                "appflomo"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json appflomo",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+    "key_dnr8q69af7": {
+        "features": {
+            "code": "key_dnr8q69af7",
+            "explain": "gitlab cyclops",
+            "cmds": [
+                "cyclops"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json cyclops",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+    "key_enr8q69af7": {
+        "features": {
+            "code": "key_enr8q69af7",
+            "explain": "adlada init env admin view",
+            "cmds": [
+                "init-admin"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json init-admin",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
+    },
+    "key_fnr8q69af7": {
+        "features": {
+            "code": "key_fnr8q69af7",
+            "explain": "adlada init env user view",
+            "cmds": [
+                "init-user"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "xdotool-ext  ~/.xdotool-actions.json init-user",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": []
     },
     "key_pdxi56rv8": {
         "features": {
@@ -345,150 +513,6 @@
         },
         "program": "shell",
         "cmd": "xdotool-ext  ~/.xdotool-actions.json rss",
-        "output": "ignore",
-        "hasSubInput": false,
-        "scptarg": "",
-        "charset": {
-            "scriptCode": "",
-            "outputCode": ""
-        },
-        "tags": []
-    },
-    "key_anr8q69af7": {
-        "features": {
-            "code": "key_anr8q69af7",
-            "explain": "go playground",
-            "cmds": [
-                "gp",
-                "goplay"
-            ],
-            "icon": "logo/shell.png",
-            "platform": [
-                "linux"
-            ]
-        },
-        "program": "shell",
-        "cmd": "xdotool-ext  ~/.xdotool-actions.json goplay",
-        "output": "ignore",
-        "hasSubInput": false,
-        "scptarg": "",
-        "charset": {
-            "scriptCode": "",
-            "outputCode": ""
-        },
-        "tags": []
-    },
-    "key_bnr8q69af7": {
-        "features": {
-            "code": "key_bnr8q69af7",
-            "explain": "rust playground",
-            "cmds": [
-                "rp",
-                "rustplay"
-            ],
-            "icon": "logo/shell.png",
-            "platform": [
-                "linux"
-            ]
-        },
-        "program": "shell",
-        "cmd": "xdotool-ext  ~/.xdotool-actions.json rustplay",
-        "output": "ignore",
-        "hasSubInput": false,
-        "scptarg": "",
-        "charset": {
-            "scriptCode": "",
-            "outputCode": ""
-        },
-        "tags": []
-    },
-
-    "key_cnr8q69af7": {
-        "features": {
-            "code": "key_cnr8q69af7",
-            "explain": "open flopmo app web",
-            "cmds": [
-                "oflo",
-                "appflomo"
-            ],
-            "icon": "logo/shell.png",
-            "platform": [
-                "linux"
-            ]
-        },
-        "program": "shell",
-        "cmd": "xdotool-ext  ~/.xdotool-actions.json appflomo",
-        "output": "ignore",
-        "hasSubInput": false,
-        "scptarg": "",
-        "charset": {
-            "scriptCode": "",
-            "outputCode": ""
-        },
-        "tags": []
-    },
-
-    "key_dnr8q69af7": {
-        "features": {
-            "code": "key_dnr8q69af7",
-            "explain": "gitlab cyclops",
-            "cmds": [
-                "cyclops"
-            ],
-            "icon": "logo/shell.png",
-            "platform": [
-                "linux"
-            ]
-        },
-        "program": "shell",
-        "cmd": "xdotool-ext  ~/.xdotool-actions.json cyclops",
-        "output": "ignore",
-        "hasSubInput": false,
-        "scptarg": "",
-        "charset": {
-            "scriptCode": "",
-            "outputCode": ""
-        },
-        "tags": []
-    },
-    "key_enr8q69af7": {
-        "features": {
-            "code": "key_enr8q69af7",
-            "explain": "adlada init env admin view",
-            "cmds": [
-                "init-admin"
-            ],
-            "icon": "logo/shell.png",
-            "platform": [
-                "linux"
-            ]
-        },
-        "program": "shell",
-        "cmd": "xdotool-ext  ~/.xdotool-actions.json init-admin",
-        "output": "ignore",
-        "hasSubInput": false,
-        "scptarg": "",
-        "charset": {
-            "scriptCode": "",
-            "outputCode": ""
-        },
-        "tags": []
-    },
-
-    "key_fnr8q69af7": {
-        "features": {
-            "code": "key_fnr8q69af7",
-            "explain": "adlada init env user view",
-            "cmds": [
-                "init-user"
-            ],
-            "icon": "logo/shell.png",
-            "platform": [
-                "linux"
-            ]
-        },
-        "program": "shell",
-        "cmd": "xdotool-ext  ~/.xdotool-actions.json init-user",
         "output": "ignore",
         "hasSubInput": false,
         "scptarg": "",
