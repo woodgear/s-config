@@ -680,18 +680,13 @@
         },
         "editor.defaultFormatter": "golang.go",
     },
-    "[go.mod]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-        },
-    },
     "gopls": {
         // Add parameter placeholders when completing a function.
         "usePlaceholders": true,
         // If true, enable additional analyses with staticcheck.
         // Warning: This will significantly increase memory usage.
-        "staticcheck": false,
+        "staticcheck": true,
+        "ui.navigation.importShortcut": "Definition"
     },
     "debug.allowBreakpointsEverywhere": true,
     "workbench.colorTheme": "Monokai Dimmed",
@@ -710,7 +705,7 @@
     "editor.fontFamily": "hack,Iosevka,monospace",
     "go.autocompleteUnimportedPackages": true,
     "debug.console.fontFamily": "Iosevka",
-    "editor.fontSize": 18,
+    "editor.fontSize": 20,
     "rust-analyzer.updates.askBeforeDownload": false,
     "rust-analyzer.updates.channel": "nightly",
     "terminal.integrated.fontFamily": "Iosevka,monospace",
@@ -772,14 +767,11 @@
         "/home/oaa/ns/share/blog",
         "/home/oaa/sm/ns/share/blog"
     ],
-    "markdown-preview-enhanced.liveUpdate": true,
     "go.languageServerExperimentalFeatures": {
         "diagnostics": true,
-        "documentLink": false
     },
-    "terminal.integrated.shell.linux": "/bin/zsh",
+    "terminal.integrated.defaultProfile.linux": "/bin/zsh",
     "cSpell.enabled": false,
-    "gitlens.views.repositories.enabled": true,
     "gitlens.views.repositories.files.layout": "list",
     "todo-tree.general.tags": [
         "BUG",

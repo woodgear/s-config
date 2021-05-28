@@ -1,0 +1,18 @@
+let mapleader = "," 
+
+set surround
+set easymotion
+set clipboard+=unnamed
+set multiple-cursors
+:map <leader>xm <Action>(GotoAction)
+:map <leader>ci <Action>(CommentByLineComment)
+:map <leader>kk <Action>(GotoFile)
+:map <leader>qq <Action>(FindInPath) "选中后在所有文件搜索 和在当前文件搜索 先设置成一样的
+:map <leader>ss <Action>(FindInPath) "选中后在所有文件搜索 和在当前文件搜索 先设置成一样的
+:map <leader>fm <Action>(ReformatCode)
+:map <leader>ai <Action>(GotoSymbol)  "在整个项目中搜索
+:map <leader>ii <Action>(FileStructurePopup)  "在当前文件的符号中搜索
+:map <leader>rn <Action>(RenameElement)
+:map <leader>jd <Action>(GotoDeclaration) "跳转到定义
+:map <leader>jb <Action>(Back) "跳转回去
+:map <leader>fc <Action>(SelectInProjectView) "focus current file in sidebar
