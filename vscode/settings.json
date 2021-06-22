@@ -1,7 +1,5 @@
 {
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true,
-    "editor.detectIndentation": false,
+    "editor.insertSpaces": false,
     "files.autoSave": "afterDelay",
     "window.menuBarVisibility": "compact",
     "workbench.activityBar.visible": true,
@@ -829,8 +827,29 @@
         "commands": {
             "note-to-folder-mode": {
                 "script": "note-to-folder-mode.js",
-            }
+            },
+            "create-or-open-work-note": {
+                "script": "create-or-open-work-note.js",
+            },
         }
     },
     "pasteImage.showFilePathConfirmInputBox": true,
+    "sonarlint.rules": {
+        "javascript:S1488": {
+            "level": "off"
+        },
+        "javascript:S4123": {
+            "level": "off"
+        }
+},
+"editor.cursorStyle": "line",
+"editor.lineNumbers": "on",
+"editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+"editor.wordWrap": "off",
+"[c]": {
+	"editor.defaultFormatter": "ms-vscode.cpptools"
+},
+"[python]": {
+	"editor.defaultFormatter": "ms-python.python"
+},
 }
