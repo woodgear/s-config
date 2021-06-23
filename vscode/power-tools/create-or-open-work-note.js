@@ -4,44 +4,96 @@ function getDate() {
     return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
 }
 
-function noteHeader(pt) {
-    const crypto = pt.require("crypto");
+function pad(num, n) {
+    var len = num.toString().length;
+    while (len < n) {
+        num = "0" + num;
+        len++;
+    }
+    return num;
+}
+
+function noteHeader() {
+    const { crypto, log } = getEnv()
     const randomHex = crypto.randomBytes(4).toString('hex');
-    log(pt, randomHex)
     const date = new Date();
     return `---
 id: '${randomHex}',
-time: ${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}T${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}+08:00',
+time: ${date.getFullYear()}-${pad(date.getMonth() + 1, 2)}-${date.getDate()}T${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}+08:00',
 ---`
 }
+
+
+// https://stackoverflow.com/a/67535595
+function weekInfo(date) {
+    const day = date.getDate()
+    const weekDay = date.getDay()
+    let week = Math.round(day / 7)
+
+    const ordinal = ["一", '二', '三', '四', '五']
+    const weekDays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+
+    return [`${ordinal[week]}`, `${weekDays[weekDay]}`]
+}
+
 // YYY/MM月/第X周/MMDD周N.md
 function filePath() {
-
+    const { os } = getEnv()
+    const home = os.homedir()
+    const date = new Date();
+    const [week, day] = weekInfo(date)
+    return `${home}/sm/ns/share/note/${date.getFullYear()}/${date.getMonth() + 1}月/第${week}周/${pad(date.getMonth() + 1, 2)}${date.getDate()}-${day}.md`;
 }
 
-function writeFile() {
 
+function writeFile(filePath, context) {
+    const { log, path, fs } = getEnv()
+    const dirname = path.dirname(filePath);
+    fs.mkdirSync(dirname, { recursive: true })
+    fs.writeFileSync(filePath, context)
 }
 
-exports.execute = async (pt) => {
-    try {
-        const vscode = pt.require('vscode');
-        const fs = pt.require("fs")
-        const os = pt.require("os")
-        const today = getDate()
-        const home = os.homedir()
-        const file = `${home}/sm/ns/share/note/${today}.md`
-        if (!fs.existsSync(file)) {
-            fs.writeFileSync(file, noteHeader(pt))
+
+function setEnv(power) {
+    global.power = power
+}
+
+function getEnv() {
+    if (global.power) {
+        return {
+            "log": (...args) => {
+                const vscode = global.power.require("vscode")
+                vscode.window.showInformationMessage([...args].join(" "))
+            },
+            "open": (filePath) => {
+                const vscode = global.power.require("vscode")
+                const url = vscode.Uri.parse('file://' + filePath);
+                vscode.commands.executeCommand('vscode.open', url);
+            },
+            "path": global.power.require("path"),
+            "os": global.power.require("os"),
+            "fs": global.power.require("fs"),
+            "crypto": global.power.require("crypto"),
         }
-        const url = vscode.Uri.parse('file://' + file);
-        vscode.commands.executeCommand('vscode.open', url);
-    } catch (e) {
-        log(pt, e)
     }
-};
 
-function log(pt, msg) {
-    const vscode = pt.require('vscode');
-    vscode.window.showInformationMessage(msg)
+    const notyet = () => { console.log("not yet") }
+    return {
+        "log": console.log,
+        "open": notyet,
+    }
+}
+
+async function dox() {
+    const { log, open } = getEnv()
+    const fp = filePath()
+    log("open ", fp)
+    writeFile(fp, noteHeader())
+    open(fp)
+}
+
+exports.execute = async (power) => {
+    // global.power = power
+    setEnv(power)
+    await dox()
 }
