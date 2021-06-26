@@ -10,8 +10,7 @@ antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
-antigen bundle autojump
-antigen bundle z
+antigen bundle skywind3000/z.lua
 antigen bundle d
 antigen bundle cargo
 antigen bundle kubectl
@@ -20,7 +19,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 # y copy to system clipboard
 antigen bundle "https://github.com/kutsan/zsh-system-clipboard.git"
-antigen bundle "https://github.com/joshskidmore/zsh-fzf-history-search.git"
+# antigen bundle "https://github.com/joshskidmore/zsh-fzf-history-search.git"
 
 # Load the theme
 # https://github.com/zsh-users/antigen/issues/675#issuecomment-452764451
@@ -29,6 +28,8 @@ antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 
 # Tell Antigen that you're done.
 antigen apply
+
+# source ~/.zsh/git/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 export PATH=~/bin:$PATH
 
@@ -80,8 +81,17 @@ load_awesome_shell_actions() {
         echo "cloud not find awesome-shell-actions in $awesome_shell_actions_path ignore"
     fi
 }
+
+
 load_awesome_shell_actions ~/.zsh/awesome-shell-actions
 
+mx() {
+    eval $(print -rl ${(k)functions_source[(R)*awesome*]} | fzf)
+    zle reset-prompt
+}
+
+zle -N  mx
+bindkey ',xm' mx
 
 ## set proxy
 export HTTPS_PROXY=http://127.0.0.1:20172/
@@ -98,9 +108,11 @@ HOME=/home/${ME}
 
 
 ## gvm
-source ~/.gvm/scripts/gvm
+source ~/.gvm/scripts/gvm # comflict with zsh-autocomplete?
+
 export PATH=~/sm/scripts:$PATH
 export PATH=/usr/local/nginx:$PATH
+export PATH=/opt/openresty/bin:$PATH
 
 export S_CONFIG_DIR=~/sm/pv/s-config
 
@@ -108,6 +120,22 @@ export S_CONFIG_DIR=~/sm/pv/s-config
 
 ## https://unix.stackexchange.com/questions/499317/prevent-completion-of-files-for-make-command-in-zsh-shell
 zstyle ':completion:*:*:make:*' tag-order 'targets'
+autoload -U compinit && compinit
 alias wget-proxy="wget  -e use_proxy=on -e http_proxy=http://127.0.0.1:20172 -e https_proxy=http://127.0.0.1:20172 "
 
 export EDITOR=vim
+
+source <(kubectl completion zsh)
+alias k=kubectl
+complete -F __start_kubectl k
+
+alias z_save="_zlua"
+alias z="z_save -I"
+export _ZL_ECHO=1
+export _ZL_HYPHEN=1
+export _ZL_MATCH_MODE=1
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+eval "$(atuin init zsh)"
+
