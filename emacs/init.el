@@ -119,7 +119,6 @@
 )
 
 ;; init some lsp relate stuff
-)
 
 
 ;; some other config

@@ -41,6 +41,8 @@ sudo apt install wmctrl -y
 sudo apt install net-tools -y 
 sudo apt install baobab -y  
 sudo apt install openssh-server -y 
+sudo apt install android-tools-adb -y 
+
 sudo systemctl enable ssh 
 sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y 
 sudo apt update 
@@ -71,6 +73,10 @@ sudo apt-get install guake -y
 sudo apt install linux-tools-common -y  
 sudo apt-get install bpfcc-tools linux-headers-$(uname -r) -y 
 sudo apt-get install bpftrace -y 
+# install wrk
+cd ~/sm/lab
+git clone https://github.com/wg/wrk.git
+make
 
 # gh
 sudo apt install gh -y 
@@ -260,6 +266,12 @@ Icon=activitywatch
 Categories=Utility;"  | tee  ${HOME}/.config/autostart/activitywatch.desktop
 rm  activitywatch-v0.9.2-linux-x86_64.zip
 
+# 
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+
+
+# fiddle
+wget https://downloads.getfiddler.com/linux/fiddler-everywhere-1.6.1.AppImage
 # common docker images
 docker pull mongo
 docker pull redis
@@ -496,4 +508,23 @@ sudo apt-get install sublime-text
 curl -fsSL https://crystal-lang.org/install.sh | sudo bash
 
 # init xdotool-ext
+cd ${HOME}/sm/project
+git clone https://github.com/woodgear/xdotool-ext.git
+sudo ./scripts/install.sh
+cd -
 
+# jetbrain tools
+wget https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.20.8352.tar.gz ./
+extract jetbrains-toolbox-1.20.8352.tar.gz
+mv ./jetbrains-toolbox-1.20.8352/jetbrains-toolbox ~/sm/app
+rm -rf ./jetbrains-toolbox-1.20.8352*
+ln -s $S_CONFIG_DIR/idea/.ideavimrc ~/.ideavimrc 
+
+
+
+
+# jmeter
+cd ~/sm/app
+wget https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.4.1.zip
+unzip  apache-jmeter-5.4.1.zip
+rm -rf ./apache-jmeter-5.4.1.zip
