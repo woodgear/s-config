@@ -826,7 +826,7 @@
                 "script": "note-to-folder-mode.js",
             },
             "create-or-open-work-note": {
-                "script": "create-or-open-work-note.pt.js",
+                "script": "create-or-open-work-note.js",
             },
         }
     },

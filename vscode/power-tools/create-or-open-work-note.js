@@ -42,7 +42,7 @@ function filePath() {
     const home = os.homedir()
     const date = new Date();
     const [week, day] = weekInfo(date)
-    return `${home}/sm/ns/share/note/${date.getFullYear()}/${date.getMonth() + 1}月/第${week}周/${pad(date.getMonth() + 1, 2)}${date.getDate()}-${day}.md`;
+    return `${home}/sm/ns/share/note/${date.getFullYear()}/${date.getMonth() + 1}月/第${week}周/${pad(date.getMonth() + 1, 2)}-${date.getDate()}-${day}.md`;
 }
 
 

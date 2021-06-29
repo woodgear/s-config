@@ -140,4 +140,4 @@ export _ZL_MATCH_MODE=1
 export PATH="$HOME/.poetry/bin:$PATH"
 
 eval "$(atuin init zsh)"
-
+alias emacs='emacs -nw'

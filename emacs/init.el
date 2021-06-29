@@ -1,3 +1,13 @@
+;; hide welcome page
+(setq inhibit-splash-screen t)
+(setq inhibit-startup-message t)
+(setq initial-scratch-message nil)
+(setq inhibit-startup-message t)
+
+;; hide top tool-bar
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file 'noerror)
 (setq vc-follow-symlinks t)
