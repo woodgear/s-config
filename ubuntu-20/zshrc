@@ -1,5 +1,5 @@
 set -o emacs # emacs style
-set -e
+# set -x
 
 source ~/antigen/antigen.zsh
 
@@ -86,8 +86,9 @@ load_awesome_shell_actions() {
 load_awesome_shell_actions ~/.zsh/awesome-shell-actions
 
 mx() {
-    eval $(print -rl ${(k)functions_source[(R)*awesome*]} | fzf)
-    zle reset-prompt
+    # eval $(print -rl ${(k)functions_source[(R)*awesome*]} | fzf)
+    # zle reset-prompt
+    print -rl ${(k)functions_source[(R)*awesome*]} | fzf
 }
 
 zle -N  mx
@@ -137,6 +138,14 @@ export _ZL_MATCH_MODE=1
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
+
+
 eval "$(atuin init zsh)"
+
+
+# 
+# zle -N  atuin_fzf
+# bindkey -r "^R" 
+# bindkey "^R" atuin_fzf
+
 alias emacs='emacs -nw'
-alias vim='emacs'
