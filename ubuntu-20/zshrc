@@ -13,15 +13,14 @@ antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
 antigen bundle skywind3000/z.lua
-antigen bundle d
 antigen bundle cargo
 antigen bundle kubectl
-antigen bundle zsh-users/zsh-autosuggestions
-# Syntax highlighting bundle.
+# TODO fix me
+# antigen bundle zsh-users/zsh-autosuggestions # tab and crash
+# # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 # y copy to system clipboard
 antigen bundle "https://github.com/kutsan/zsh-system-clipboard.git"
-# antigen bundle "https://github.com/joshskidmore/zsh-fzf-history-search.git"
 
 # Load the theme
 # https://github.com/zsh-users/antigen/issues/675#issuecomment-452764451
@@ -31,7 +30,6 @@ antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 # Tell Antigen that you're done.
 antigen apply
 
-# source ~/.zsh/git/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 export PATH=~/bin:$PATH
 
