@@ -141,3 +141,4 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 eval "$(atuin init zsh)"
 alias emacs='emacs -nw'
+alias vim='emacs'

@@ -8,6 +8,10 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+;; show linenum 
+(global-display-line-numbers-mode)
+
+
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file 'noerror)
 (setq vc-follow-symlinks t)
@@ -35,9 +39,17 @@
 ; ; load package manager, add the Melpa package registry
 (require 'package)
 
+;; (setq url-proxy-services
+;;       '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+;;         ("http" . "127.0.0.1:20172")
+;;         ("https" . "127.0.0.1:20172")))
+;; 
+
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
 			 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
+;; (setq package-archives '(
+;; 			 ("melpa" . "https://melpa.org/packages/")))
 
 (package-initialize)
 ;; 使用escape 退出正常的minibuffer
@@ -69,6 +81,11 @@
   :init  :config
   (evil-mode)
   (message "load evil ok")
+)
+
+;; dracula-theme 
+(use-package dracula-theme
+  :ensure t
 )
 
 ;; 窗口导航要素

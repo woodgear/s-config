@@ -30,7 +30,7 @@ function weekInfo(date) {
     const weekDay = date.getDay()
     let week = Math.round(day / 7)
 
-    const ordinal = ["一", '二', '三', '四', '五']
+    const ordinal = ["1", '2', '3', '4', '5']
     const weekDays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
 
     return [`${ordinal[week]}`, `${weekDays[weekDay]}`]
