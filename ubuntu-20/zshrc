@@ -1,5 +1,4 @@
 set -o emacs # emacs style
-# set -x
 
 source ~/antigen/antigen.zsh
 
@@ -86,9 +85,9 @@ load_awesome_shell_actions() {
 load_awesome_shell_actions ~/.zsh/awesome-shell-actions
 
 mx() {
-    # eval $(print -rl ${(k)functions_source[(R)*awesome*]} | fzf)
-    # zle reset-prompt
-    print -rl ${(k)functions_source[(R)*awesome*]} | fzf
+    eval $(print -rl ${(k)functions_source[(R)*awesome*]} | fzf)
+    zle reset-prompt
+    # print -rl ${(k)functions_source[(R)*awesome*]} | fzf
 }
 
 zle -N  mx

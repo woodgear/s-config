@@ -118,4 +118,8 @@
         "command": "-markdown.showPreview",
         "when": "!notebookEditorFocused && editorLangId == 'markdown'"
     },
+    {
+        "key": "ctrl+,",
+        "command": "-workbench.action.openSettings"
+    }
 ]

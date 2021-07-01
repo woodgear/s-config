@@ -85,10 +85,13 @@ function getEnv() {
 }
 
 async function dox() {
-    const { log, open } = getEnv()
+    const { log, open, fs } = getEnv()
     const fp = filePath()
+    if (!fs.existsSync(fp)) {
+        log("not exists create it")
+        writeFile(fp, noteHeader())
+    }
     log("open ", fp)
-    writeFile(fp, noteHeader())
     open(fp)
 }
 
