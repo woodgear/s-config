@@ -1,5 +1,4 @@
 set -o emacs # emacs style
-
 source ~/antigen/antigen.zsh
 
 antigen use oh-my-zsh
@@ -54,8 +53,7 @@ alias dl="aria2c -s16 -x16 -k1M"
 # rust
 source $HOME/.cargo/env
 
-# TODO fix me 
-# eval $(thefuck --alias)
+eval $(thefuck --alias)
 
 gitclone () {
     echo "git clone by https://gitclone.com/"
@@ -93,11 +91,7 @@ mx() {
 zle -N  mx
 bindkey ',xm' mx
 
-## set proxy
-export HTTPS_PROXY=http://127.0.0.1:20172/
-export ALL_PROXY=socks://127.0.0.1:20170/
-export HTTP_PROXY=http://127.0.0.1:20172/
-export NO_PROXY=localhost,127.0.0.0/8,127.0.0.1,::1
+
 
 alias vim=nvim
 
