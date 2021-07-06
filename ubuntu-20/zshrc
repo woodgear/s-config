@@ -1,5 +1,4 @@
 set -o emacs # emacs style
-
 source ~/antigen/antigen.zsh
 
 antigen use oh-my-zsh

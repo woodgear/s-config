@@ -490,7 +490,7 @@ Icon=/opt/Postman/app/resources/app/assets/icon.png
 Terminal=false
 Type=Application
 Categories=Development;
-" > ${HOME}.local/share/applications/Postman.desktop
+" > ${HOME}/.local/share/applications/Postman.desktop
 # ocr
 sudo add-apt-repository ppa:daniel.p/dpscreenocr
 sudo apt-get update
