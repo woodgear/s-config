@@ -528,3 +528,15 @@ cd ~/sm/app
 wget https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.4.1.zip
 unzip  apache-jmeter-5.4.1.zip
 rm -rf ./apache-jmeter-5.4.1.zip
+
+
+# anki
+cd ~/sm/app
+wget https://github.com/ankitects/anki/releases/download/2.1.44/anki-2.1.44-linux.tar.bz2
+tar -xf ./anki-2.1.44-linux.tar.bz2
+rm ./anki-2.1.44-linux.tar.bz2
+cd anki-2.1.44-linux
+sudo ./install.sh
+
+# flatpak
+flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref

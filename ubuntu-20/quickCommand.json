@@ -161,6 +161,59 @@
             "show"
         ]
     },
+    "key_44132lp2aga": {
+        "features": {
+            "code": "key_44132lp2aga",
+            "explain": "show firefox",
+            "cmds": [
+                "chrome",
+                "sc",
+                "cc"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "win32",
+                "darwin",
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "wmctrl -a \"chrome\"",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": [
+            "show"
+        ]
+    },
+    "key_54132lp2aga": {
+        "features": {
+            "code": "key_54132lp2aga",
+            "explain": "capture",
+            "cmds": [
+                "jp"
+            ],
+            "icon": "logo/shell.png",
+            "platform": [
+                "linux"
+            ]
+        },
+        "program": "shell",
+        "cmd": "flameshot gui",
+        "output": "ignore",
+        "hasSubInput": false,
+        "scptarg": "",
+        "charset": {
+            "scriptCode": "",
+            "outputCode": ""
+        },
+        "tags": [
+        ]
+    },
     "key_2625uzf3bjn": {
         "features": {
             "code": "key_2625uzf3bjn",

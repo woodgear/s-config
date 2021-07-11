@@ -53,6 +53,7 @@ alias dl="aria2c -s16 -x16 -k1M"
 source $HOME/.cargo/env
 
 eval $(thefuck --alias)
+alias fk=fuck
 
 gitclone () {
     echo "git clone by https://gitclone.com/"
@@ -90,10 +91,7 @@ mx() {
 zle -N  mx
 bindkey ',xm' mx
 
-
-
 alias vim=nvim
-
 
 
 ME=$(who|head -n 1 | awk '{print $1}')
@@ -122,12 +120,11 @@ source <(kubectl completion zsh)
 alias k=kubectl
 complete -F __start_kubectl k
 
-alias z_save="_zlua"
-alias z="z_save -I"
+alias z="_zlua -I"
+
 export _ZL_ECHO=1
 export _ZL_HYPHEN=1
 export _ZL_MATCH_MODE=1
-
 export PATH="$HOME/.poetry/bin:$PATH"
 
 
@@ -135,7 +132,6 @@ export PATH="$HOME/.poetry/bin:$PATH"
 eval "$(atuin init zsh)"
 
 
-# 
 # zle -N  atuin_fzf
 # bindkey -r "^R" 
 # bindkey "^R" atuin_fzf
