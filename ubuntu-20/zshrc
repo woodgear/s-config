@@ -83,9 +83,15 @@ load_awesome_shell_actions() {
 load_awesome_shell_actions ~/.zsh/awesome-shell-actions
 
 mx() {
-    eval $(print -rl ${(k)functions_source[(R)*awesome*]} | fzf)
-    zle reset-prompt
-    # print -rl ${(k)functions_source[(R)*awesome*]} | fzf
+    cmd=$(print -rl ${(k)functions_source[(R)*awesome*]} | fzf)
+    source_file=$(echo $functions_source[$cmd])
+    if grep "$cmd" $source_file -A 1 |grep 'arg-len'; then
+        echo "cmd is " $cmd
+        print -z $cmd
+    else
+        eval $cmd
+        zle reset-prompt
+    fi
 }
 
 zle -N  mx
