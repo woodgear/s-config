@@ -1,31 +1,43 @@
 set -o emacs # emacs style
-source ~/antigen/antigen.zsh
-antigen use oh-my-zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle extract 
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
-antigen bundle skywind3000/z.lua
-antigen bundle cargo
-antigen bundle kubectl
-# TODO fix me
-# antigen bundle zsh-users/zsh-autosuggestions # tab and crash
-# # Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-# y copy to system clipboard
-antigen bundle "https://github.com/kutsan/zsh-system-clipboard.git"
+source ~/.zplug/init.zsh
 
-# Load the theme
-# https://github.com/zsh-users/antigen/issues/675#issuecomment-452764451
-THEME=robbyrussell
-antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
+zplug "plugins/extract",   from:oh-my-zsh
+zplug "skywind3000/z.lua"
+zplug 'dracula/zsh', as:theme
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+zplug load --verbose
+# antigen use oh-my-zsh
+# # Bundles from the default repo (robbyrussell's oh-my-zsh).
+# antigen bundle git
+# antigen bundle extract 
+# antigen bundle heroku
+# antigen bundle pip
+# antigen bundle lein
+# antigen bundle command-not-found
+# antigen bundle skywind3000/z.lua
+# antigen bundle cargo
+# antigen bundle kubectl
+# # crash
+# # antigen bundle zsh-users/zsh-autosuggestions
+# # # Syntax highlighting bundle.
+# antigen bundle zsh-users/zsh-syntax-highlighting
+# # y copy to system clipboard
+# antigen bundle "https://github.com/kutsan/zsh-system-clipboard.git"
+# 
+# # Load the theme
+# # https://github.com/zsh-users/antigen/issues/675#issuecomment-452764451
+# THEME=robbyrussell
+# antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 
 # Tell Antigen that you're done.
-antigen apply
+# antigen apply
 
 
 export PATH=~/bin:$PATH
@@ -82,12 +94,46 @@ load_awesome_shell_actions() {
 
 load_awesome_shell_actions ~/.zsh/awesome-shell-actions
 
+
+set_args_doc() {
+    cmd=$1
+    source_file=$(echo $functions_source[$cmd])
+    cmd_start_line=$(grep -no "$cmd()" $source_file |cut -d ':' -f 1 |tr -d '\n\r')
+    cmd_args_offset=$(grep "$cmd()" $source_file -A 1 |rg -o 'arg-len:\s+(\d+)' -r '$1' |tr -d '\n\r')
+    cmd_args_start_line=$(echo "$cmd_start_line+2" |bc |tr -d '\n\r')
+    cmd_args_end_line=$(echo "$cmd_args_start_line+$cmd_args_offset" |bc |tr -d '\n\r')
+    cmd_args_lines=$(sed -n "$cmd_args_start_line,$cmd_args_end_line p" $source_file)
+#    echo $cmd_start_line $cmd_args_start_line $cmd_args_end_line
+#    echo $cmd_args_lines
+    prompt_ctx=$(echo $cmd_args_lines |xargs -I{} echo {}| rg '# arg: ([^\s]*)\s([^\s]*)' -r '$1' |paste -sd ',')
+
+#    RPROMPT="%{$fg[green]%}[$prompt_ctx]" 
+#    zle reset-prompt
+
+}
+
+function clean_rpromap_preexec () {
+    cmd=$(echo $1 |cut -d ' ' -f 1)
+    # if cmd is our comomand reset RPROMPT
+    if echo ${(k)functions_source[(R)*awesome*]} |grep -q $cmd ; then
+        echo "clean prompt"
+        RPROMPT="" 
+    fi
+    
+}
+
+autoload -Uz  add-zsh-hook
+
+# add-zsh-hook preexec clean_rpromap_preexec
+
 mx() {
     cmd=$(print -rl ${(k)functions_source[(R)*awesome*]} | fzf)
     source_file=$(echo $functions_source[$cmd])
-    if grep "$cmd" $source_file -A 1 |grep 'arg-len'; then
-        echo "cmd is " $cmd
-        print -z $cmd
+    if grep "$cmd" $source_file -A 1 |grep -q 'arg-len'; then
+        set_args_doc $cmd
+        LBUFFER+=$cmd
+        LBUFFER+=" "
+        zle reset-prompt
     else
         eval $cmd
         zle reset-prompt
@@ -114,7 +160,6 @@ export PATH=/opt/openresty/bin:$PATH
 export S_CONFIG_DIR=~/sm/pv/s-config
 
 
-
 ## https://unix.stackexchange.com/questions/499317/prevent-completion-of-files-for-make-command-in-zsh-shell
 zstyle ':completion:*:*:make:*' tag-order 'targets'
 autoload -U compinit && compinit
@@ -133,10 +178,7 @@ export _ZL_HYPHEN=1
 export _ZL_MATCH_MODE=1
 export PATH="$HOME/.poetry/bin:$PATH"
 
-
-
 eval "$(atuin init zsh)"
-
 
 # zle -N  atuin_fzf
 # bindkey -r "^R" 
