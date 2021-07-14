@@ -159,6 +159,7 @@ alias k=kubectl
 complete -F __start_kubectl k
 
 alias z="_zlua -I"
+alias zb="_zlua -b"
 
 export _ZL_ECHO=1
 export _ZL_HYPHEN=1
