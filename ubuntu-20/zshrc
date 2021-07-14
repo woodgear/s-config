@@ -1,30 +1,43 @@
 set -o emacs # emacs style
-source ~/antigen/antigen.zsh
-antigen use oh-my-zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle extract 
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
-antigen bundle skywind3000/z.lua
-antigen bundle cargo
-antigen bundle kubectl
-antigen bundle zsh-users/zsh-autosuggestions
-# # Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-# y copy to system clipboard
-antigen bundle "https://github.com/kutsan/zsh-system-clipboard.git"
+source ~/.zplug/init.zsh
 
-# Load the theme
-# https://github.com/zsh-users/antigen/issues/675#issuecomment-452764451
-THEME=robbyrussell
-antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
+zplug "plugins/extract",   from:oh-my-zsh
+zplug "skywind3000/z.lua"
+zplug 'dracula/zsh', as:theme
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+zplug load --verbose
+# antigen use oh-my-zsh
+# # Bundles from the default repo (robbyrussell's oh-my-zsh).
+# antigen bundle git
+# antigen bundle extract 
+# antigen bundle heroku
+# antigen bundle pip
+# antigen bundle lein
+# antigen bundle command-not-found
+# antigen bundle skywind3000/z.lua
+# antigen bundle cargo
+# antigen bundle kubectl
+# # crash
+# # antigen bundle zsh-users/zsh-autosuggestions
+# # # Syntax highlighting bundle.
+# antigen bundle zsh-users/zsh-syntax-highlighting
+# # y copy to system clipboard
+# antigen bundle "https://github.com/kutsan/zsh-system-clipboard.git"
+# 
+# # Load the theme
+# # https://github.com/zsh-users/antigen/issues/675#issuecomment-452764451
+# THEME=robbyrussell
+# antigen list | grep $THEME; if [ $? -ne 0 ]; then antigen theme $THEME; fi
 
 # Tell Antigen that you're done.
-antigen apply
+# antigen apply
 
 
 export PATH=~/bin:$PATH
