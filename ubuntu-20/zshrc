@@ -1,18 +1,22 @@
 set -o emacs # emacs style
 
+if [ ! -f ~/.zplug/init.zsh ]; then
+    echo "install zplug"
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+fi
+
 source ~/.zplug/init.zsh
 
 zplug "plugins/extract",   from:oh-my-zsh
 zplug "skywind3000/z.lua"
 zplug 'dracula/zsh', as:theme
+zplug "zsh-users/zsh-syntax-highlighting"
 
 if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+    zplug install
 fi
 zplug load --verbose
+
 # antigen use oh-my-zsh
 # # Bundles from the default repo (robbyrussell's oh-my-zsh).
 # antigen bundle git
@@ -27,7 +31,7 @@ zplug load --verbose
 # # crash
 # # antigen bundle zsh-users/zsh-autosuggestions
 # # # Syntax highlighting bundle.
-# antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle 
 # # y copy to system clipboard
 # antigen bundle "https://github.com/kutsan/zsh-system-clipboard.git"
 # 
@@ -186,3 +190,4 @@ eval "$(atuin init zsh)"
 # bindkey "^R" atuin_fzf
 
 alias emacs='emacs -nw'
+alias ls='ls --color=auto'

@@ -1,7 +1,7 @@
 {
     "editor.insertSpaces": false,
     "files.autoSave": "afterDelay",
-    "window.menuBarVisibility": "compact",
+    "window.menuBarVisibility": "toggle",
     "workbench.activityBar.visible": true,
     "vim.easymotion": true,
     "vim.sneak": true,
@@ -736,7 +736,9 @@
     "cSpell.userWords": [
         "Warningf",
         "alauda",
+        "api",
         "auxre",
+        "clusters",
         "codegen",
         "emicklei",
         "eval",

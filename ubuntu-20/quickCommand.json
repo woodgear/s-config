@@ -1,4 +1,4 @@
-{
+console.log(console.log({
     "key_1625uzf3bjn": {
         "features": {
             "code": "key_1625uzf3bjn",
@@ -602,4 +602,4 @@
             "firefox"
         ]
     }
-}
+}))
